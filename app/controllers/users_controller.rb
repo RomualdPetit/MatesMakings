@@ -1,5 +1,5 @@
-class UserController < ApplicationController
-  
+class UsersController < ApplicationController
+
   def index
     @users = User.all
   end
@@ -9,7 +9,7 @@ class UserController < ApplicationController
   end
 
   def show
-  @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def create
@@ -49,6 +49,4 @@ class UserController < ApplicationController
   end
 
   private
-
 end
-
