@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  height: 1000px;
+}
+
+.card-up {
+  border-radius: 15px;
+  justify-content: center;
+  max-width: 500px;
+  width: auto;
+  margin: auto;
+  text-align: center;
+  margin-top: 200px;
+}
+
+.btn-primary {
+  background-color: #078080 !important;
+  border-color: #078080 !important;
+  margin: 20px;
+  width: 150px;
+}
+
+a {
+  color: #078080 !important;
+}
+
+.field {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  padding: 2rem 1.25rem !important;
+}
