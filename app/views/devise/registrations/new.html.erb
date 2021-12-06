@@ -4,10 +4,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <body style="background-image: linear-gradient(to right top, #232323, #49354c, #843f64, #c34662, #f45d48); width: 100%; background-repeat: no-repeat; ">
+
 <div class="card-up" style ="background-color: #f8f5f2;">
   <div class="card-header">
     <h2>Crée ton compte</h2>
-  <div>
+  </div>
 
   <div class="card-body">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -34,10 +35,8 @@
     <div class="actions-succes">
       <%= f.submit "Sign up", class: "btn btn-primary" %>
     </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
   </div>
-
-<% end %>
-
-<%= render "devise/shared/links" %>
 </div>
 </body>

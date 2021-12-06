@@ -39,6 +39,10 @@ a {
   color: #078080 !important;
 }
 
+a:hover {
+  background-color: transparent;
+}
+
 .field {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -46,4 +50,8 @@ a {
 
 .card-header {
   padding: 2rem 1.25rem !important;
+  background-color: #078080 !important;
+  border-top-left-radius: 13px !important;
+  border-top-right-radius: 13px !important;
+  color: white;
 }
