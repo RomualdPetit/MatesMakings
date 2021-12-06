@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<tr>
+<td>creator : event.user.name</td>
+<td><%= @game.name %></td>       
+<td><%= @game.category %></td>
+
+</tr>
+
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
