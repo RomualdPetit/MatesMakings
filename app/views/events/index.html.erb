@@ -12,9 +12,10 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td>creator : event.user.name</td>
+        <td><%= event.user_id %></td>
         <td><%= event.title %></td>       
-        <td><%= event.start_time %></td>
+        <td><%= event.start_time_hours %></td>
+        <td><%= event.start_time_min %></td>
         <td><%= event.start_date %></td>
        
 

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :events
   resources :games
-  get 'users/show'
+  resources :users
   devise_for :users
   root'home#index'
   

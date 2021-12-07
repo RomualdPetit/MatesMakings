@@ -22,7 +22,11 @@ class GamesController < ApplicationController
 
   # POST /games or /games.json
   def create
-    @game = Game.new(game_params)
+    @game = Game.new(
+      name: params[:name], category: params[:category]
+    )
+
+    @user = User.find_by(email: params[:email])
 
     respond_to do |format|
       if @game.save
@@ -65,6 +69,6 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.require(:game).permit(:name, :category)
+      params.require(:games).permit(:name, :category)
     end
 end
