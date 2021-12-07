@@ -1,15 +1,96 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MatesMakings</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <title>MatesMakings</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <link rel="stylesheets" href="style.css">
   </head>
+<header>
+<nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">MatesMakings</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Recherche d'un jeu</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
+        </ul>
+      </div>
+    </nav>  
+</header>
+<body>
 
-  <body>
-    <%= yield %>
-  </body>
+<div id="viewport">
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <header>
+      <a href="#">M&M</a>
+    </header>
+    <ul class="nav">
+      <li>
+        <a href="#">
+          <i class="zmdi zmdi-view-dashboard"></i> Accueil
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="zmdi zmdi-link"></i> Jeux
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="zmdi zmdi-widgets"></i> Evênements
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="zmdi zmdi-calendar"></i> Communautées
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="zmdi zmdi-info-outline"></i> Jeux populaires
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+</body>
+<footer>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Equipe</h4>
+          <ul>
+            <li><a href="#">A propos de nous</a></li>
+            <li><a href="#">Nous contacter</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Aide</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Suivez nous</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></a>
+            <a href="#"><i class="fab fa-twitter"></a>
+            <a href="#"><i class="fab fa-linkedin-in"></a>
+          </div>
+        </div>
+  </footer>
 </html>
