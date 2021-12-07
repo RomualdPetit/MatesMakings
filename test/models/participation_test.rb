@@ -1,7 +1,6 @@
 require 'test_helper'
 
-class EventTest < ActiveSupport::TestCase
-
+class ParticipationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

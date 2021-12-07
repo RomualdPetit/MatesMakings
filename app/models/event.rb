@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
 
-    has_one :game
-    has_many :users, through :game
+    has_many :communities
+    belongs_to :user
+    
 end

@@ -7,6 +7,27 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
+      t.string :last_name
+      t.string :first_name
+      t.string :player_type
+      t.string :country
+      t.string :description
+      t.string :gender
+      t.integer :age
+      t.string :discord_tag
+      t.string :steam
+      t.string :availablity
+      t.decimal :note
+      t.string :riot_games
+      t.string :uplay
+      t.string :psn
+      t.string :nintendo
+      t.string :epic_game
+      t.string :battlenet
+      t.string :origin
+      t.string :xbox
+
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

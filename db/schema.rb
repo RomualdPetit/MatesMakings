@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_06_140428) do
+ActiveRecord::Schema.define(version: 2021_12_07_102249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "communities", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_communities_on_game_id"
+    t.index ["user_id"], name: "index_communities_on_user_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -24,6 +33,8 @@ ActiveRecord::Schema.define(version: 2021_12_06_140428) do
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -34,9 +45,37 @@ ActiveRecord::Schema.define(version: 2021_12_06_140428) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "participations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_participations_on_event_id"
+    t.index ["user_id"], name: "index_participations_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "last_name"
+    t.string "first_name"
+    t.string "player_type"
+    t.string "country"
+    t.string "description"
+    t.string "gender"
+    t.integer "age"
+    t.string "discord_tag"
+    t.string "steam"
+    t.string "availablity"
+    t.decimal "note"
+    t.string "riot_games"
+    t.string "uplay"
+    t.string "psn"
+    t.string "nintendo"
+    t.string "epic_game"
+    t.string "battlenet"
+    t.string "origin"
+    t.string "xbox"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -46,4 +85,5 @@ ActiveRecord::Schema.define(version: 2021_12_06_140428) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "users"
 end
