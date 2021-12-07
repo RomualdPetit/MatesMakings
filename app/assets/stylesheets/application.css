@@ -36,7 +36,7 @@ body {
 }
 
 a {
-  color: #078080 !important;
+  color: #8f5960 !important;
 }
 
 a:hover {
@@ -57,7 +57,7 @@ a:hover {
 }
 
 .navbar {
-  background-color: #078080;
+  background-color: #ffffff;
   width: absolute;
   position: fixed;
   z-index: 10;
