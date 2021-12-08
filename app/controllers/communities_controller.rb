@@ -25,10 +25,6 @@ class CommunitiesController < ApplicationController
      end
     end
 
-    def count
-      self.length
-    end
-
   def destroy
     @community = current_user.communities.find(params[:id])
     game = @community.game

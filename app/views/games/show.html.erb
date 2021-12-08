@@ -17,6 +17,13 @@
 <%= link_to 'Back', games_path %>
 
 
+<% c = Community.find_by(game_id: @game.id) %>
+<%= @game.id %>
+<% array_of_user = [] %>
+<% array_of_user.push(c) %>
+<br>
+<%= array_of_user.count %><p> Joueurs </p>
+
 <% community = current_user.communities.find_by(game: @game)%>
 <% if community.nil? %>
 <form action="/communities" method="post" >
