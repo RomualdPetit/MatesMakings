@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+    @user = User.find(params[:id])
   end
 
   def create
@@ -41,6 +41,7 @@ class UsersController < ApplicationController
 
 
     if @user.update(users_params)
+      puts "UPTADEEEEEEEEEEEE"
     redirect_to user_path
     flash[:success] = "Ton profil a été enregistré ! "
     else
@@ -49,4 +50,8 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def users_params
+    params.require(:user).permit(:email, :age, :description, :country, :discord_tag, :player_type, :steam, :availablity, :note, :riot_games, :uplay, :psn, :nintendo, :epic_game, :battlenet, :origin, :xbox)
+  end
 end
