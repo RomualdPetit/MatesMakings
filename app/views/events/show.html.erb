@@ -10,16 +10,17 @@
 
 
     <tr>
-      <td>creator : event.user.name</td>
+      
       <td><%= @event.title %></td>       
       <td><%= @event.start_time_hours %>:<%= @event.start_time_min %></td>
+      <td><%= @event.description %></td>
       <td><%= @event.start_date %></td>
       </tr>
 
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Events', events_path %>
 
 <% participation = current_user.participations.find_by(event: @event)%>
 <% if participation.nil? %>
