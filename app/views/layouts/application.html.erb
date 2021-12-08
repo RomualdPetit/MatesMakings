@@ -27,7 +27,7 @@
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Recherche d'un jeu</a></li>
 
            <% if current_user %>
-            <li><%= button_to "Déconnexion", destroy_user_session_path(current_user), method: :delete, class: 'btn btn-outline-danger', style: "margin: 10px" %></li>
+            <li><%= button_to "Déconnexion", destroy_user_session_path(current_user), method: :delete, class: 'btn btn-danger', style: "margin: 10px" %></li>
             <li><%=link_to "Mon profil", user_path(current_user), class: 'btn btn-outline-secondary', style: "margin: 10px" %></li>
 
            <% else %>

@@ -1,0 +1,75 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+<body style="background-image: linear-gradient(to right top, #232323, #49354c, #843f64, #c34662, #f45d48); width: 100%; background-repeat: no-repeat; ">
+
+<div class="card-up edit-card" style ="background-color: #f8f5f2; width: 60vw">
+  <div class="card-header">
+    <h2>Editer ton compte</h2>
+  </div>
+
+  <div class="card-body" style="padding: 20px;">
+    <%= form_for(current_user) do |f| %>
+    
+
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		  <div class="form-group">
+        <div class="field">
+          <%= f.label :email, style: "display: inline block;" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		  <div class="form-group">
+        <div class="field">
+          <%= f.label :age, style: "display: inline block;" %>
+          <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		  <div class="form-group">
+        <div class="field">
+          <%= f.label :description, style: "display: block;" %>
+          <%= f.text_area :description, autofocus: true, autocomplete: "description" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="field">
+      <%= f.label :country, style: "display: block;" %>
+      <%= f.text_field :country, autofocus: true, autocomplete: "Country" %>
+    </div>
+
+       <div class="field">
+      <%= f.label :player_type, style: "display: block;" %>
+      <%= f.select :player_type, options_for_select([[""], "Casual", "Mid gamer", "Tryharder"]), autofocus: true, autocomplete: "Type de joueur" %>
+      
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update", method: :uptade, class: "btn btn-primary" %>
+    </div>
+
+
+    <p><%= button_to "Update", user_path(current_user), method: :uptade, class: "btn btn-success" %></p>
+    <% end %>
+  
+
+    <h3>Supprimer mon compte</h3>
+
+    <p><%= button_to "Supprimer mon compte", registration_path(current_user), data: { confirm: "Confirmer la suppression ?" }, method: :delete, class: "btn btn-danger" %></p>
+
+    <%= link_to "Retour profil", :back %>
+  </div>
+</body>
