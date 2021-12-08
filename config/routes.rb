@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :communities, only: [:create, :destroy]
+  resources :participations, only: [:create, :destroy]
   
   root 'home#index'
   #post "events/new"

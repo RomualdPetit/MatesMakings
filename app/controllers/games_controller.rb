@@ -8,7 +8,7 @@ class GamesController < ApplicationController
 
   # GET /games/1 or /games/1.json
   def show
-    @game = Game.find(params[:id])
+    @games = Game.find(params[:id])
   end
 
   # GET /games/new
@@ -73,8 +73,3 @@ class GamesController < ApplicationController
     end
 end
 
-
-
-
-#<% <%=link_to "Rejoindre", root_path(), {:controller => "communities", :action => "create", } %>
-#<%=button_to "Rejoindre", { :controller => "communities", :action => "create", community_id: params[:id]} %> 

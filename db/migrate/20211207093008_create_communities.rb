@@ -2,10 +2,14 @@ class CreateCommunities < ActiveRecord::Migration[5.2]
   def change
     create_table :communities do |t|
 
-      t.belongs_to :user, index: true
-      t.belongs_to :game, index: true
+      
+      t.references :user, null: false, foreign_key: true
+      t.references :game, null: false, foreign_key: true
 
       t.timestamps
     end
+
+    add_index :communities, [:user_id, :game_id], unique: true
+
   end
 end
