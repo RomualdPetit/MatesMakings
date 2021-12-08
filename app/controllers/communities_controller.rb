@@ -1,5 +1,5 @@
 class CommunitiesController < ApplicationController
-    before_action :find_game
+    # before_action :find_game
   def index
     @communities = Community.all
   end
@@ -12,11 +12,12 @@ class CommunitiesController < ApplicationController
     @community = Community.find(params[:id])
   end
 
-
   def create
-    Attendance.create(user: current_user, event: @event) 
-    flash[:success] = "Vous avez rejoint la communauté d'un jeu "
+    puts "methode call"
+     #Community.create(user: current_user, game: @game) 
+    # flash[:success] = "Vous avez rejoint la communauté de l'anneau "
     redirect_to root_path
+    puts "methode end, "
   end
   
 end

@@ -1,7 +1,7 @@
 class ParticipationsController < ApplicationController
     before_action :find_event
     def create
-        Attendance.create(user: current_user, game: @game) 
+        Participation.create(user: current_user, game: @game) 
         flash[:success] = "Vous avez rejoint la communauté d'un jeu "
         redirect_to root_path
       end
