@@ -72,3 +72,9 @@ class GamesController < ApplicationController
       params.require(:games).permit(:name, :category)
     end
 end
+
+
+
+
+#<% <%=link_to "Rejoindre", root_path(), {:controller => "communities", :action => "create", } %>
+#<%=button_to "Rejoindre", { :controller => "communities", :action => "create", community_id: params[:id]} %> 
