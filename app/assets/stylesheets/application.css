@@ -14,18 +14,21 @@
  *= require_self
  */
 
-body {
-  height: 1000px;
-}
-
 .card-up {
   border-radius: 15px;
   justify-content: center;
   max-width: 500px;
-  width: auto;
+  width: 60vw;
   margin: auto;
   text-align: center;
   margin-top: 200px;
+  -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  margin-bottom: 150px;
+}
+
+.card-up.edit-card {
+  max-width: 60vw;
 }
 
 .btn-primary {
@@ -33,6 +36,15 @@ body {
   border-color: #078080 !important;
   margin: 20px;
   width: 150px;
+}
+
+.btn-danger {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+i {
+  margin-bottom: 20px;
 }
 
 a {
@@ -54,6 +66,8 @@ a:hover {
   border-top-left-radius: 13px !important;
   border-top-right-radius: 13px !important;
   color: white;
+  -webkit-box-shadow: 5px 9px 20px 4px rgba(0, 0, 0, 0.33);
+  box-shadow: 5px 9px 20px 4px rgba(0, 0, 0, 0.33);
 }
 
 .navbar {
@@ -271,4 +285,120 @@ ul {
     text-align: center;
     float: none;
   }
+}
+
+/* --------- VALI --------- */
+/* Par défaut, une étoile est en gris,
+   avec un padding et un curseur en forme de main. */
+.fa-star {
+  color: gray;
+  cursor: pointer;
+  padding: 0.0625rem;
+}
+/* Si elle porte en plus la classe '.gold', elle sera en jaune. */
+.fa-star.gold {
+  color: #ffdc0f;
+}
+
+/* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Le groupe '.stars' positionne les étoiles
+       les unes à côté des autres sans espacements. */
+.stars {
+  display: inline-flex;
+  justify-content: center;
+  font-size: 3em;
+}
+
+/**
+     * Et là opère la magie du ':hover' !
+     */
+
+/* A l'état :hover sur le parent '.rating',
+       on force TOUTES les étoiles à passer en jaune. */
+.stars:hover .fa-star {
+  color: #ffdc0f;
+}
+/* Et si la souris survole une étoile en particulier,
+       on sélectionne toutes les étoiles qui sont APRÈS celle-ci
+       grâce à l'opérateur '~' et on les force en GRIS */
+.stars .fa-star:hover ~ .fa-star {
+  color: gray;
+}
+
+/******************************************************************/
+/* style pour la démo */
+html {
+  margin-top: 2em;
+  text-align: center;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 1.4rem;
+}
+a {
+  color: crimson;
+  font-weight: 600;
+  transition: all 0.8s cubic-bezier(0.14, 1.36, 0.5, 0.88);
+  display: inline-block;
+}
+a:hover {
+  transform: scale(1.3);
+}
+/******************************************************************/
+
+.container {
+  width: 1000px;
+  text-align: center;
+}
+
+.card-description {
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1000px;
+  margin: auto;
+  background-color: white;
+  -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+}
+
+.card-plateform {
+  border-radius: 15px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1000px;
+  margin: auto;
+  background-color: white;
+  -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+}
+
+.card-star {
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1000px;
+  margin: auto;
+  background-color: white;
+  -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+}
+
+textarea {
+  padding: 10px;
+  max-width: 100%;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+  margin: 0px;
+  width: 707px;
+  height: 104px;
+  margin-bottom: -15px;
 }
