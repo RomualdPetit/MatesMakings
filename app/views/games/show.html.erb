@@ -17,12 +17,13 @@
 <%= link_to 'Back', games_path %>
 
 
+
 <% community = current_user.communities.find_by(game: @game)%>
 <% if community.nil? %>
 <form action="/communities" method="post" >
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
     <input type="hidden" name="community[game_id]" value="<%= @game.id %>" >
-    <input type="submit" value="Rejoindre la commu du jeu" <% x+=1 %> >
+    <input type="submit" value="Rejoindre la commu du jeu">
 </form>
 
 <% else %>
@@ -30,7 +31,7 @@
 <form action="<%= community_path(community) %>" method="post" >
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
     <input type="hidden" name="_method" value="DELETE" >
-    <input type="submit" value="Quitter la commu du jeu" <% x-=1 %> >
+    <input type="submit" value="Quitter la commu du jeu">
 </form>
 
 <% end %>
