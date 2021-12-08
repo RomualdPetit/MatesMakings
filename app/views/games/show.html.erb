@@ -1,7 +1,10 @@
+<br><br><br><br>
+
+
 <p id="notice"><%= notice %></p>
 
 <tr>
-<td>creator : event.user.name</td>
+
 <td><%= @game.name %></td>       
 <td><%= @game.category %></td>
 
@@ -10,3 +13,8 @@
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
+
+
+<%# <%=link_to "Rejoindre", root_path(), {:controller => "communities", :action => "create", } %> %>
+<%=button_to "Rejoindre", { :controller => "communities", :action => "create", community_id: params[:id]} %>
+
