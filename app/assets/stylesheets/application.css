@@ -15,6 +15,7 @@
  */
 
 body {
+  margin-top: 50px;
   height: 1000px;
 }
 
@@ -64,6 +65,7 @@ a:hover {
   left: 0;
   right: 0;
   top: 0;
+  
 }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500");
@@ -272,3 +274,101 @@ ul {
     float: none;
   }
 }
+
+
+/* --------- VALI --------- */
+/* Par défaut, une étoile est en gris,
+   avec un padding et un curseur en forme de main. */
+   .fa-star {
+    color: gray;
+    cursor: pointer;
+    padding: 0.0625rem;
+  }
+  /* Si elle porte en plus la classe '.gold', elle sera en jaune. */
+  .fa-star.gold {
+    color: #ffdc0f;
+  }
+  
+  /* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
+  .rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+    /* Le groupe '.stars' positionne les étoiles
+       les unes à côté des autres sans espacements. */
+    .stars {
+      display: inline-flex;
+      justify-content: center;
+      font-size: 3em;
+    }
+  
+    /**
+     * Et là opère la magie du ':hover' !
+     */
+  
+    /* A l'état :hover sur le parent '.rating',
+       on force TOUTES les étoiles à passer en jaune. */
+    .stars:hover .fa-star {
+      color: #ffdc0f;
+    }
+    /* Et si la souris survole une étoile en particulier,
+       on sélectionne toutes les étoiles qui sont APRÈS celle-ci
+       grâce à l'opérateur '~' et on les force en GRIS */
+    .stars .fa-star:hover ~ .fa-star {
+      color: gray;
+    }
+  
+  /******************************************************************/
+  /* style pour la démo */
+  html { margin-top: 2em; text-align: center; font-family: 'Droid Sans', sans-serif; font-size: 1.4rem; }
+  a { color: crimson; font-weight: 600; transition: all 0.8s cubic-bezier(.14,1.36,.5,.88); display: inline-block; }
+  a:hover { transform: scale(1.3) }
+  /******************************************************************/
+
+.container {
+  width: 1000px;
+  text-align: center;
+}
+
+.card-description{
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1000px; 
+  margin: auto; 
+  background-color: white; 
+  -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  
+
+}
+
+.card-plateform {
+  border-radius: 15px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1000px; 
+  margin: auto;
+  background-color: white; 
+  -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  
+
+}
+
+.card-star {
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1000px; 
+  margin: auto;
+  background-color: white; 
+  -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+
+}
+

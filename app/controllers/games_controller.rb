@@ -69,10 +69,12 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-<<<<<<< HEAD
       params.require(:games).permit(:name, :category)
-=======
-      params.require(:game).permit(:name, :category)
->>>>>>> f91185eaea0e0edc9633cee2ba56a3c584153998
     end
 end
+
+
+
+
+#<% <%=link_to "Rejoindre", root_path(), {:controller => "communities", :action => "create", } %>
+#<%=button_to "Rejoindre", { :controller => "communities", :action => "create", community_id: params[:id]} %> 
