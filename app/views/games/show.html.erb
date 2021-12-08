@@ -11,10 +11,15 @@
 </tr>
 
 
+
+
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
 
+<form action="/communities" method="post" >
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
+    <input type="hidden" name="community[game_id]" value="<%= @game.id %>" >
+    <input type="submit" value="community">
+</form>
 
-<%# <%=link_to "Rejoindre", root_path(), {:controller => "communities", :action => "create", } %> %>
-<%=button_to "Rejoindre", { :controller => "communities", :action => "create", community_id: params[:id]} %>
 

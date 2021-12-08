@@ -26,7 +26,8 @@ end
         description: "lolol",
         plateform: Faker::Game.platform,
         start_time_hours: 15,
-        start_time_min: 39 
+        start_time_min: 39
+        
     )
 end
 
