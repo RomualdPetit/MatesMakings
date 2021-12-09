@@ -16,37 +16,34 @@
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
       <link rel="stylesheets" href="style.css">
   </head>
-<header>
 
 
-<nav class="navbar navbar-inverse">
-    <div class="menu-burger">
-      <i class="fas fa-bars" id="btn"></i>
-      <i class="fas fa-times" id="cancel"></i>
-    </div>
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/"><img class="nav-logo" src="https://media.discordapp.net/attachments/887258359252783116/917879647759372398/MATES__MAKINGS_NOIR.png?width=400&height=113"></a>
-        </div>
+ <header>
+ <nav class="navbar navbar-inverse">
 
-        <ul class="nav navbar-nav navbar-right">
+       <div class="container-fluid">
+          <div class="menu-burger">
+            <i class="fas fa-bars" id="btn"></i>
+          </div>
+         <div class="navbar-header">
+           <a class="navbar-brand" href="/"><img class="nav-logo" src="https://media.discordapp.net/attachments/887258359252783116/917879647759372398/MATES__MAKINGS_NOIR.png?width=400&height=113"></a>
+         </div>
+         <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
+             <li><%= button_to "Déconnexion", destroy_user_session_path(current_user), method: :delete, class: 'btn btn-danger', style: "margin: 10px" %></li>
+             <li class="profile"><%=link_to "Mon profil", user_path(current_user), class: 'btn btn-outline-secondary' %></li>
+            <% else %>
+             <li><%=link_to "Inscription", new_user_registration_path(), class: 'nav-link' %><span class="glyphicon glyphicon-user"></span></li>
+             <li><%= link_to "Se connecter", new_user_session_path(), class: 'nav-link' %><span class="glyphicon glyphicon-log-in"></span></li>
+            <% end %>
+         </ul>
+       </div>
+ </nav>  
+ </header>
 
-           <% if current_user %>
-            <li><%= button_to "Déconnexion", destroy_user_session_path(current_user), method: :delete, class: 'btn btn-danger', style: "margin: 10px" %></li>
-            <li><%=link_to "Mon profil", user_path(current_user), class: 'btn btn-outline-secondary' %></li>
-
-           <% else %>
-            <li><%=link_to "Inscription", new_user_registration_path(), class: 'nav-link' %><span class="glyphicon glyphicon-user"></span></li>
-            <li><%= link_to "Se connecter", new_user_session_path(), class: 'nav-link' %><span class="glyphicon glyphicon-log-in"></span></li>
-           <% end %>
-        </ul>
-      </div>
-</nav>  
-</header>
 <body style="background-image: linear-gradient(to right top, #232323, #49354c, #843f64, #c34662, #f45d48); background-repeat: no-repeat; ">
-    <input type="checkbox" id="check" />
     <div class="sidebar">
-      <header>MatesMakings</header>
+      <div class="sidebar-header">MatesMakings</div>
       <ul>
         <li>
           <a href="#">Cherche un jeu</a>
