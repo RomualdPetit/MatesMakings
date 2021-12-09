@@ -14,3 +14,26 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$( document ).ready(function() {
+    $('.menu-burger').on('click', () => {
+        console.log($(this));
+    });
+});
+console.log('test')
+
+
+$( document ).ready(function() {
+  $('.event-btn').click(function(e){
+    e.preventDefault()
+    $('.sidebar ul .event-show').toggleClass("show");
+  });
+});
+
+
+$( document ).ready(function() {
+  $('.jeux-btn').click(function(e){
+    e.preventDefault()
+    $('.sidebar ul .jeux-show').toggleClass("show");
+  });
+});
