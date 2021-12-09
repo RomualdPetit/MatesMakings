@@ -9,7 +9,10 @@ class GamesController < ApplicationController
   # GET /games/1 or /games/1.json
   def show
     @game = Game.find(params[:id])
-    
+    @all_commu = Community.where(game_id: @game.id)
+
+    @compteur = @all_commu.count 
+
   end
 
   # GET /games/new
