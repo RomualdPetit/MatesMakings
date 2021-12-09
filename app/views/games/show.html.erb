@@ -17,7 +17,7 @@
 <%= link_to 'Back', games_path %>
 
 
-
+il y a <%= @compteur %> personnes qui joue a ce jeux
 <% community = current_user.communities.find_by(game: @game)%>
 <% if community.nil? %>
 <form action="/communities" method="post" >
