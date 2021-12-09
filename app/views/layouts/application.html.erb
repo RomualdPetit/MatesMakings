@@ -20,14 +20,16 @@
 
 
 <nav class="navbar navbar-inverse">
+    <div class="menu-burger">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </div>
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="/"><img class="nav-logo" src="https://media.discordapp.net/attachments/887258359252783116/917879647759372398/MATES__MAKINGS_NOIR.png?width=400&height=113"></a>
         </div>
 
         <ul class="nav navbar-nav navbar-right">
-
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Recherche d'un jeu</a></li>
 
            <% if current_user %>
             <li><%= button_to "Déconnexion", destroy_user_session_path(current_user), method: :delete, class: 'btn btn-danger', style: "margin: 10px" %></li>
@@ -43,33 +45,30 @@
 </header>
 <body style="background-image: linear-gradient(to right top, #232323, #49354c, #843f64, #c34662, #f45d48); background-repeat: no-repeat; ">
     <input type="checkbox" id="check" />
-    <label for="check">
-      <i class="fas fa-bars" id="btn"></i>
-      <i class="fas fa-times" id="cancel"></i>
-    </label>
     <div class="sidebar">
       <header>MatesMakings</header>
       <ul>
         <li>
-          <a href="#">Accueil</a>
-        </li>
-        <li>
           <a href="#">Cherche un jeu</a>
         </li>
         <li>
-          <a href="#">Communautée</a>
+          <a href="#" class="event-btn">Evênements
+            <span class="fas fa-caret-down first"></a></a>
+            <ul class="event-show">
+              <li><a href="#">Crée ton event</a></li>
+              <li><a href="#">Rejoins un event</a></li>
+            </ul>
         </li>
         <li>
-          <a href="#">Evênements</a>
-        </li>
-        <li>
-          <a href="#">Tous nos jeux</a>
-        </li>
-        <li>
-          <a href="#">Services</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
+          <a href="#" class="jeux-btn">Tous nos jeux
+            <span class="fas fa-caret-down second"></a>
+            <ul class="jeux-show">
+              <li><a href="#">Rocket League</a></li>
+              <li><a href="#">League of Legend</a></li>
+              <li><a href="#">Pokémon</a></li>
+              <li><a href="#">Battlefield 2042</a></li>
+              <li><a href="#">GTA XII</a></li>
+            </ul>
         </li>
       </ul>
     </div>

@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2021_12_09_085820) do
     t.string "steam"
     t.string "availablity"
     t.decimal "note"
-    t.string "riot_games"
+    t.string "riot_games" #table platforme ?
     t.string "uplay"
     t.string "psn"
     t.string "nintendo"
@@ -87,6 +87,8 @@ ActiveRecord::Schema.define(version: 2021_12_09_085820) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "communities", "games"
+  add_foreign_key "communities", "users"
   add_foreign_key "events", "games"
   add_foreign_key "events", "users"
 end
