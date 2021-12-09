@@ -25,7 +25,7 @@ class CommunitiesController < ApplicationController
 
 
  def communities_params
-  params.require(:community).permit(:game_id)
+  params.require(:community).permit(:game_id, :user_id)
  end
 
 
