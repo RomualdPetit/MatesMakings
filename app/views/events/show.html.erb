@@ -10,13 +10,34 @@
 
 
     <tr>
-      <td>creator : event.user.name</td>
+      
       <td><%= @event.title %></td>       
       <td><%= @event.start_time_hours %>:<%= @event.start_time_min %></td>
+      <td><%= @event.description %></td>
       <td><%= @event.start_date %></td>
       </tr>
 
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Events', events_path %>
+
+<% participation = current_user.participations.find_by(event: @event)%>
+<% if participation.nil? %>
+<form action="/participations" method="post" >
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
+    <input type="hidden" name="participation[event_id]" value="<%= @event.id %>" >
+    <input type="submit" value="Rejoindre un évenement du jeu">
+</form>
+
+<% else %>
+
+<form action="<%= participation_path(participation) %>" method="post" >
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
+    <input type="hidden" name="_method" value="DELETE" >
+    <input type="submit" value="Ne plus participer à l'évent">
+</form>
+
+<% end %>
+
+

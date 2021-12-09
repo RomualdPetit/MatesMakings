@@ -8,12 +8,12 @@ module ParticipationsHelper
         session[:user_id] = user.id
       end
 
-      def find_game
-        @game = Game.find(params[:event_id])
+      def find_event
+        @event = Evnet.find(params[:event_id])
       end
     
-      def find_game_bis
-        @game = Game.find(params[:id])
+      def find_event_bis
+        @event = Evnet.find(params[:event_id])
       end
     
 

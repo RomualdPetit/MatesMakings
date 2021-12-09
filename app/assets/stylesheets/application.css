@@ -14,6 +14,12 @@
  *= require_self
  */
 
+body {
+  height: 100vh;
+  width: 100vw;
+  margin-top: 60px;
+}
+
 .card-up {
   border-radius: 15px;
   justify-content: center;
@@ -52,7 +58,7 @@ a {
 }
 
 a:hover {
-  background-color: transparent;
+  padding-left: 35px;
 }
 
 .field {
@@ -74,7 +80,7 @@ a:hover {
   background-color: #ffffff;
   width: absolute;
   position: fixed;
-  z-index: 10;
+  z-index: 1111;
   left: 0;
   right: 0;
   top: 0;
@@ -110,61 +116,90 @@ body {
 
 /* Sidebar Styles */
 
-#sidebar {
-  z-index: 1000;
+.sidebar {
   position: fixed;
-  left: 250px;
-  top: 52px;
+  left: 0px;
   width: 250px;
   height: 100%;
-  margin-left: -250px;
-  overflow-y: auto;
-  background: #078080;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
+  top: 7%;
+  background: #042331;
   transition: all 0.5s ease;
-  border-radius: 5px;
 }
 
-#sidebar header {
-  background-color: #263238;
-  font-size: 20px;
-  line-height: 52px;
+.sidebar header {
+  font-size: 22px;
+  color: #8f5960;
+  line-height: 70px;
   text-align: center;
+  background: #063146;
+  user-select: none;
 }
 
-#sidebar header a {
-  color: #fff;
+.sidebar ul a {
   display: block;
-  text-decoration: none;
-}
-
-#sidebar header a:hover {
-  color: #fff;
-}
-
-#sidebar .nav a {
-  background: none;
-  border-bottom: 1px solid #455a64;
-  color: #cfd8dc;
-  font-size: 14px;
-  padding: 20px 24px;
-}
-
-#sidebar .nav a:hover {
-  background: none;
-  color: #eceff1;
-}
-
-#sidebar .nav a i {
-  margin-right: 20px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white !important;
+  padding-right: 25px !important;
   box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar ul li:hover a {
+  padding-left: 35px !important;
+}
+
+.sidebar ul a i {
+  margin-right: 16px;
+}
+#check {
+  display: none !important;
+}
+
+label #btn,
+label #cancel {
+  position: absolute;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer !important;
+}
+
+label #btn {
+  left: 200px;
+  top: 90px;
+  font-size: 15px;
+  color: black;
+  padding: 6px 12px;
+  transition: all 0.5s;
+}
+
+label #cancel {
+  z-index: 1111;
+  left: 205px;
+  top: 80px;
+  font-size: 15px;
+  color: black;
+  padding: 4px 10px;
+  transition: all 0.5s ease;
+}
+
+#check:checked ~ .sidebar {
+  left: 0;
+}
+
+#check:checked ~ label #btn {
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#check:checked ~ label #cancel {
+  left: 195px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .container {
@@ -252,39 +287,32 @@ ul {
   background-color: #ffffff;
 }
 
-/*responsive*/
-@media (max-width: 767px) {
-  .footer-col {
-    width: 50%;
-    margin-bottom: 30px;
-  }
+/* --------- VALI --------- */
+/* Par défaut, une étoile est en gris,
+   avec un padding et un curseur en forme de main. */
+.fa-star {
+  color: gray;
+  cursor: pointer;
+  padding: 0.0625rem;
+}
+/* Si elle porte en plus la classe '.gold', elle sera en jaune. */
+.fa-star.gold {
+  color: #ffdc0f;
 }
 
-@media (max-width: 574px) {
-  .footer-col {
-    width: 100%;
-  }
+/* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media (max-width: 767px) {
-  .sidebar header {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar .nav {
-    float: left;
-  }
-  div.content {
-    margin-left: 0;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
+/* Le groupe '.stars' positionne les étoiles
+       les unes à côté des autres sans espacements. */
+.stars {
+  display: inline-flex;
+  justify-content: center;
+  font-size: 3em;
 }
 
 /* --------- VALI --------- */

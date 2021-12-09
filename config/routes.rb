@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  
+
   resources :events
   resources :games
   devise_for :users
   resources :users
   resources :communities, only: [:create, :destroy]
+  resources :participations, only: [:create, :destroy]
   
   root 'home#index'
   #post "events/new"
