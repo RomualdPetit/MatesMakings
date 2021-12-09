@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :plateform
       t.integer :start_time_hours
       t.integer :start_time_min
+      t.integer :game_number
 
       t.date :start_date
 
