@@ -1,6 +1,6 @@
 class CommunitiesController < ApplicationController
     # before_action :find_game
-  
+    before_action :authenticate_user!, only: [:create, :destroy] 
 
   def create
     @community = current_user.communities.new(communities_params)
@@ -28,5 +28,11 @@ class CommunitiesController < ApplicationController
   params.require(:community).permit(:game_id)
  end
 
+ def authenticate_user
+  unless current_user
+    flash[:danger] = "Tu n'est pas connecté"
+    redirect_to new_user_session_path
+  end
+end
 
 end

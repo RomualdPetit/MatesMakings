@@ -3,73 +3,105 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
 
-<body style="background-image: linear-gradient(to right top, #232323, #49354c, #843f64, #c34662, #f45d48); width: 100%; background-repeat: no-repeat; ">
 
-<div class="card-up edit-card" style ="background-color: #f8f5f2; width: 60vw">
-  <div class="card-header">
-    <h2>Editer ton compte</h2>
-  </div>
 
-  <div class="card-body" style="padding: 20px;">
+  <div class="card-up edit-card" style ="background-color: #f8f5f2;">
+    
+      <h1 class="card-title">Editer ton compte</h2>
+    
+
+    <div class="card-body" style="padding: 20px;">
     <%= form_for(current_user) do |f| %>
     
 
-  <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		  <div class="form-group">
-        <div class="field">
-          <%= f.label :email, style: "display: inline block;" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		      <div class="form-group">
+            <div class="field">
+              <%= f.label :pseudo, style: "display: inline block;" %>
+              <%= f.text_field :last_name, autofocus: true, autocomplete: "pseudo" %>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		  <div class="form-group">
-        <div class="field">
-          <%= f.label :age, style: "display: inline block;" %>
-          <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		      <div class="form-group">
+            <div class="field">
+              <%= f.label :age, style: "display: inline block;" %>
+              <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
+            </div>
+          </div>
         </div>
       </div>
+
+	    <div class="row">
+		    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		      <div class="form-group">
+            <div class="field">
+              <%= f.label :Pays, style: "display: inline block;" %>
+              <%= f.text_field :country, autofocus: true, autocomplete: "Country" %>
+            </div>
+          </div>
+        </div>
+
+		    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		      <div class="form-group">
+            <div class="field">
+              <%= f.label :Type_de_Joueur, style: "display: inline block;" %>
+              <%= f.select :player_type, options_for_select(["Casual", "Mid gamer", "Tryharder"]), autofocus: true, autocomplete: "Type de joueur" %>  
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+		    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		      <div class="form-group">
+            <div class="field">
+              <%= f.label :Description_et_Disponibilitées, style: "display: block;" %>
+              <%= f.text_area :description, autofocus: true, autocomplete: "Description et Disponibilitées" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-
-	<div class="row">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		  <div class="form-group">
-        <div class="field">
-          <%= f.label :description, style: "display: block;" %>
-          <%= f.text_area :description, autofocus: true, autocomplete: "description" %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <div class="field">
-      <%= f.label :country, style: "display: block;" %>
-      <%= f.text_field :country, autofocus: true, autocomplete: "Country" %>
-    </div>
-
-       <div class="field">
-      <%= f.label :player_type, style: "display: block;" %>
-      <%= f.select :player_type, options_for_select([[""], "Casual", "Mid gamer", "Tryharder"]), autofocus: true, autocomplete: "Type de joueur" %>
-      
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Update", method: :uptade, class: "btn btn-primary" %>
-    </div>
-
-
-    <p><%= button_to "Update", user_path(current_user), method: :uptade, class: "btn btn-success" %></p>
-    <% end %>
   
+    <div class="plateform">
+      <div class="card-plateform">
+        <div class="card-body" style="padding: 30px;">
+          <h1 class="card-title" style="margin-bottom: 30px;">Vos Plateformes gaming</h1>
+          <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/xbox.png"/> 
+          <%= f.text_field :xbox, autofocus: true, autocomplete: "xbox" %>
+          <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/play-station.png"/>
+          <%= f.text_field :psn, autofocus: true, autocomplete: "psn" %>
+          <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/nintendo-switch-logo.png"/>
+          <%= f.text_field :nintendo, autofocus: true, autocomplete: "nintendo" %>
+          <p><img class="img-edit" src="https://img.icons8.com/ios/50/000000/battle-net.png"/>
+          <%= f.text_field :battlenet, autofocus: true, autocomplete: "battlenet" %>
+          <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/steam.png"/>
+          <%= f.text_field :steam, autofocus: true, autocomplete: "steam" %>
+          <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/epic-games.png"/>
+          <%= f.text_field :epic_game, autofocus: true, autocomplete: "Epic Game" %>
+          <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/origin.png"/>
+          <%= f.text_field :origin, autofocus: true, autocomplete: "origin" %>
+          <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/league-of-legends.png"/>
+          <%= f.text_field :riot_games, autofocus: true, autocomplete: "Riot Games" %>
+          <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/discord-logo.png"/>
+          <%= f.text_field :discord_tag, autofocus: true, autocomplete: "Discord" %>
+        </div>
+      </div>
+   </div>
 
-    <h3>Supprimer mon compte</h3>
-
-    <p><%= button_to "Supprimer mon compte", registration_path(current_user), data: { confirm: "Confirmer la suppression ?" }, method: :delete, class: "btn btn-danger" %></p>
-
-    <%= link_to "Retour profil", :back %>
-  </div>
+    <div class="availablity" style="margin-bottom: 100px;">
+     <div class="card-availablity">
+    
+      <div class="actions">
+        <%= f.submit "Update", method: :uptade, class: "btn btn-primary" %>
+        <%= link_to "Retour profil", user_path(current_user), class: "btn btn-secondary" %>
+      </div>
+    </div>
+<% end %>
 </body>

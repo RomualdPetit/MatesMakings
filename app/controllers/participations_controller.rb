@@ -1,6 +1,6 @@
 class ParticipationsController < ApplicationController
     #before_action :find_event
-    
+    before_action :authenticate_user!, only: [:create, :destroy] 
     def create
       #@event = Event.find(params[:id])
      
@@ -28,6 +28,14 @@ private
     params.require(:participation).permit(:event_id)
   end
 
+
+
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Tu n'est pas connecté"
+      redirect_to new_user_session_path
+    end
+  end
 
 end
 
