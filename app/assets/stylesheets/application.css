@@ -384,6 +384,7 @@ a:hover {
 }
 
 .card-description {
+  border-radius: 15px;
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -407,6 +408,7 @@ a:hover {
 }
 
 .card-star {
+  border-radius: 15px;
   text-align: center;
   justify-content: center;
   margin-top: 20px;

@@ -18,8 +18,8 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		  <div class="form-group">
         <div class="field">
-          <%= f.label :email, style: "display: inline block;" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.label :pseudo, style: "display: inline block;" %>
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "pseudo" %>
         </div>
       </div>
     </div>
@@ -47,12 +47,12 @@
   </div>
 
     <div class="field">
-      <%= f.label :country, style: "display: block;" %>
+      <%= f.label :Pays, style: "display: block;" %>
       <%= f.text_field :country, autofocus: true, autocomplete: "Country" %>
     </div>
 
        <div class="field">
-      <%= f.label :player_type, style: "display: block;" %>
+      <%= f.label :Joueur, style: "display: block;" %>
       <%= f.select :player_type, options_for_select([[""], "Casual", "Mid gamer", "Tryharder"]), autofocus: true, autocomplete: "Type de joueur" %>
       
     </div>
@@ -61,8 +61,6 @@
       <%= f.submit "Update", method: :uptade, class: "btn btn-primary" %>
     </div>
 
-
-    <p><%= button_to "Update", user_path(current_user), method: :uptade, class: "btn btn-success" %></p>
     <% end %>
   
 

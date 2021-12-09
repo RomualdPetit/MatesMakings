@@ -9,13 +9,31 @@
     <div class="description">
      <div class="card-description">
       <div class="card-body">
-        <h1 class="card-title">Description du joueur</h1>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-       <%= link_to "Editer mon profil", edit_user_registration_path(), class: "btn btn-primary" %>
+        <h1 class="card-title"> Description </h1>
+        <h2 class="card-title"> Pseudo: <%= @user.last_name %> </h2>
+        <h3 class="card-title"> Pays: <%= @user.country %> </h3>
+        <h3 class="card-title"> Age: <%= @user.age %> </h3>
+        <h3 class="carde-title"> Nivau de jeu: <%= @user.player_type %> </h3>
+        <h3 class="carde-title"> A propos de moi: <%= @user.description %> </h3>
+        
+       <%= link_to "Editer mon profil", edit_user_path(), class: "btn btn-primary" %>
       </div>
      </div>
     </div>
     </div>
+    <div class="row description">
+    <div class="description">
+     <div class="card-description">
+      <div class="card-body">
+        <h1 class="card-title"> Disponibilitées </h1>
+        <h3 class="card-title"> Matin:  </h3>
+        <h3 class="card-title"> Apres-midi: </h3>
+        <h3 class="card-title"> Soir: </h3>
+      </div>
+     </div>
+    </div>
+    </div>
+
     <div class="row plateform ">
     <div class="plateform">
     <div class="card-plateform">
