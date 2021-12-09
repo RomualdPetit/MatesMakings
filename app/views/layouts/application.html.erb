@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
 
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -36,9 +36,40 @@
            <% end %>
         </ul>
       </div>
-    </nav>  
+</nav>  
 </header>
 <body>
+    <input type="checkbox" id="check" />
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+      <header>MatesMakings</header>
+      <ul>
+        <li>
+          <a href="#">Accueil</a>
+        </li>
+        <li>
+          <a href="#">Cherche un jeu</a>
+        </li>
+        <li>
+          <a href="#">Communautée</a>
+        </li>
+        <li>
+          <a href="#">Evênements</a>
+        </li>
+        <li>
+          <a href="#">Tous nos jeux</a>
+        </li>
+        <li>
+          <a href="#">Services</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
 <%= yield %>
 </body>
 </html>
