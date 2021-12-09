@@ -16,12 +16,11 @@ ActiveRecord::Schema.define(version: 2021_12_09_085820) do
   enable_extension "plpgsql"
 
   create_table "communities", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "game_id", null: false
+    t.bigint "user_id"
+    t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_communities_on_game_id"
-    t.index ["user_id", "game_id"], name: "index_communities_on_user_id_and_game_id", unique: true
     t.index ["user_id"], name: "index_communities_on_user_id"
   end
 
@@ -73,7 +72,11 @@ ActiveRecord::Schema.define(version: 2021_12_09_085820) do
     t.string "availablity"
     t.decimal "note"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     t.string "riot_games" #table platforme ?
+=======
+    t.string "riot_games"
+>>>>>>> Stashed changes
 =======
     t.string "riot_games"
 >>>>>>> Stashed changes
@@ -93,8 +96,11 @@ ActiveRecord::Schema.define(version: 2021_12_09_085820) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< Updated upstream
   add_foreign_key "communities", "games"
   add_foreign_key "communities", "users"
   add_foreign_key "events", "games"
+=======
+>>>>>>> Stashed changes
   add_foreign_key "events", "users"
 end
