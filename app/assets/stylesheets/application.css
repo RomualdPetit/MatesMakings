@@ -432,3 +432,16 @@ textarea {
   height: 104px;
   margin-bottom: -15px;
 }
+
+textarea {
+  padding: 10px;
+  max-width: 100%;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+  margin: 0px;
+  width: 707px;
+  height: 104px;
+  margin-bottom: -15px;
+}
