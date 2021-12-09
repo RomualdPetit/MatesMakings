@@ -10,9 +10,8 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @all_commu = Community.where(game_id: @game.id)
-
     @compteur = @all_commu.count 
-
+    @events = Event.where(game_id: @game.id)
   end
 
   # GET /games/new
