@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_07_102249) do
+ActiveRecord::Schema.define(version: 2021_12_09_085820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,10 +31,13 @@ ActiveRecord::Schema.define(version: 2021_12_07_102249) do
     t.string "plateform"
     t.integer "start_time_hours"
     t.integer "start_time_min"
+    t.integer "game_number"
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "game_id"
+    t.index ["game_id"], name: "index_events_on_game_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -69,7 +72,7 @@ ActiveRecord::Schema.define(version: 2021_12_07_102249) do
     t.string "steam"
     t.string "availablity"
     t.decimal "note"
-    t.string "riot_games" #table platforme ?
+    t.string "riot_games"
     t.string "uplay"
     t.string "psn"
     t.string "nintendo"
@@ -88,5 +91,6 @@ ActiveRecord::Schema.define(version: 2021_12_07_102249) do
 
   add_foreign_key "communities", "games"
   add_foreign_key "communities", "users"
+  add_foreign_key "events", "games"
   add_foreign_key "events", "users"
 end

@@ -10,11 +10,14 @@
 
 
     <tr>
-      
-      <td><%= @event.title %></td>       
-      <td><%= @event.start_time_hours %>:<%= @event.start_time_min %></td>
-      <td><%= @event.description %></td>
-      <td><%= @event.start_date %></td>
+      ecris par : <td><%= @event.user.email %></td><br>
+      <td><%= @event.title %></td>       <br>
+      <td><%= @event.start_time_hours %>:<%= @event.start_time_min %></td><br>
+      <td><%= @event.description %></td><br>
+      <td><%= @event.start_date %></td><br>
+      le jeu : <td><%= @event.game.name %></td>
+
+
       </tr>
 
 
@@ -39,5 +42,4 @@
 </form>
 
 <% end %>
-
 
