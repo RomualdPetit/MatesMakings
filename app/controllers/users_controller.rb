@@ -52,6 +52,6 @@ class UsersController < ApplicationController
   private
 
   def users_params
-    params.require(:user).permit(:email, :age, :description, :country, :discord_tag, :player_type, :steam, :availablity, :note, :riot_games, :uplay, :psn, :nintendo, :epic_game, :battlenet, :origin, :xbox)
+    params.require(:user).permit(:last_name, :email, :age, :description, :country, :discord_tag, :player_type, :steam, :availablity, :note, :riot_games, :uplay, :psn, :nintendo, :epic_game, :battlenet, :origin, :xbox)
   end
 end

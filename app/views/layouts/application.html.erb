@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="url" href="https://media.discordapp.net/attachments/887258359252783116/917879598727970836/MATES__MAKINGS_LOGO_BIG.png?width=400&height=225" />
     
 
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -21,7 +22,7 @@
 <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">MatesMakings</a>
+          <a class="navbar-brand" href="/"><img class="nav-logo" src="https://media.discordapp.net/attachments/887258359252783116/917879647759372398/MATES__MAKINGS_NOIR.png?width=400&height=113"></a>
         </div>
 
         <ul class="nav navbar-nav navbar-right">
@@ -30,7 +31,7 @@
 
            <% if current_user %>
             <li><%= button_to "Déconnexion", destroy_user_session_path(current_user), method: :delete, class: 'btn btn-danger', style: "margin: 10px" %></li>
-            <li><%=link_to "Mon profil", user_path(current_user), class: 'btn btn-outline-secondary', style: "margin: 10px" %></li>
+            <li><%=link_to "Mon profil", user_path(current_user), class: 'btn btn-outline-secondary' %></li>
 
            <% else %>
             <li><%=link_to "Inscription", new_user_registration_path(), class: 'nav-link' %><span class="glyphicon glyphicon-user"></span></li>
@@ -40,7 +41,7 @@
       </div>
 </nav>  
 </header>
-<body>
+<body style="background-image: linear-gradient(to right top, #232323, #49354c, #843f64, #c34662, #f45d48); background-repeat: no-repeat; ">
     <input type="checkbox" id="check" />
     <label for="check">
       <i class="fas fa-bars" id="btn"></i>
