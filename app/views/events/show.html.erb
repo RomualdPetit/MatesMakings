@@ -25,6 +25,7 @@
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Events', events_path %>
 
+il y a <%= @compteur %> personnes inscrites
 <% participation = current_user.participations.find_by(event: @event)%>
 <% if participation.nil? %>
 <form action="/participations" method="post" >

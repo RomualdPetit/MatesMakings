@@ -9,7 +9,8 @@ class EventsController < ApplicationController
   # GET /events/1 or /events/1.json
   def show
     @event = Event.find(params[:id])
-    
+    @all_participation = Participation.where(event_id: @event.id)
+    @compteur = @all_participation.count 
   end
 
   # GET /events/new
