@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_09_160436) do
+ActiveRecord::Schema.define(version: 2021_12_09_175700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "communities", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "game_id"
+    t.bigint "community_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_communities_on_game_id"
+    t.index ["community_id"], name: "index_communities_on_community_id"
     t.index ["user_id"], name: "index_communities_on_user_id"
   end
 
@@ -34,10 +34,6 @@ ActiveRecord::Schema.define(version: 2021_12_09_160436) do
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.bigint "game_id"
-    t.index ["game_id"], name: "index_events_on_game_id"
-    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -84,6 +80,7 @@ ActiveRecord::Schema.define(version: 2021_12_09_160436) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "game_id"
     t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["game_id"], name: "index_users_on_game_id"
