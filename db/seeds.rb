@@ -20,14 +20,3 @@ Event.destroy_all
     )
 end
 
-10.times do 
-    Event.create(
-        title: Faker::Book.title,
-        description: "lolol",
-        plateform: Faker::Game.platform,
-        start_time_hours: 15,
-        start_time_min: 39
-        
-    )
-end
-
