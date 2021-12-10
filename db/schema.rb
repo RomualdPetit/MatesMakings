@@ -95,5 +95,5 @@ ActiveRecord::Schema.define(version: 2021_12_09_160436) do
   add_foreign_key "communities", "users"
   add_foreign_key "events", "games"
   add_foreign_key "events", "users"
-  add_foreign_key "users", "games"
+  
 end
