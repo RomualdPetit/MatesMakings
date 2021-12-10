@@ -1,5 +1,8 @@
 class GamesController < ApplicationController
+  include ApplicationHelper
   before_action :set_game, only: %i[ show edit update destroy ]
+  before_action :isAdmin?, only: [:create, :destroy, :edit, :new]
+  before_action :authenticate_user!, only: [:create, :destroy] 
 
   # GET /games or /games.json
   def index
@@ -10,9 +13,8 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @all_commu = Community.where(game_id: @game.id)
-
     @compteur = @all_commu.count 
-
+    @events = Event.where(game_id: @game.id)
   end
 
   # GET /games/new
@@ -75,5 +77,24 @@ class GamesController < ApplicationController
     def game_params
       params.require(:game).permit(:name, :category)
     end
+
+
+
+ def authenticate_user
+  unless current_user
+    flash[:danger] = "Tu n'est pas connecté"
+    redirect_to new_user_session_path
+  end
+end
+
+
+def isAdmin?
+  unless current_user && current_user.role === 'admin'
+    flash[:danger] = "Tu n'as pas accès a cette page"
+    redirect_to root_path
+  end
+end
+
+
 end
 

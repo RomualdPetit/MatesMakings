@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_09_085820) do
+ActiveRecord::Schema.define(version: 2021_12_09_160436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "communities", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "game_id", null: false
+    t.bigint "user_id"
+    t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_communities_on_game_id"
-    t.index ["user_id", "game_id"], name: "index_communities_on_user_id_and_game_id", unique: true
     t.index ["user_id"], name: "index_communities_on_user_id"
   end
 
@@ -72,7 +71,15 @@ ActiveRecord::Schema.define(version: 2021_12_09_085820) do
     t.string "steam"
     t.string "availablity"
     t.decimal "note"
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+    t.string "riot_games" #table platforme ?
+=======
     t.string "riot_games"
+>>>>>>> Stashed changes
+=======
+    t.string "riot_games"
+>>>>>>> Stashed changes
     t.string "uplay"
     t.string "psn"
     t.string "nintendo"
@@ -85,9 +92,11 @@ ActiveRecord::Schema.define(version: 2021_12_09_085820) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 
   add_foreign_key "communities", "games"
   add_foreign_key "communities", "users"

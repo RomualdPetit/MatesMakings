@@ -2,46 +2,68 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-<body style="background-image: linear-gradient(to right top, #232323, #49354c, #843f64, #c34662, #f45d48); width: 100%; background-repeat: no-repeat; " >
+
     
   <div class="container">
-    <div class="row description">
+   
     <div class="description">
      <div class="card-description">
       <div class="card-body">
-        <h1 class="card-title">Description du joueur</h1>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-       <%= link_to "Editer mon profil", edit_user_registration_path(), class: "btn btn-primary" %>
+        
+        <h1 class="card-title">
+         <img src="https://img.icons8.com/external-photo3ideastudio-gradient-photo3ideastudio/64/000000/external-description-museum-photo3ideastudio-gradient-photo3ideastudio.png"/>
+         Description 
+         <img src="https://img.icons8.com/external-photo3ideastudio-gradient-photo3ideastudio/64/000000/external-description-museum-photo3ideastudio-gradient-photo3ideastudio.png"/>
+         </h1>
+
+        <h3>Pseudo</h3> <strong> <div class="text-tag"><%= @user.last_name %> </div> </strong>
+        <br>
+        <br>
+        <h3>Pays</h3>  <strong> <div class="text-tag"><%= @user.country %> </div> </strong>
+        <br>
+        <br>
+        <h3>Age</h3> <strong> <div class="text-tag"><%= @user.age %> </div> </strong>
+        <br>
+        <br>
+        <h3>Niveau de jeu</h3>  <strong> <div class="text-tag"><%= @user.player_type %> </div> </strong>
+        <br>
+        <hr style="height: 2px; color: #8f5960; background-color: #8f5960; width: 50%; border: none;">
+        <h3 class="card-title" style="color:#8f5960"> Description et Disponibilitées </h3> <strong> <%= @user.description %> </strong>
+        <hr style="height: 2px; color: #8f5960; background-color: #8f5960; width: 50%; border: none;">
       </div>
      </div>
     </div>
-    </div>
-    <div class="row plateform ">
+  
     <div class="plateform">
     <div class="card-plateform">
-      <div class="card-body">
+      <div class="card-body" >
           <h1 class="card-title">Plateforme</h1>
-          <p><img src="https://img.icons8.com/ios-filled/50/000000/xbox.png"/> 
-           <input type="text" length="20" data-length="20">
-          <img src="https://img.icons8.com/ios-filled/50/000000/play-station.png"/>
-          <input type="text" length="20" data-length="20">
-          <img src="https://img.icons8.com/ios-filled/50/000000/nintendo-switch-logo.png"/>
-          <input type="text" length="20" data-length="20"></p>
-          <p><img src="https://img.icons8.com/ios/50/000000/battle-net.png"/>
-          <input type="text" length="20" data-length="20">
-          <img src="https://img.icons8.com/ios-filled/50/000000/steam.png"/>
-          <input type="text" length="20" data-length="20">
-          <img src="https://img.icons8.com/ios-filled/50/000000/epic-games.png"/>
-          <input type="text" length="20" data-length="20"></p>
-          <p><img src="https://img.icons8.com/ios-filled/50/000000/origin.png"/>
-          <input type="text" length="20" data-length="20">
-          <img src="https://img.icons8.com/ios-filled/50/000000/league-of-legends.png"/>
-          <input type="text" length="20" data-length="20"></p>
+          
+           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/xbox.png"/> 
+           <div class="text-tag"><strong> <%= @user.xbox %></strong></div>
+           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/play-station.png"/>
+           <div class="text-tag"><strong><%= @user.psn %></strong></div>
+           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/nintendo-switch-logo.png"/>
+           <div class="text-tag"><strong><%= @user.nintendo %></strong></div>
+           <br>
+           <img class="img-plateform" src="https://img.icons8.com/ios/50/000000/battle-net.png"/>
+           <div class="text-tag"><strong><%= @user.battlenet %></strong></div>
+           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/steam.png"/>
+           <div class="text-tag"><strong><%= @user.steam %></strong></div>
+           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/epic-games.png"/>
+           <div class="text-tag"><strong><%= @user.epic_game %></strong></div>
+           <br>
+           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/origin.png"/>
+           <div class="text-tag"><strong><%= @user.origin %></strong></div>
+           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/league-of-legends.png"/>
+           <div class="text-tag"><strong><%= @user.riot_games %></strong></div>
+           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/discord-logo.png"/>
+           <div class="text-tag"><strong><%= @user.discord_tag %></strong></div>
       </div>
     </div>
    </div>
-   </div>
-   <div class="row star">
+   
+ 
    <div class="star">
      <div class="card-star">
        <div class="card-body">
@@ -54,11 +76,10 @@
 		          <i class="fa fa-star"></i>
 		          <i class="fa fa-star"></i>
 	          </div>
-	          <a href="#">Voir les avis.</a>
           </div>
        </div> 
      </div>
    </div>
-   </div>
   </div>
+  <%= link_to "Editer mon profil", edit_user_path(), class: "btn btn-primary"%>
 </body>
