@@ -71,15 +71,6 @@ ActiveRecord::Schema.define(version: 2021_12_09_160436) do
     t.string "steam"
     t.string "availablity"
     t.decimal "note"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    t.string "riot_games" #table platforme ?
-=======
-    t.string "riot_games"
->>>>>>> Stashed changes
-=======
-    t.string "riot_games"
->>>>>>> Stashed changes
     t.string "uplay"
     t.string "psn"
     t.string "nintendo"
