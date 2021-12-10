@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_09_160436) do
+ActiveRecord::Schema.define(version: 2021_12_09_175700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,10 +34,6 @@ ActiveRecord::Schema.define(version: 2021_12_09_160436) do
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.bigint "game_id"
-    t.index ["game_id"], name: "index_events_on_game_id"
-    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -71,6 +67,7 @@ ActiveRecord::Schema.define(version: 2021_12_09_160436) do
     t.string "steam"
     t.string "availablity"
     t.decimal "note"
+    t.string "riot_games"
     t.string "uplay"
     t.string "psn"
     t.string "nintendo"
@@ -83,14 +80,12 @@ ActiveRecord::Schema.define(version: 2021_12_09_160436) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "game_id"
     t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["game_id"], name: "index_users_on_game_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
-  add_foreign_key "communities", "games"
-  add_foreign_key "communities", "users"
-  add_foreign_key "events", "games"
-  add_foreign_key "events", "users"
+  add_foreign_key "users", "games"
 end
