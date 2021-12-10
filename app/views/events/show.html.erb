@@ -44,3 +44,30 @@ il y a <%= @compteur %> personnes inscrites
 
 <% end %>
 
+<div class="row align-item-center justify-content-center">
+    <div class="col-sm-10">
+      <div class="card">
+       
+        <div class="card-body">
+          <div class="row card-deck justify-content-center">
+            <% @all_particiation.each do |participations| %>
+              <div class="col-sm-5 mx-2 my-4">
+                <div class="card">
+                 <% if participations.user %>
+                  <div class="card-body">
+                    <h5 class="card-title"><%= participations.user.email %></h5>
+                   
+                    <br>
+                    <p><a><%= link_to "En savoir plus", user_path(participations.user.id), class: "btn btn-link" %></a></p>
+                    
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

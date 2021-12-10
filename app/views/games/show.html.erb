@@ -18,6 +18,8 @@
 
 
 il y a <%= @compteur %> personnes qui joue a ce jeux
+
+
 <% community = current_user.communities.find_by(game: @game)%>
 <% if community.nil? %>
 <form action="/communities" method="post" >
@@ -32,9 +34,40 @@ il y a <%= @compteur %> personnes qui joue a ce jeux
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
     <input type="hidden" name="_method" value="DELETE" >
     <input type="submit" value="Quitter la commu du jeu">
+    
 </form>
 
-<% end %>
+
+    <% end %>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br><br>
 
@@ -70,3 +103,30 @@ il y a <%= @compteur %> personnes qui joue a ce jeux
 </div>
 
 
+    <div class="row align-item-center justify-content-center">
+    <div class="col-sm-10">
+      <div class="card">
+       
+        <div class="card-body">
+          <div class="row card-deck justify-content-center">
+            <% @all_commu.each do |communities| %>
+              <div class="col-sm-5 mx-2 my-4">
+                <div class="card">
+                 <% if communities.user %>
+                  <div class="card-body">
+                    <h5 class="card-title"><%= communities.user.email %></h5>
+                   
+                    <br>
+                    <p><a><%= link_to "En savoir plus", user_path(communities.user.id), class: "btn btn-link" %></a></p>
+                    
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

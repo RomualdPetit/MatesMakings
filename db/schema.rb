@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< Updated upstream
 ActiveRecord::Schema.define(version: 2021_12_09_160436) do
+=======
+ActiveRecord::Schema.define(version: 2021_12_09_175700) do
+>>>>>>> Stashed changes
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,15 +75,7 @@ ActiveRecord::Schema.define(version: 2021_12_09_160436) do
     t.string "steam"
     t.string "availablity"
     t.decimal "note"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    t.string "riot_games" #table platforme ?
-=======
     t.string "riot_games"
->>>>>>> Stashed changes
-=======
-    t.string "riot_games"
->>>>>>> Stashed changes
     t.string "uplay"
     t.string "psn"
     t.string "nintendo"
@@ -94,6 +90,7 @@ ActiveRecord::Schema.define(version: 2021_12_09_160436) do
     t.datetime "updated_at", null: false
     t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["game_id"], name: "index_users_on_game_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -102,4 +99,5 @@ ActiveRecord::Schema.define(version: 2021_12_09_160436) do
   add_foreign_key "communities", "users"
   add_foreign_key "events", "games"
   add_foreign_key "events", "users"
+  add_foreign_key "users", "games"
 end
