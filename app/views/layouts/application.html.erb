@@ -17,32 +17,79 @@
       <link rel="stylesheets" href="style.css">
   </head>
 
-
- <header>
- <nav class="navbar navbar-inverse">
-
-       <div class="container-fluid">
+<body>
+  <header>
+  <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
           <div class="menu-burger">
             <i class="fas fa-bars" id="btn"></i>
           </div>
-         <div class="navbar-header">
+          <div class="navbar-header">
            <a class="navbar-brand" href="/"><img class="nav-logo" src="https://media.discordapp.net/attachments/887258359252783116/917879647759372398/MATES__MAKINGS_NOIR.png?width=400&height=113"></a>
-         </div>
-         <ul class="nav navbar-nav navbar-right">
+          </div>
+          <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
              <li><%= button_to "Déconnexion", destroy_user_session_path(current_user), method: :delete, class: 'btn btn-danger', style: "margin: 10px" %></li>
              <li class="profile"><%=link_to "Mon profil", user_path(current_user), class: 'btn btn-outline-secondary' %></li>
             <% else %>
-             <li><%=link_to "Inscription", new_user_registration_path(), class: 'nav-link' %><span class="glyphicon glyphicon-user"></span></li>
-             <li><%= link_to "Se connecter", new_user_session_path(), class: 'nav-link' %><span class="glyphicon glyphicon-log-in"></span></li>
+             <li><span class="glyphicon glyphicon-user"></span><%=link_to "Inscription", new_user_registration_path(), class: 'nav-link' %></li>
+             <li><span class="glyphicon glyphicon-log-in"></span><%= link_to "Se connecter", new_user_session_path(), class: 'nav-link' %></li>
             <% end %>
-         </ul>
-       </div>
- </nav>  
- </header>
+          </ul>
+        </div>
+  </nav>  
+  </header>
 
-<body style="background-image: linear-gradient(to right top, #232323, #49354c, #843f64, #c34662, #f45d48); background-repeat: no-repeat; ">
-
-<%= yield %>
-</body>
+  <main class="body" style="background-image: linear-gradient(to right top, #232323, #49354c, #843f64,     #c34662, #f45d48); background-repeat: no-repeat; ">
+    <div class="sidebar">
+      <div class="sidebar-header">MatesMakings</div>
+      <ul>
+        <li><%=link_to "Jeux disponible", games_path(current_user) %></li>
+        <li>
+          <a href="#" class="event-btn">Evênements
+            <span class="fas fa-caret-down first"></a>
+            <ul class="event-show">
+              <li><%=link_to "Crée ton event", new_event_path(current_user) %></li>
+              <li><%=link_to "Rejoins un event", events_path(current_user) %></li>
+            </ul>
+        </li>
+        <li>
+          <a href="#" class="jeux-btn">Tous nos jeux
+            <span class="fas fa-caret-down second"></a>
+            <ul class="jeux-show">
+              <li><a href="#">Rocket League</a></li>
+              <li><a href="#">League of Legend</a></li>
+              <li><a href="#">Pokémon</a></li>
+              <li><a href="#">Battlefield 2042</a></li>
+              <li><a href="#">GTA XII</a></li>
+            </ul>
+        </li>
+      </ul>
+    </div> 
+   <%= yield %>
+    <footer>
+        <div class="row-footer">
+          <div class="footer-col">
+            <h4>Equipe</h4>
+            <ul>
+              <li><a href="#">A propos de nous</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Aide</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Politique de confidentialité</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Suivez nous</h4>
+              <ul>
+                <li><a href="#">100code@yoplait.com"</a></li>
+              </ul>
+          </div>
+        </div>
+    </footer> 
+  </main>
+  </body>
 </html>
