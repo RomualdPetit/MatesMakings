@@ -10,37 +10,91 @@
       </ul>
     </div>
   <% end %>
-              <% x = @games.length%>
+  <% x = @games.length%>
+
+    <div class="card-up edit-card" style ="background-color: #f8f5f2;">
+     
+      <h1 class="card-title">
+      <img src="https://img.icons8.com/nolan/64/paste-special.png"/>
+      Crée ton Event</h1>
+
+      <div class="card-body" style="padding: 20px;">
+
+            <div class="row">
+
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		              <div class="form-group">
+                    <div class="field">
+                      <%= f.label :game_number, "sur kel jeu BG ?" %>
+                     <%= f.number_field :game_number, in: 1..x, step: 1, class: 'form-control' %>
+                   </div> 
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		              <div class="form-group">
+                    <div class="field">
+                     <%= f.label :title, 'Titre' %>
+                     <%= f.text_field :title, class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		              <div class="form-group">
+                    <div class="field">
+                     <%= f.label :description, 'Description' %>
+                     <%= f.text_area :description, class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		              <div class="form-group">
+                    <div class="field">
+                     <%= f.label :plateform, "Plateform" %>
+                     <%= f.text_field :plateform, class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		              <div class="form-group">
+                    <div class="field">
+                      <%= f.label :start_date, "Date" %><br/>
+                      <%= f.date_field :start_date, class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
+          
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		              <div class="form-group">
+                    <div class="field">
+                     <%= f.label :start_time_hours, "heure du début" %>
+                     <%= f.number_field :start_time_hours, in: 1..24, step: 1, class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		              <div class="form-group">
+                    <div class="field">
+                     <%= f.label :start_time_min, "heures minutes" %>
+                     <%= f.number_field :start_time_min, in: 0..60, step: 5, class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
             </div>
-            <div class="form-group mb-4">
-            <%= f.label :game_number, "sur kel jeu BG ?" %>
-            <%= f.number_field :game_number, in: 1..x, step: 1, class: 'form-control' %>
-          </div> 
-          <div class="form-group mb-4">
-             <%= f.label :title, 'Titre' %>
-              <%= f.text_field :title, class: 'form-control' %>
-          </div>
-          <div class="form-group mb-4">
-            <%= f.label :description, 'Description' %>
-            <%= f.text_area :description, class: 'form-control' %>
-          </div>
-          <div class="form-group mb-4">
-            <%= f.label :plateform, "Plateform" %>
-            <%= f.text_field :plateform, class: 'form-control' %>
-          </div>
-          <div class="form-group mb-4">
-            <%= f.label :start_date, "Date" %><br/>
-            <%= f.date_field :start_date, class: 'form-control' %>
-          </div>
-          <div class="form-group mb-4">
-            <%= f.label :start_time_hours, "heure du début" %>
-            <%= f.number_field :start_time_hours, in: 1..24, step: 1, class: 'form-control' %>
-         
-          <div class="form-group mb-4">
-            <%= f.label :start_time_min, "heures minutes" %>
-            <%= f.number_field :start_time_min, in: 0..60, step: 5, class: 'form-control' %>
-          </div>
+      </div>  
+    </div>    
   <div class="actions">
-    <%= f.submit %>
+        <%= f.submit "Crée ton evênement", class: "btn btn-primary" %>
+        <%= link_to "Retour aux Events", events_path(current_user), class: "btn btn-secondary" %>
   </div>
 <% end %>
