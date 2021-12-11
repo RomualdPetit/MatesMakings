@@ -10,7 +10,7 @@ require 'faker'
 
 
 Game.destroy_all
-Event.destroy_all
+
 
 
 10.times do 
