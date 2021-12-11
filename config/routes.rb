@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :events
   resources :games
   devise_for :users
-  resources :users
+  resources :users, only: [:show, :edit] do
+    resources :avatars, only: [:create]
+  end
   resources :communities, only: [:create, :destroy]
   resources :participations, only: [:create, :destroy]
   
