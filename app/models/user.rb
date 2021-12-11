@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :participations
   has_many :events, through: :participations
+
+  has_one_attached :avatar
   
   #validates :last_name, presence: true
   #validates :first_name, presence: true
