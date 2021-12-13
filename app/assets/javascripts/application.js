@@ -26,6 +26,7 @@ $(document).ready(function () {
     $(".sidebar ul .event-show").toggleClass("show");
   });
 });
+console.log("test2");
 
 $(document).ready(function () {
   $(".jeux-btn").click(function (e) {
@@ -33,3 +34,11 @@ $(document).ready(function () {
     $(".sidebar ul .jeux-show").toggleClass("show");
   });
 });
+
+
+
+
+
+
+
+
