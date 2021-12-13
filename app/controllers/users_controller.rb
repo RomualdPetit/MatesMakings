@@ -24,15 +24,7 @@ class UsersController < ApplicationController
      password: params[:pass_first],
      password_confirmation: params[:pass_second])
  
- 
-     if @user.email === "100code@weshh.bg"
-        puts "lllllllllllllllllllllllllllllllllllllllllll"
-        puts "lllllllllllllllllllllllllllllllllllllllllll"
-        puts "lllllllllllllllllllllllllllllllllllllllllll"
 
-        @user.role = "admin"
-      end
-puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
     if @user.save
       puts "Je save l'utilisateur"
       log_in(@user)
