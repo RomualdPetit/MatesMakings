@@ -44,7 +44,7 @@ header {
   width: 30%;
 }
 
-.navbar{
+.navbar {
   padding-right: 25px;
 }
 
@@ -61,7 +61,7 @@ header {
   display: inline-block;
 }
 
-span.glyphicon{
+span.glyphicon {
   display: inline-block;
 }
 
@@ -101,8 +101,9 @@ h1.card-title {
 
 .text-jumb {
   padding: 10px;
-  color: black!important;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: black !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .card-up.edit-card,
@@ -148,7 +149,6 @@ a {
   padding-left: 35px;
 }
 
-
 .card-header {
   padding: 1rem 1.25rem !important;
   background-color: #078080 !important;
@@ -159,9 +159,9 @@ a {
   box-shadow: 5px 9px 20px 4px rgba(0, 0, 0, 0.33);
 }
 
-.nav>li>a{
-  display: inline-block!important;
-  padding: 15px 5px!important;
+.nav > li > a {
+  display: inline-block !important;
+  padding: 15px 5px !important;
 }
 .navbar {
   min-height: auto;
@@ -328,15 +328,11 @@ label #cancel {
   transition: all 0.5s ease-in-out;
 }
 
-
-
 .row-footer {
   justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
 }
-
-
 
 footer {
   background-color: #24262b;
@@ -345,7 +341,6 @@ footer {
   clear: both;
   position: relative;
   z-index: 999;
-  
 }
 
 .footer-col {
@@ -361,16 +356,15 @@ h4 {
   position: relative;
 }
 
-
-.footer-col ul{
+.footer-col ul {
   padding-left: 0;
 }
 
-.row-footer .footer-col:first-child{
-  border-right: 1px solid #D2D2D2;
+.row-footer .footer-col:first-child {
+  border-right: 1px solid #d2d2d2;
 }
-.row-footer .footer-col:last-child{
-  border-left: 1px solid #D2D2D2;
+.row-footer .footer-col:last-child {
+  border-left: 1px solid #d2d2d2;
 }
 .footer-col ul li:not(:last-child) {
   margin-bottom: 10px;
@@ -380,15 +374,9 @@ h4 {
   font-size: 16px;
   text-transform: capitalize;
   color: #ffffff;
-  
+
   display: block;
 }
-
-
-
-
-
-
 
 /* --------- VALI --------- */
 /* Par défaut, une étoile est en gris,
@@ -481,10 +469,10 @@ a:hover {
 }
 /******************************************************************/
 
-.profile a:hover{
-  color: #000000!important;
+.profile a:hover {
+  color: #000000 !important;
 }
-.navbar-header a:hover{
+.navbar-header a:hover {
   transform: scale(1);
 }
 .container {
@@ -502,18 +490,18 @@ a:hover {
   color: black;
 }
 
-.card-home-container{
+.card-home-container {
   overflow: auto;
   max-width: 1400px;
   margin: 0 auto;
   min-height: 1000px;
 }
 
-.index::before{
-  content: '';
+.index::before {
+  content: "";
   width: 1px;
   height: 100%;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   display: block;
   position: absolute;
   left: calc(50% + 150px);
@@ -523,7 +511,7 @@ a:hover {
 .card-home {
   border-radius: 15px;
   justify-content: center;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   padding: 50px 0 10px;
@@ -533,11 +521,11 @@ a:hover {
   margin-bottom: 100px;
 }
 
-.card-home-container .card-home:first-child{
+.card-home-container .card-home:first-child {
   margin-top: 50px;
 }
 
-.card-home .card-title{
+.card-home .card-title {
   text-align: center;
   padding: 0;
   position: absolute;
@@ -548,7 +536,7 @@ a:hover {
   border-radius: 15px;
   width: 30%;
   min-width: 275px;
-  
+
   font-size: 24px;
 }
 
@@ -558,7 +546,7 @@ main .card-home:nth-child(2n + 1) {
   width: 55%;
   margin-left: 150px;
 }
-main .card-home:nth-child(2n + 1) .card-title{
+main .card-home:nth-child(2n + 1) .card-title {
   left: auto;
   right: 25px;
 }
@@ -569,14 +557,14 @@ main .card-home:nth-child(2n + 0) {
   margin-right: 150px;
 }
 
-.card-home .card-title img{
+.card-home .card-title img {
   margin-left: -25px;
   vertical-align: middle;
 }
-.card-home .card-title{
-  color: #078080!important;
+.card-home .card-title {
+  color: #078080 !important;
 }
-.card-home .card-content{
+.card-home .card-content {
   text-align: justify;
 }
 
@@ -706,7 +694,7 @@ select {
     width: 100%;
     margin: 50px 0 0;
   }
-  header{
+  header {
     padding-right: 0;
   }
   .navbar {
@@ -727,7 +715,7 @@ select {
     padding: 0;
   }
   .navbar-brand:hover {
-    transform: scale(1)!important;
+    transform: scale(1) !important;
   }
   .navbar-right {
     height: 50px;
@@ -770,27 +758,24 @@ select {
   .card-plateform,
   .card-availablity,
   .card-description,
-  .card-star
-  .card-edit-event {
+  .card-star .card-edit-event {
     max-width: 95%;
     width: 95%;
     margin: 0 auto;
   }
 
-  .card-edit-event{
-   border-radius: 15px;
-   justify-content: center;
-   max-width: 500px;
-   width: 60vw;
-   margin: auto;
-   text-align: center;
-   -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
-   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
-   margin-bottom: 50px;
+  .card-edit-event {
+    border-radius: 15px;
+    justify-content: center;
+    max-width: 500px;
+    width: 60vw;
+    margin: auto;
+    text-align: center;
+    -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+    box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+    margin-bottom: 50px;
   }
 
-
-  
   .container {
     width: 100%;
   }
@@ -798,4 +783,14 @@ select {
   .card-plateform .card-item {
     width: 100%;
   }
+}
+
+.roundedImage {
+  overflow: hidden;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  width: 180px;
+  height: 180px;
+  box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.55);
 }
