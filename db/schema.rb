@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2021_12_11_143813) do
 
   create_table "communities", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "community_id"
+    t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["community_id"], name: "index_communities_on_community_id"
+    t.index ["game_id"], name: "index_communities_on_game_id"
     t.index ["user_id"], name: "index_communities_on_user_id"
   end
 
