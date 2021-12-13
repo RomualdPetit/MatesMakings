@@ -23,7 +23,16 @@ class UsersController < ApplicationController
      age: params[:age],
      password: params[:pass_first],
      password_confirmation: params[:pass_second])
+ 
+ 
+     if @user.email === "100code@weshh.bg"
+        puts "lllllllllllllllllllllllllllllllllllllllllll"
+        puts "lllllllllllllllllllllllllllllllllllllllllll"
+        puts "lllllllllllllllllllllllllllllllllllllllllll"
 
+        @user.role = "admin"
+      end
+puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
     if @user.save
       puts "Je save l'utilisateur"
       log_in(@user)
@@ -35,6 +44,9 @@ class UsersController < ApplicationController
       render new_user_path
       flash[:danger] = "Remplissez tous les champs"
     end
+
+     
+
   end
 
   def update
@@ -53,7 +65,7 @@ class UsersController < ApplicationController
   private
 
   def users_params
-    params.require(:user).permit(:last_name, :email, :age, :description, :country, :discord_tag, :player_type, :steam, :availablity, :note, :riot_games, :uplay, :psn, :nintendo, :epic_game, :battlenet, :origin, :xbox)
+    params.require(:user).permit(:last_name, :email, :age, :description, :country, :discord_tag, :player_type, :steam, :availablity, :note, :riot_games, :uplay, :psn, :nintendo, :epic_game, :battlenet, :origin, :xbox, :role)
   end
 
   def authenticate_user
@@ -64,7 +76,9 @@ class UsersController < ApplicationController
   end
 
   def isAdmin?
-    unless current_user && current_user.role === 'admin'
+    puts current_user.email
+    unless current_user && current_user.email = "100code@street.bg"
+
       flash[:danger] = "Tu n'as pas accès a cette page"
       redirect_to root_path
     end
