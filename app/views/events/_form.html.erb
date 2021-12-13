@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <% x = @games.length%>
+  <% x = @games.length %>
 
     <div class="card-up edit-card" style ="background-color: #f8f5f2;">
      
@@ -25,7 +25,7 @@
                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		              <div class="form-group">
                     <div class="field">
-                      <%= f.label :game_number, "sur kel jeu BG ?" %>
+                      <%= f.label :game_number, "Choisi ton jeu" %>
                      <%= f.number_field :game_number, in: 1..x, step: 1, class: 'form-control' %>
                    </div> 
                   </div>
@@ -55,7 +55,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		              <div class="form-group">
                     <div class="field">
-                     <%= f.label :plateform, "Plateform" %>
+                     <%= f.label :plateform, "Plateforme" %>
                      <%= f.text_field :plateform, class: 'form-control' %>
                     </div>
                   </div>
@@ -75,7 +75,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		              <div class="form-group">
                     <div class="field">
-                     <%= f.label :start_time_hours, "heure du début" %>
+                     <%= f.label :start_time_hours, "Heure du début" %>
                      <%= f.number_field :start_time_hours, in: 1..24, step: 1, class: 'form-control' %>
                     </div>
                   </div>
@@ -85,7 +85,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		              <div class="form-group">
                     <div class="field">
-                     <%= f.label :start_time_min, "heures minutes" %>
+                     <%= f.label :start_time_min, "Minutes" %>
                      <%= f.number_field :start_time_min, in: 0..60, step: 5, class: 'form-control' %>
                     </div>
                   </div>
