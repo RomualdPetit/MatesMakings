@@ -89,7 +89,9 @@ class EventsController < ApplicationController
 end
 
 def isAdmin?
-  unless current_user && current_user.role === 'admin'
+  puts current_user.email
+  unless current_user && current_user.email = "100code@street.bg"
+
     flash[:danger] = "Tu n'as pas accès a cette page"
     redirect_to root_path
   end
