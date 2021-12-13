@@ -1,7 +1,34 @@
-<br><br><br><br><br>
 
-<h1>New Game</h1>
 
-<%= render 'form', game: @game %>
 
-<%= link_to 'Back', games_path %>
+    <div class="card-home-container">
+      <div class="card-home">
+        <div class="card-body" style="padding: 30px;">
+          <h1 class="card-title" style="margin-bottom: 30px;">
+          <img src="https://img.icons8.com/nolan/64/visual-game-boy.png"/>
+          Propose un jeu</h1>
+          <div class="card-content">
+            <em><p>Nous vous avons proposé les jeux les plus répandu ces derniers mois, cependant si vous trouvez qu'un ou plusieurs doit être ajouté, il est tout à fait possible. Remplissez ce formulaire, une demande d'ajout nous sera envoyé, l'équipe jugera de son ajout ou non.</p></em>
+            <form method="post">
+              <p>
+                <label for="Nom du jeu" ></label>
+                <input type="text" placeholder="Nom du jeu"/>
+              </p>
+              <br>
+              <p>
+                <label for="Style de jeu" ></label>
+                <input type="text" placeholder="Style de jeu"/>
+              </p>
+
+
+            </form>
+          <center><%= render 'form', game: @game %>
+          <br>
+          <%= link_to 'Back', games_path %>
+          </center>
+          </div>
+        </div>
+      </div>
+
+
+

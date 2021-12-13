@@ -492,6 +492,14 @@ h4 {
   color: gray;
 }
 
+
+
+
+
+
+
+
+
 /******************************************************************/
 /* style pour la démo */
 html {
@@ -582,6 +590,7 @@ a:hover {
   font-size: 24px;
 }
 
+
 main .card-home:nth-child(2n + 1) {
   float: left;
   clear: both;
@@ -609,6 +618,10 @@ main .card-home:nth-child(2n + 0) {
 .card-home .card-content {
   text-align: justify;
 }
+
+
+
+
 
 .card-plateform {
   border-radius: 15px;
