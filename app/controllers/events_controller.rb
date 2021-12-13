@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: [:create, :destroy, :show] 
 
   # GET /events or /events.json
   def index
@@ -77,4 +78,21 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:title, :description, :start_date, :start_time_hours, :start_time_min, :plateform, :game_number)
     end
+
+
+
+ def authenticate_user
+  unless current_user
+    flash[:danger] = "Tu n'est pas connecté"
+    redirect_to new_user_session_path
+  end
+end
+
+def isAdmin?
+  unless current_user && current_user.role === 'admin'
+    flash[:danger] = "Tu n'as pas accès a cette page"
+    redirect_to root_path
+  end
+end
+
 end

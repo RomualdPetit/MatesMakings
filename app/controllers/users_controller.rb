@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  before_action :authenticate_user!, only: [:create, :destroy, :show, :edit] 
+  
   def index
     @users = User.all
   end
@@ -54,4 +55,20 @@ class UsersController < ApplicationController
   def users_params
     params.require(:user).permit(:last_name, :email, :age, :description, :country, :discord_tag, :player_type, :steam, :availablity, :note, :riot_games, :uplay, :psn, :nintendo, :epic_game, :battlenet, :origin, :xbox)
   end
+
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Tu n'est pas connecté"
+      redirect_to new_user_session_path
+    end
+  end
+
+  def isAdmin?
+    unless current_user && current_user.role === 'admin'
+      flash[:danger] = "Tu n'as pas accès a cette page"
+      redirect_to root_path
+    end
+  end
+
+
 end

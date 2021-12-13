@@ -4,23 +4,25 @@
 
 
 
-
+<%= form_for(current_user) do |f| %>
   <div class="card-up edit-card" style ="background-color: #f8f5f2;">
-    
-      <h1 class="card-title">Editer ton compte</h2>
-    
-
+     
+      <h1 class="card-title">
+      <img src="https://img.icons8.com/nolan/64/edit--v1.png"/>
+      Editer ton compte
+      </h1>
+     
     <div class="card-body" style="padding: 20px;">
-    <%= form_for(current_user) do |f| %>
-    
 
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		      <div class="form-group">
+          
             <div class="field">
-              <%= f.label :pseudo, style: "display: inline block;" %>
+              <%= f.label :pseudo, style: "display: inline block;" %> 
               <%= f.text_field :last_name, autofocus: true, autocomplete: "pseudo" %>
             </div>
+
           </div>
         </div>
 
@@ -59,7 +61,7 @@
 		      <div class="form-group">
             <div class="field">
               <%= f.label :Description_et_Disponibilitées, style: "display: block;" %>
-              <%= f.text_area :description, autofocus: true, autocomplete: "Description et Disponibilitées" %>
+              <%= f.text_area :description, autofocus: true, autocomplete: "Description et Disponibilités" %>
             </div>
           </div>
         </div>
@@ -72,42 +74,53 @@
     <div class="plateform">
       <div class="card-plateform">
         <div class="card-body" style="padding: 30px;">
-          <h1 class="card-title" style="margin-bottom: 30px;">Vos Plateformes gaming</h1>
-          <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/xbox.png"/> 
-          <%= f.text_field :xbox, autofocus: true, autocomplete: "xbox" %>
-          <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/play-station.png"/>
-          <%= f.text_field :psn, autofocus: true, autocomplete: "psn" %>
-          <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/nintendo-switch-logo.png"/>
-          <%= f.text_field :nintendo, autofocus: true, autocomplete: "nintendo" %>
-          <p><img class="img-edit" src="https://img.icons8.com/ios/50/000000/battle-net.png"/>
-          <%= f.text_field :battlenet, autofocus: true, autocomplete: "battlenet" %>
-          <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/steam.png"/>
-          <%= f.text_field :steam, autofocus: true, autocomplete: "steam" %>
-          <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/epic-games.png"/>
-          <%= f.text_field :epic_game, autofocus: true, autocomplete: "Epic Game" %>
-          <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/origin.png"/>
-          <%= f.text_field :origin, autofocus: true, autocomplete: "origin" %>
-          <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/league-of-legends.png"/>
-          <%= f.text_field :riot_games, autofocus: true, autocomplete: "Riot Games" %>
-          <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/discord-logo.png"/>
-          <%= f.text_field :discord_tag, autofocus: true, autocomplete: "Discord" %>
+          <h1 class="card-title" style="margin-bottom: 30px;">
+          <img src="https://img.icons8.com/nolan/64/controller.png"/>
+          Vos Plateformes gaming</h1>
+          <div class="card-content">
+            <div class="card-item">
+              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/xbox.png"/> 
+              <%= f.text_field :xbox, autofocus: true, autocomplete: "xbox" %></p>
+            </div>
+            <div class="card-item">
+              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/play-station.png"/>
+              <%= f.text_field :psn, autofocus: true, autocomplete: "psn" %></p>
+            </div>
+            <div class="card-item">
+              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/nintendo-switch-logo.png"/>
+              <%= f.text_field :nintendo, autofocus: true, autocomplete: "nintendo" %></p>
+            </div>
+            <div class="card-item">
+              <p><img class="img-edit" src="https://img.icons8.com/ios/50/000000/battle-net.png"/>
+              <%= f.text_field :battlenet, autofocus: true, autocomplete: "battlenet" %></p>
+            </div>
+            <div class="card-item">
+              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/steam.png"/>
+              <%= f.text_field :steam, autofocus: true, autocomplete: "steam" %></p>
+            </div>
+            <div class="card-item">
+              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/epic-games.png"/>
+              <%= f.text_field :epic_game, autofocus: true, autocomplete: "Epic Game" %></p>
+            </div>
+            <div class="card-item">
+              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/origin.png"/>
+              <%= f.text_field :origin, autofocus: true, autocomplete: "origin" %></p>
+            </div>
+            <div class="card-item">
+              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/league-of-legends.png"/>
+              <%= f.text_field :riot_games, autofocus: true, autocomplete: "Riot Games" %></p>
+            </div>
+            <div class="card-item">
+              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/discord-logo.png"/>
+              <%= f.text_field :discord_tag, autofocus: true, autocomplete: "Discord" %></p>
+            </div>
+          </div>
         </div>
       </div>
    </div>
-
-    <div class="availablity" style="margin-bottom: 100px;">
-     <div class="card-availablity">
-    
       <div class="actions">
-        <%= f.submit "Update", method: :uptade, class: "btn btn-primary" %>
-      </div>
-
-            
+        <%= f.submit "Update", data: { disable_with: false }, class: "btn btn-primary" %>
         <%= link_to "Retour profil", user_path(current_user), class: "btn btn-secondary" %>
-      
-
-     </div>
-    </div>
-
+      </div>
+    
 <% end %>
-</body>
