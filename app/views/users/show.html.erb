@@ -15,13 +15,13 @@
          Description 
          </h1>
         <h3>Avatar</h3>
-         <center><div class="roundedImage">
+         <center>
           <%if @user.avatar.attached?%>
         <div class="roundedImage">
           <%= image_tag @user.avatar, alt: 'avatar', :size => '260x180'%>
         </div></center>
         <%else%>
-          <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+          <p>=== Ajoute ton avatar ===</p>
         <%end%>
         <br>
         <center>
