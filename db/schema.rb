@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 2021_12_11_143813) do
     t.string "plateform"
     t.integer "start_time_hours"
     t.integer "start_time_min"
-    t.integer "game_number"
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -110,7 +109,10 @@ ActiveRecord::Schema.define(version: 2021_12_11_143813) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< Updated upstream
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+=======
+>>>>>>> Stashed changes
   add_foreign_key "events", "games"
   add_foreign_key "events", "users"
 end
