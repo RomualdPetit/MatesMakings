@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :events
   resources :games
   devise_for :users
-  resources :users, only: [:show, :edit] do
+  resources :users, only: [:show, :edit, :update] do
     resources :avatars, only: [:create]
   end
   resources :communities, only: [:create, :destroy]
