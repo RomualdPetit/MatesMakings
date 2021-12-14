@@ -1,8 +1,75 @@
-<br><br><br><br>
 
-<h1>Editing Event</h1>
+<%= form_for(@event) do |f| %>
+  <div class="card-up edit-card" style="background-color: #f8f5f2;">
+    <h1 class="card-title">
+      <img src="https://img.icons8.com/nolan/64/edit--v1.png"/>
+      Editer ton évenement sur <%= @event.game.name %>
+    </h1>
+    <div class="card-body" style="padding: 20px;">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		      <div class="form-group">
+          
+            <div class="field">
+              <%= f.label :Titre, style: "display: inline block;" %> 
+              <%= f.text_field :title, autofocus: true, autocomplete: "titre" %>
+            </div>
 
-<%= render 'form', event: @event %>
+          </div>
+        </div>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		      <div class="form-group">
+            <div class="field">
+              <%= f.label :Description, style: "display: inline block;" %>
+              <%= f.text_field :description, autofocus: true, autocomplete: "Description" %>  
+            </div>
+          </div>
+        </div>
+      
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		      <div class="form-group">
+            <div class="field">
+              <%= f.label :Heure, style: "display: inline block;" %>
+              <%= f.text_field :start_time_hours, autofocus: true, autocomplete: "Heure" %>
+            </div>
+          </div>
+        </div>
+      
+
+	    
+		    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		      <div class="form-group">
+            <div class="field">
+              <%= f.label :Minutes, style: "display: inline block;" %>
+              <%= f.text_field :start_time_min, autofocus: true, autocomplete: "Minute" %>
+            </div>
+          </div>
+        </div>
+
+		    
+     
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		      <div class="form-group">
+            <div class="field">
+              <%= f.label :Date, style: "display: inline block;" %>
+              <%= f.text_field :start_date, autofocus: true, autocomplete: "Date" %>  
+            </div>
+          </div>
+        </div>
+      </div>
+
+       
+          <div class="actions">
+           <%= f.submit "Update", data: { disable_with: false }, class: "btn btn-primary" %>
+           <%= link_to 'Supprimer', event_path , method: :delete ,class:"btn btn-primary" %>|
+           <%= link_to "Retour aux évenements", events_path, class: "btn btn-secondary" %>
+          </div>
+        
+     
+    </div>
+  </div>
+<% end %>

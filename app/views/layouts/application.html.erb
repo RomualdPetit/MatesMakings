@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="icon" type="url" href="https://media.discordapp.net/attachments/887258359252783116/917879598727970836/MATES__MAKINGS_LOGO_BIG.png?width=400&height=225" />
+    <link rel="icon" type="url" href="https://media.discordapp.net/attachments/232197634981363714/919989173702783086/Logo_16x16.png" />
     
 
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -25,7 +25,7 @@
             <i class="fas fa-bars" id="btn"></i>
           </div>
           <div class="navbar-header">
-           <a class="navbar-brand" href="/"><img class="nav-logo" src="https://media.discordapp.net/attachments/887258359252783116/917879647759372398/MATES__MAKINGS_NOIR.png?width=400&height=113"></a>
+           <a class="navbar-brand" href="/"><img class="nav-logo" src="https://media.discordapp.net/attachments/232197634981363714/919988734991142912/Noir.png?width=1074&height=330"></a>
           </div>
           <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
@@ -49,8 +49,8 @@
           <a href="#" class="event-btn">Evênements
             <span class="fas fa-caret-down first"></a>
             <ul class="event-show">
-              <li><%=link_to "Crée ton event", new_event_path(current_user) %></li>
-              <li><%=link_to "Rejoins un event", events_path(current_user) %></li>
+              <li><%=link_to "Créer un événement", new_event_path(current_user) %></li>
+              <li><%=link_to "Rejoins un événement", events_path(current_user) %></li>
             </ul>
         </li>
         <li>

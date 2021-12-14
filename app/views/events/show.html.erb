@@ -1,74 +1,49 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-
-<p id="notice"><%= notice %></p>
-
-
-    <tr>
-      ecris par : <td><%= @event.user.email %></td><br>
-      <td><%= @event.title %></td>       <br>
-      <td><%= @event.start_time_hours %>:<%= @event.start_time_min %></td><br>
-      <td><%= @event.description %></td><br>
-      <td><%= @event.start_date %></td><br>
-      le jeu : <td><%= @event.game.name %></td>
-
-
-      </tr>
-
-
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Events', events_path %>
-
-il y a <%= @compteur %> personnes inscrites
-<% participation = current_user.participations.find_by(event: @event)%>
-<% if participation.nil? %>
-<form action="/participations" method="post" >
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
-    <input type="hidden" name="participation[event_id]" value="<%= @event.id %>" >
-    <input type="submit" value="Rejoindre un évenement du jeu">
-</form>
-
-<% else %>
-
-<form action="<%= participation_path(participation) %>" method="post" >
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
-    <input type="hidden" name="_method" value="DELETE" >
-    <input type="submit" value="Ne plus participer à l'évent">
-</form>
-
-<% end %>
-
-
-<div class="row align-item-center justify-content-center">
-    <div class="col-sm-10">
-      <div class="card">
-       
-        <div class="card-body">
-          <div class="row card-deck justify-content-center">
-            <% @all_participation.each do |participations| %>
-              <div class="col-sm-5 mx-2 my-4">
-                <div class="card">
-                 <% if participations.user %>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= participations.user.email %></h5>
-                   
-                    <br>
-                    <p><a><%= link_to "En savoir plus", user_path(participations.user.id), class: "btn btn-link" %></a></p>
-                    
-                  </div>
-                </div>
-              </div>
-            <% end %>
-            <% end %>
-          </div>
-        </div>
-      </div>
+<div class="card-event" style ="background-color: #f8f5f2;">
+  <p id="notice"><%= notice %></p>
+  <h1 class="card-title"><%= @event.title %>, crée par <%= @event.user.last_name %></h1>
+    <div class="card-body">
+      <h3>Titre</h3> <div class="text-tag-event"><%= @event.title %></div>      
+      <h3>Heure</h3> <div class="text-tag-event"><%= @event.start_time_hours %>H<%= @event.start_time_min %>min</div>
+      <h3>Description</h3> <div class="text-tag-event"><%= @event.description %></div>
+      <h3>Date</h3> <div class="text-tag-event"><%= @event.start_date %></div>
+      <h3>Jeu</h3> <div class="text-tag-event"><%= @event.game.name %></div>
+      <br>
+      <%= link_to 'Editer', edit_event_path(@event), class: "btn btn-primary" %>
+      <%= link_to 'Retour aux évenements', events_path, class: "btn btn-info" %>
+      <br>
+      <em>il y a <%= @compteur %> personnes inscrites</em>
+      <% participation = current_user.participations.find_by(event: @event)%>
+      <% if participation.nil? %>
+        <form action="/participations" method="post" >
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
+          <input type="hidden" name="participation[event_id]" value="<%= @event.id %>" >
+          <input class="btn btn-primary" type="submit" value="Rejoindre l'évenement">
+        </form>
+      <% else %>
+        <form action="<%= participation_path(participation) %>" method="post" >
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
+          <input type="hidden" name="_method" value="DELETE" >
+          <input class="btn btn-danger" type="submit" value="Ne plus participer à l'évent">
+        </form>
+      <% end %>
     </div>
+</div>
+
+<div class="card-event" style ="background-color: #f8f5f2;">
+  <h1 class="card-title">Participants</h1>   
+  <div class="card-body">
+    <% @all_participation.each do |participations| %>
+      <% if participations.user %>
+      <div class="card-body-event">
+        <h3 class="title-event"><strong><%= participations.user.last_name %></strong></h3>
+        <p><strong>Description</strong></p>
+        <p><em><%= participations.user.description %></em></p>
+        <p><strong>Discord</strong><p>
+        <p><%= participations.user.discord_tag %></p>
+        <p><a><%= link_to "En savoir plus", user_path(participations.user.id), class: "btn btn-primary" %></a></p>                
+      </div>
+      <% end %>
+      <% end %>
   </div>
-  
+</div>

@@ -84,6 +84,64 @@ input[type="text"] {
   margin-bottom: 50px;
 }
 
+.card-event {
+  border-radius: 15px;
+  justify-content: center;
+  max-width: 500px;
+  width: 60vw;
+  margin: auto;
+  text-align: center;
+  -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  margin-bottom: 50px;
+}
+
+.card-body-event {
+  background-color: #e6e6e6;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 10px;
+  margin: 0px 10px 20px;
+  font-size: 18px;
+  -webkit-box-shadow: 5px 5px 15px 16px rgba(95, 95, 95, 0.26);
+  box-shadow: 5px 5px 15px 16px rgba(124, 124, 124, 0.26);
+  width: 300px;
+  height: 450px;
+  text-align: left;
+  vertical-align: middle;
+  position: relative;
+}
+
+.action-game {
+  position: absolute;
+  bottom: 0;
+}
+
+.card-body-event img {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.title-event {
+  min-height: 100px;
+  color: white;
+  background-color: #8f5960;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.title-event strong {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  width: 100%;
+}
+
 h1.card-title {
   color: #078080 !important;
 
@@ -99,6 +157,28 @@ h1.card-title {
   z-index: 2;
 }
 
+.jumbotron-game h1 {
+  font-size: 80px;
+}
+
+.container-game {
+  margin-top: 120px;
+}
+
+.jumbotron-game {
+  background-color: white;
+  color: white;
+  max-width: 70vw;
+  margin: 0 auto 50px;
+  border-radius: 15px;
+  position: relative;
+  z-index: 2;
+  background: url("https://t.eu1.jwwb.nl/W1871880/GQK_XXd3DEh-31yLBsXfzf020G0=/full-fit-in/1920x1920/filters:no_upscale()/f.eu1.jwwb.nl%2Fpublic%2Fq%2Fh%2Fi%2Ftemp-diwvonmrdhigccrlpagg%2FMiniatureserveurMultigaming-1.jpg");
+  background-size: cover;
+  padding: 50px;
+  height: 500px;
+}
+
 .text-jumb {
   padding: 10px;
   color: black !important;
@@ -106,9 +186,14 @@ h1.card-title {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.fond {
+  width: 100%;
+}
+
 .card-up.edit-card,
 .card-home,
 .card-plateform,
+.card-event,
 .card-availablity,
 .card-description,
 .card-star {
@@ -120,7 +205,6 @@ h1.card-title {
   background-color: #078080 !important;
   border-color: #078080 !important;
   margin: 20px;
-  width: 150px;
   color: #ffffff !important;
 }
 
@@ -128,8 +212,17 @@ h1.card-title {
   background-color: white !important;
   border-color: white !important;
   margin: 20px;
-  width: 150px;
   color: #8f5960 !important;
+}
+
+.btn-info {
+  margin: 20px;
+  background-color: #8f5960;
+  border: none;
+}
+
+.btn-link {
+  color: #8f5960;
 }
 
 .btn-danger {
@@ -667,6 +760,23 @@ main .card-home:nth-child(2n + 0) {
   vertical-align: middle;
 }
 
+.text-tag-event {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px;
+  border-style: solid;
+  border-color: #e7e7e7;
+  background-color: #d3d3d362;
+  width: 200px;
+  border-radius: 10px;
+  margin: auto;
+  color: #8f5960;
+  min-height: 50px;
+  vertical-align: middle;
+  margin-bottom: 15px;
+}
+
 textarea {
   padding: 10px;
   max-width: 100%;
@@ -756,6 +866,7 @@ select {
   .card-home,
   .card-up.edit-card,
   .card-plateform,
+  .card-event,
   .card-availablity,
   .card-description,
   .card-star .card-edit-event {

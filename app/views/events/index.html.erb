@@ -1,38 +1,43 @@
-<br>
-<br>
-<br>
-<br>
-<br>
 
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="text-jumb">
+    <img src="https://img.icons8.com/nolan/64/planner.png"/>
+     Les Événements </h1>
+     <br>
+     <br>
+    <p class="lead">Tu souhaite rejoindre, un tournoi, une partie privée, un événement en tout genre ?</p>
+    <p> Tu es au bon endroit ! <img src="https://img.icons8.com/nolan/50/slime-rancher.png"/> </p>
+    <%= link_to 'Créer un événement', new_event_path, class: "btn btn-primary" %>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.user_id %></td>
-        <td><%= event.title %></td>       
-        <td><%= event.start_time_hours %></td>
-        <td><%= event.start_time_min %></td>
-        <td><%= event.start_date %></td>
-       
+  
 
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+ <p id="notice"><%= notice %></p>
+
+ 
+
+ 
+    <body>
+      <% @events.each do |event| %>
+      <div class="card-event" style ="background-color: #f8f5f2;">
+        <div class="card-body"> 
+           
+           <h3 class="title-event" >Événement de <%= event.user.last_name %></h3>
+           <h3>Sur le Jeu: <%= event.game.name %></h3>
+           <h3>Titre de l'événement: <%= event.title %></h3>
+           <h3>Heure de début: <%= event.start_time_hours %>H <%= event.start_time_min %>min</h3>
+           <h3>Date de l'événement: <%= event.start_date %></h3>
+           <h3><%= link_to 'Info événement', event, class:"btn btn-primary" %></h3>
+        </div>    
+      </div>
+      <% end %>
+    </body>
+
 
 <br>
-
-<%= link_to 'New Event', new_event_path %>
+</div>
