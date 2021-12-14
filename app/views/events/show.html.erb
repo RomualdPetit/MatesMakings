@@ -23,7 +23,7 @@
       <% if participation.nil? %>
         <form action="/participations" method="post" >
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
-          <input type="hidden" name="participation[event_id]" value="<%= @event.id %>" >
+          <input type="hidden" name="participation[event_id]" value="<%= @event.id %>">
           <input class="btn btn-primary" type="submit" value="Rejoindre l'évenement">
         </form>
       <% else %>

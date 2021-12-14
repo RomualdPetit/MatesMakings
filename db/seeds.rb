@@ -8,7 +8,7 @@
 require 'faker'
 
 
-
+Event.destroy_all
 Game.destroy_all
 
 Game.create(
@@ -19,8 +19,8 @@ Game.create(
 
     Game.create(
         name: "Rocket League",
-        category: "Jeux de voitures ou de foot, on sait pas trop",
-        img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfOixbTaj1yAqjpFm3ohPHI0qQECzZ-N56aw&usqp=CAU"
+        category: "Jeu mécanique qui demande beaucoup d'heures afin de métriser ne serait ce que les bases.",
+        img_url: "https://rocketleague.media.zestyio.com/rl_gen_blog_1920x1080.309bf22bd29c2e411e9dd8eb07575bb1.jpg"
     )
 
     Game.create(
@@ -37,7 +37,7 @@ Game.create(
 
     Game.create(
         name: "Apex Legends",
-        category: "batlle royale",
+        category: "battle royale",
         img_url: "https://image.jeuxvideo.com/medias/155137/1551371304-2322-jaquette-avant.jpg"
     )
 
