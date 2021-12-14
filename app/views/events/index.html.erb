@@ -1,8 +1,3 @@
-<br>
-<br>
-<br>
-<br>
-<br>
 
 <p id="notice"><%= notice %></p>
 
@@ -20,4 +15,29 @@
 </div>
 
 
+  
 
+ <p id="notice"><%= notice %></p>
+
+ 
+
+ 
+    <body>
+      <% @events.each do |event| %>
+      <div class="card-event" style ="background-color: #f8f5f2;">
+        <div class="card-body"> 
+           
+           <h3 class="title-event" >Événement de <%= event.user.last_name %></h3>
+           <h3>Sur le Jeu: <%= event.game.name %></h3>
+           <h3>Titre de l'événement: <%= event.title %></h3>
+           <h3>Heure de début: <%= event.start_time_hours %>H <%= event.start_time_min %>min</h3>
+           <h3>Date de l'événement: <%= event.start_date %></h3>
+           <h3><%= link_to 'Info événement', event, class:"btn btn-primary" %></h3>
+        </div>    
+      </div>
+      <% end %>
+    </body>
+
+
+<br>
+</div>

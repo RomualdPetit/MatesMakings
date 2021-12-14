@@ -62,6 +62,7 @@
         <hr style="height: 2px; color: #8f5960; background-color: #8f5960; width: 50%; border: none;">
         <h3 class="card-title" style="color:#8f5960">Description et Disponibilitées </h3> <strong> <%= @user.description %> </strong>
         <hr style="height: 2px; color: #8f5960; background-color: #8f5960; width: 50%; border: none;">
+         <%= link_to "Editer mon profil", edit_user_path(), class: "btn btn-primary"%>
       </div>
      </div>
     </div>
@@ -116,21 +117,6 @@
   </div>
 
   
-  <%= link_to "Editer mon profil", edit_user_path(), class: "btn btn-primary"%>
+ 
 
-  <h1>Page Profil</h1>
-
-<p>Bienvenue sur la page d'ajout d'un avatar pour le User portant l'id : <%=@user.id%></p>
-<h3>Avatar actuel</h3>
-<%if @user.avatar.attached?%>
-  <%= image_tag @user.avatar, alt: 'avatar', :size => '260x180'%>
-<%else%>
-  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
-<%end%>
-
-<h3>Changer d'avatar ?</h3>
-<%= form_tag user_avatars_path(@user), multipart: true do %>
-  <%= file_field_tag :avatar %>
-  <%= submit_tag "mettre à jour" %>
-<% end %>
-
+</body>
