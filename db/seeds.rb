@@ -8,7 +8,7 @@
 require 'faker'
 
 
-
+Event.destroy_all
 Game.destroy_all
 
 Game.create(
