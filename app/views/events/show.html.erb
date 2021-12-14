@@ -4,12 +4,12 @@
   <h1 class="card-title"><%= @event.title %>, crée par <%= @event.user.last_name %></h1>
     <div class="card-body">
       <h3>Titre</h3> <div class="text-tag-event"><%= @event.title %></div>      
-      <h3>Heure</h3> <div class="text-tag-event"><%= @event.start_time_hours %>:<%= @event.start_time_min %></div>
+      <h3>Heure</h3> <div class="text-tag-event"><%= @event.start_time_hours %>H<%= @event.start_time_min %>min</div>
       <h3>Description</h3> <div class="text-tag-event"><%= @event.description %></div>
       <h3>Date</h3> <div class="text-tag-event"><%= @event.start_date %></div>
       <h3>Jeu</h3> <div class="text-tag-event"><%= @event.game.name %></div>
       <br>
-      <%= link_to 'Editer', edit_event_path(@event), class: "btn btn-primary" %> |
+      <%= link_to 'Editer', edit_event_path(@event), class: "btn btn-primary" %>
       <%= link_to 'Retour aux évenements', events_path, class: "btn btn-info" %>
       <br>
       <em>il y a <%= @compteur %> personnes inscrites</em>

@@ -106,14 +106,40 @@ input[type="text"] {
   -webkit-box-shadow: 5px 5px 15px 16px rgba(95, 95, 95, 0.26);
   box-shadow: 5px 5px 15px 16px rgba(124, 124, 124, 0.26);
   width: 300px;
+  height: 450px;
   text-align: left;
+  vertical-align: middle;
+  position: relative;
+}
+
+.action-game {
+  position: absolute;
+  bottom: 0;
+}
+
+.card-body-event img {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 .title-event {
+  min-height: 100px;
   color: white;
   background-color: #8f5960;
   border-radius: 10px;
   padding: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.title-event strong {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  width: 100%;
 }
 
 h1.card-title {
@@ -170,8 +196,7 @@ h1.card-title {
 .card-event,
 .card-availablity,
 .card-description,
-.card-star
-{
+.card-star {
   max-width: 60vw;
   margin: 0 auto 50px;
 }
@@ -518,14 +543,6 @@ h4 {
   color: gray;
 }
 
-
-
-
-
-
-
-
-
 /******************************************************************/
 /* style pour la démo */
 html {
@@ -616,7 +633,6 @@ a:hover {
   font-size: 24px;
 }
 
-
 main .card-home:nth-child(2n + 1) {
   float: left;
   clear: both;
@@ -644,10 +660,6 @@ main .card-home:nth-child(2n + 0) {
 .card-home .card-content {
   text-align: justify;
 }
-
-
-
-
 
 .card-plateform {
   border-radius: 15px;
@@ -857,8 +869,7 @@ select {
   .card-event,
   .card-availablity,
   .card-description,
-  .card-star .card-edit-event
-  {
+  .card-star .card-edit-event {
     max-width: 95%;
     width: 95%;
     margin: 0 auto;
@@ -894,9 +905,3 @@ select {
   height: 180px;
   box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.55);
 }
-
-
-
-
-
-

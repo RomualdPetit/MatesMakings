@@ -62,6 +62,7 @@
         <hr style="height: 2px; color: #8f5960; background-color: #8f5960; width: 50%; border: none;">
         <h3 class="card-title" style="color:#8f5960">Description et Disponibilitées </h3> <strong> <%= @user.description %> </strong>
         <hr style="height: 2px; color: #8f5960; background-color: #8f5960; width: 50%; border: none;">
+         <%= link_to "Editer mon profil", edit_user_path(), class: "btn btn-primary"%>
       </div>
      </div>
     </div>
@@ -128,6 +129,6 @@
   </div>
 
   
-  <%= link_to "Editer mon profil", edit_user_path(), class: "btn btn-primary"%>
+ 
 
   
