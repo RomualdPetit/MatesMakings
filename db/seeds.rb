@@ -8,37 +8,37 @@
 require 'faker'
 
 
-Event.destroy_all
-Game.destroy_all
+
+
 
 Game.create(
         name: "GTA 5",
         category: "Jeux de voitures sympas",
-        img_url: "https://image.jeuxvideo.com/medias-sm/163129/1631287693-8700-jaquette-avant.jpg"
+        img_url: "https://s1.1zoom.me/b5050/317/GTA_5_san_andreas_Carl_438113_1920x1080.jpg"
     )
 
     Game.create(
         name: "Rocket League",
         category: "Jeux de voitures ou de foot, on sait pas trop",
-        img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfOixbTaj1yAqjpFm3ohPHI0qQECzZ-N56aw&usqp=CAU"
+        img_url: "https://lesgicques.fr/wp-content/uploads/2016/10/rocket-league-lesgicques.jpg"
     )
 
     Game.create(
         name: "Fortnite",
         category: "Battle royal",
-        img_url: "https://img.lemde.fr/2018/04/06/0/0/1280/720/1920/0/75/0/9002ece_26251-xfz7z4.8lm3.jpg"
+        img_url: "https://cdn2.unrealengine.com/fortnite-battle-royale-1920x1080-864336699.jpg"
     )
 
     Game.create(
         name: "Alexandra Ledermann 8 : Les Secrets du Haras",
         category: "Simulation équtation",
-        img_url: "https://image.jeuxvideo.com/images-sm/pc/a/l/als8pc0f.jpg"
+        img_url: "https://i.ytimg.com/vi/ngeO7he4XHg/maxresdefault.jpg"
     )
 
     Game.create(
         name: "Apex Legends",
-        category: "batlle royale",
-        img_url: "https://image.jeuxvideo.com/medias/155137/1551371304-2322-jaquette-avant.jpg"
+        category: "battle royale",
+        img_url: "https://images6.alphacoders.com/992/thumb-1920-992033.jpg"
     )
 
     Game.create(
@@ -57,6 +57,6 @@ Game.create(
     Game.create(
         name: "FIFA13",
         category: "Allez le foot",
-        img_url: "https://i.jeuxactus.com/datas/jeux/f/i/fifa-13/xl/fifa-13-jaquette-500d75b65f2f7.jpg"
+        img_url: "https://images.alphacoders.com/269/thumb-1920-269733.jpg"
     )
 
