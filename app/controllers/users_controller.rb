@@ -11,6 +11,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_review = UserReview.find_by(user_id: @user.id)
+  
   end
 
   def create
@@ -36,7 +38,6 @@ class UsersController < ApplicationController
       render new_user_path
       flash[:danger] = "Remplissez tous les champs"
     end
-
      
 
   end
@@ -44,14 +45,15 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-
     if @user.update(users_params)
-      puts "UPTADEEEEEEEEEEEE"
     redirect_to user_path
     flash[:success] = "Ton profil a été enregistré ! "
+
+    UserReview.create(user: @user)
     else
     render edit_user_path
     end
+
   end
 
   private
