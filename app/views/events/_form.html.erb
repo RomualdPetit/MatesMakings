@@ -16,20 +16,11 @@
      
       <h1 class="card-title">
       <img src="https://img.icons8.com/nolan/64/paste-special.png"/>
-      Crée ton Event</h1>
+      Crée ton Événement </h1>
 
       <div class="card-body" style="padding: 20px;">
 
             <div class="row">
-
-               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		              <div class="form-group">
-                    <div class="field">
-                      <%= f.label :game_number, "Choisi ton jeu" %>
-                     <%= f.number_field :game_number, in: 1..x, step: 1, class: 'form-control' %>
-                   </div> 
-                  </div>
-                </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		              <div class="form-group">
@@ -39,29 +30,7 @@
                     </div>
                   </div>
                 </div>
-
-
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		              <div class="form-group">
-                    <div class="field">
-                     <%= f.label :description, 'Description' %>
-                     <%= f.text_area :description, class: 'form-control' %>
-                    </div>
-                  </div>
-                </div>
-
-
-
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		              <div class="form-group">
-                    <div class="field">
-                     <%= f.label :plateform, "Plateforme" %>
-                     <%= f.text_field :plateform, class: 'form-control' %>
-                    </div>
-                  </div>
-                </div>
-
-
+                
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		              <div class="form-group">
                     <div class="field">
@@ -70,31 +39,80 @@
                     </div>
                   </div>
                 </div>
-          
+      
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		              <div class="form-group">
+                    <div class="field">
+                     <%= f.label :Heure, style: "display: inline block;" %><br>
+                     <%= f.text_field :start_time_hours, autofocus: true, autocomplete: "Heure" %>
+                    </div>
+                  </div>
+                </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		              <div class="form-group">
                     <div class="field">
-                     <%= f.label :start_time_hours, "Heure du début" %>
-                     <%= f.number_field :start_time_hours, in: 1..24, step: 1, class: 'form-control' %>
+                     <%= f.label :Minutes, style: "display: inline block;" %><br>
+                     <%= f.text_field :start_time_min, autofocus: true, autocomplete: "Minute" %>
+                   </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		              <div class="form-group">
+                    <div class="field">
+                     <%= f.label :plateform, "Plateforme" %>
+                     <%= f.text_field :plateform, class: 'form-control' %>
                     </div>
+                  </div>
+                </div>           
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		              <div class="form-group">
+                    <div class="field">
+                      <%= f.label :game_number, "Choisi ton jeu" %>
+                      <br>
+                      <%= f.select :game_number, options_for_select([
+                       11,
+                       "",
+                       "",
+                        "",
+                       "",
+                       "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "GTA 5", 
+                        "Rocket League", 
+                        "Fortnite", "Alexandra Ledermann 8 : Les Secrets du Haras", 
+                        "Apex Legends", 
+                        "Call of Duty: Vanguard", 
+                        "Battlefield 2042", 
+                        "FIFA13"
+                      ]), autofocus: true, autocomplete: "Choisi ton jeu" %> 
+                         <!-- ATTENTION A LA MERDE DU TRUC ICI -->
+                      
+                    </div> 
                   </div>
                 </div>
 
                 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		              <div class="form-group">
+		              
+            
+            </div>
+                  <div class="form-group">
                     <div class="field">
-                     <%= f.label :start_time_min, "Minutes" %>
-                     <%= f.number_field :start_time_min, in: 0..60, step: 5, class: 'form-control' %>
+                     <%= f.label :description, style: "display: block;" %>
+                     <%= f.text_area :description, autofocus: true, autocomplete: "Description" %>
                     </div>
                   </div>
-                </div>
-            </div>
+
+                  <div class="actions">
+                    <%= f.submit "Créer ton evênement", class: "btn btn-primary" %>|
+                    <%= link_to "Retour aux Events", events_path(current_user), class: "btn btn-secondary" %>
+                  </div>                
       </div>  
     </div>    
-  <div class="actions">
-        <%= f.submit "Crée ton evênement", class: "btn btn-primary" %>
-        <%= link_to "Retour aux Events", events_path(current_user), class: "btn btn-secondary" %>
-  </div>
+ 
 <% end %>
