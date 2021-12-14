@@ -35,7 +35,7 @@ gem 'bootstrap-sass'
 gem 'jquery-rails', '~> 4.4'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem "aws-sdk-s3", require: false
-
+gem 'simple_form'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
