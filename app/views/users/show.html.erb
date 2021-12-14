@@ -1,9 +1,10 @@
- <link href="app/assets/stylesheets/application.css" rel="stylesheet">
+ <link rel="stylesheets" href="style.css">
+ <link rel="stylesheets" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
 
-    
+  
   <div class="container">
    
     <div class="description">
@@ -15,13 +16,13 @@
          Description 
          </h1>
         <h3>Avatar</h3>
-         <center><div class="roundedImage">
+         <center>
           <%if @user.avatar.attached?%>
         <div class="roundedImage">
           <%= image_tag @user.avatar, alt: 'avatar', :size => '260x180'%>
         </div></center>
         <%else%>
-          <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+          <p>=== Ajoute ton avatar ===</p>
         <%end%>
         <br>
         <center>
@@ -33,7 +34,7 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		      <div class="form-group">
-
+            
             <h3>Pseudo</h3> <strong> <div class="text-tag"><%= @user.last_name %> </div> </strong>
 
           </div>
@@ -94,10 +95,9 @@
            <div class="text-tag"><strong><%= @user.discord_tag %></strong></div>
       </div>
     </div>
- 
-   <div class="star">
-     <div class="card-star">
-       <div class="card-body">
+    <div class="star">
+      <div class="card-star">
+        <div class="card-body">
           <h1 class="card-tittle">
           <img src="https://img.icons8.com/nolan/64/filled-star.png"/>
           Notation</h1>
@@ -110,15 +110,14 @@
 		          <i class="fa fa-star"></i>
 	          </div>
           </div>
-       </div> 
-     </div>
-   </div>
+        </div> 
+      </div>
+    </div>
   </div>
+
+  
   <%= link_to "Editer mon profil", edit_user_path(), class: "btn btn-primary"%>
 
-<<<<<<< Updated upstream
-</body>
-=======
   <h1>Page Profil</h1>
 
 <p>Bienvenue sur la page d'ajout d'un avatar pour le User portant l'id : <%=@user.id%></p>
@@ -135,4 +134,3 @@
   <%= submit_tag "mettre à jour" %>
 <% end %>
 
->>>>>>> Stashed changes
