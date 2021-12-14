@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :participations
   has_many :events, through: :participations
 
+  has_many :reviews
+  has_many :user_reviews
+
   has_one_attached :avatar
 
 
@@ -23,7 +26,7 @@ class User < ApplicationRecord
   
   
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+        :recoverable, :rememberable, :validatable
 
          after_create :welcome_send
 
