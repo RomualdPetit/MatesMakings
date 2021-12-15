@@ -24,6 +24,10 @@
   min-height: calc(100vh - 50px);
 }
 
+.global-container {
+  min-height: calc(100vh - 320px);
+}
+
 header {
   width: 100vw;
   position: fixed;
