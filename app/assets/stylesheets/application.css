@@ -24,6 +24,10 @@
   min-height: calc(100vh - 50px);
 }
 
+.global-container {
+  min-height: calc(100vh - 320px);
+}
+
 header {
   width: 100vw;
   position: fixed;
@@ -921,60 +925,25 @@ select {
   box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.55);
 }
 
-.jumbotron-show-game {
-  
-  color: white;
-  max-width: 70vw;
-  margin: 0 auto 0px;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  position: relative;
-  z-index: 2;
-  background-size: cover;
-  padding: 50px;
-  height: 500px;
-}
 
-.jumbotron-show-game h1 {
-  font-size: 80px;
-}
-.container-page-game {
-  margin-top: 120px;
-}
 
-.fond-game{
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+
+
+.roundedImage img {
   width: 100%;
-  height: 100%;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
 }
 
-
-
-.card-players{
-  border-radius: 15px;
-  justify-content: center;
-  max-width: 500px;
-  width: 60vw;
-  margin: auto;
-  text-align: center;
-  -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
-  box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
-  margin-bottom: 50px;
-
+input[type="file"] {
+  color: white;
+  margin-left: 170px;
+  position: relative;
+  overflow: hidden;
 }
 
-.card-body-player{
-  border: solid 1px grey;
-  width: auto;
-  height: auto;
-  border-radius: 17px;
+input[type="file"]::-webkit-file-upload-button {
+  color: #8f5960;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #8f5960;
+  padding: 8px;
 }
-
-
