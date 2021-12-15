@@ -8,19 +8,19 @@
 require 'faker'
 
 
-
-
+Event.destroy_all
+Game.destroy_all
 
 Game.create(
         name: "GTA 5",
-        category: "Jeux de voitures sympas",
+        category: "Vroum Vroum et Pan Pan",
         img_url: "https://s1.1zoom.me/b5050/317/GTA_5_san_andreas_Carl_438113_1920x1080.jpg"
     )
 
     Game.create(
         name: "Rocket League",
-        category: "Jeux de voitures ou de foot, on sait pas trop",
-        img_url: "https://lesgicques.fr/wp-content/uploads/2016/10/rocket-league-lesgicques.jpg"
+        category: " Hotwheels avec un ballon",
+        img_url: "https://rocketleague.media.zestyio.com/rl_gen_blog_1920x1080.309bf22bd29c2e411e9dd8eb07575bb1.jpg"
     )
 
     Game.create(
@@ -31,14 +31,14 @@ Game.create(
 
     Game.create(
         name: "Alexandra Ledermann 8 : Les Secrets du Haras",
-        category: "Simulation équtation",
+        category: "Mon petit poney",
         img_url: "https://i.ytimg.com/vi/ngeO7he4XHg/maxresdefault.jpg"
     )
 
     Game.create(
         name: "Apex Legends",
         category: "battle royale",
-        img_url: "https://images6.alphacoders.com/992/thumb-1920-992033.jpg"
+        img_url: "https://image.jeuxvideo.com/medias/155137/1551371304-2322-jaquette-avant.jpg"
     )
 
     Game.create(
@@ -49,7 +49,7 @@ Game.create(
 
     Game.create(
         name: "Battlefield 2042",
-        category: "battlefield",
+        category: "This is WAR",
         img_url: "https://www.presse-citron.net/app/uploads/2021/06/battlefiled-2042.jpg"
     )
 
