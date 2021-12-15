@@ -13,13 +13,13 @@ Game.destroy_all
 
 Game.create(
         name: "GTA 5",
-        category: "Jeux de voitures sympas",
+        category: "Vroum Vroum et Pan Pan",
         img_url: "https://s1.1zoom.me/b5050/317/GTA_5_san_andreas_Carl_438113_1920x1080.jpg"
     )
 
     Game.create(
         name: "Rocket League",
-        category: "Jeu mécanique qui demande beaucoup d'heures afin de métriser ne serait ce que les bases.",
+        category: " Hotwheels avec un ballon",
         img_url: "https://rocketleague.media.zestyio.com/rl_gen_blog_1920x1080.309bf22bd29c2e411e9dd8eb07575bb1.jpg"
     )
 
@@ -31,7 +31,7 @@ Game.create(
 
     Game.create(
         name: "Alexandra Ledermann 8 : Les Secrets du Haras",
-        category: "Simulation équtation",
+        category: "Mon petit poney",
         img_url: "https://i.ytimg.com/vi/ngeO7he4XHg/maxresdefault.jpg"
     )
 
@@ -49,7 +49,7 @@ Game.create(
 
     Game.create(
         name: "Battlefield 2042",
-        category: "battlefield",
+        category: "This is WAR",
         img_url: "https://www.presse-citron.net/app/uploads/2021/06/battlefiled-2042.jpg"
     )
 
