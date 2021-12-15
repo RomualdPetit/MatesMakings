@@ -31,9 +31,10 @@ class EventsController < ApplicationController
     
      x = @event.game_number
      @event.game = Game.find(x)
+
+     #x = @event.game_name
+     #@event.game = Game.find(name: x)
     
-    #@game = 
-    #g = Game.find_by(game_id: x)
     
     respond_to do |format|
       if @event.save
