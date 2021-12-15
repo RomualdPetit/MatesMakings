@@ -59,6 +59,8 @@
           </div>
         </div>
       </div>
+      
+  
         <hr style="height: 2px; color: #8f5960; background-color: #8f5960; width: 50%; border: none;">
         <h3 class="card-title" style="color:#8f5960">Description et Disponibilitées </h3> <strong> <%= @user.description %> </strong>
         <hr style="height: 2px; color: #8f5960; background-color: #8f5960; width: 50%; border: none;">
@@ -104,26 +106,21 @@
    <div class="star">
      <div class="card-star">
        <div class="card-body">
-       
+        
+        <h1 class="card-tittle">
+          <img src="https://img.icons8.com/nolan/64/filled-star.png"/>
+          Notation</h1>
+        <br>
+       </div> 
         <div>
+        
+        
       <%= link_to "ajouter un avis", new_user_review_review_path(@user_review) %>
-
+<br><br>
       <%= render @user_review.reviews %>
           </div>
 
-          <h1 class="card-tittle">
-          <img src="https://img.icons8.com/nolan/64/filled-star.png"/>
-          Notation</h1>
-          <div class="rating">
-	          <div class="stars">
-		          <i class="fa fa-star gold"></i>
-		          <i class="fa fa-star gold"></i>
-		          <i class="fa fa-star"></i>
-		          <i class="fa fa-star"></i>
-		          <i class="fa fa-star"></i>
-	          </div>
-          </div>
-       </div> 
+         
      </div>
    </div>
   </div>
@@ -131,4 +128,3 @@
   
  <% end %>
 
-  
