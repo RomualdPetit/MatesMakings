@@ -137,26 +137,21 @@
    <div class="star">
      <div class="card-star">
        <div class="card-body">
-       
+        
+        <h1 class="card-tittle">
+          <img src="https://img.icons8.com/nolan/64/filled-star.png"/>
+          Notation</h1>
+        <br>
+       </div> 
         <div>
+        
+        
       <%= link_to "ajouter un avis", new_user_review_review_path(@user_review) %>
-
+<br><br>
       <%= render @user_review.reviews %>
           </div>
 
-          <h1 class="card-tittle">
-          <img src="https://img.icons8.com/nolan/64/filled-star.png"/>
-          Notation</h1>
-          <div class="rating">
-	          <div class="stars">
-		          <i class="fa fa-star gold"></i>
-		          <i class="fa fa-star gold"></i>
-		          <i class="fa fa-star"></i>
-		          <i class="fa fa-star"></i>
-		          <i class="fa fa-star"></i>
-	          </div>
-          </div>
-       </div> 
+         
      </div>
    </div>
   </div>
@@ -164,4 +159,3 @@
   
  <% end %>
 
-  
