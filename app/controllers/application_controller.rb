@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
 
     def after_sign_out_path_for(current_user)
-      redirect_to root_path
+      root_path       
     end
 
     def configure_permitted_parameters
