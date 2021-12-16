@@ -37,6 +37,8 @@
         <div class="card-body-avatar">
         <% if communities.user.avatar %> 
          <%= image_tag communities.user.avatar, alt: 'avatar', :size => '220x150', style:"border-radius: 50%;"%>
+          <% else %>
+        <p> no photo </p>
          <% end %>
         </div>
         <div class="card-body-player">
