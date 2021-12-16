@@ -206,13 +206,8 @@ input[type="text"] {
   -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   margin-bottom: 50px;
-  border-radius: 15px;
   margin-top: 50px;
-}
-
-.em-game {
-  font-size: 22px;
-  text-shadow: 1px 1px 8px #000000;
+  border-radius: 15px;
 }
 
 .card-body-event {
@@ -224,7 +219,22 @@ input[type="text"] {
   -webkit-box-shadow: 5px 5px 15px 16px rgba(95, 95, 95, 0.26);
   box-shadow: 5px 5px 15px 16px rgba(124, 124, 124, 0.26);
   width: 300px;
-  height: 450px;
+  height: 300px;
+  text-align: left;
+  vertical-align: middle;
+  position: relative;
+  width: calc(25% - 35px);
+}
+
+.card-body-game {
+  background-color: #e6e6e6;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 0px 10px 20px;
+  font-size: 18px;
+  -webkit-box-shadow: 5px 5px 15px 16px rgba(95, 95, 95, 0.26);
+  box-shadow: 5px 5px 15px 16px rgba(124, 124, 124, 0.26);
+  height: 300px;
   text-align: left;
   vertical-align: middle;
   position: relative;
@@ -260,10 +270,12 @@ input[type="text"] {
 .actions-list li:first-child {
   margin-right: 10px;
 }
-.card-body-event img {
+.card-body-game img {
   overflow: hidden;
   width: 100%;
   margin-bottom: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .title-event {
@@ -350,6 +362,15 @@ h1.card-title {
 .fond {
   width: 100%;
 }
+
+.fond em {
+  font-size: 25px;
+}
+
+.em-game {
+  text-shadow: 1px 1px 8px #000000;
+  font-size: 25px;
+}
 .card-up.edit-card,
 .card-home,
 .card-plateform,
@@ -388,10 +409,11 @@ h1.card-title {
 }
 
 .btn-link {
-  font-family: "Quantico", sans serif;
-  border: solid 1px #8f5960;
-  border-radius: 25px;
-  background-color: #8f5960;
+  font-family: 'Quantico', sans serif;
+  margin-top: 15px;
+  border: solid 1px #078080;
+  border-radius: 15px;
+  background-color: #078080;
   color: #dad8d8;
   -webkit-box-shadow: 5px 9px 20px 4px rgba(0, 0, 0, 0.4);
   box-shadow: 5px 9px 20px 4px rgba(0, 0, 0, 0.4);
@@ -560,6 +582,11 @@ footer {
   position: relative;
   z-index: 999;
   font-family: "Quantico", sans-sans-serif;
+}
+
+footer h4 {
+  color: white;
+  font-size: 25px;
 }
 
 .footer-col {
@@ -801,11 +828,12 @@ a:hover,
   background-color: #f6f6f6;
   -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
-  padding: 50px 0 10px;
+  padding: 30px 0 10px;
   color: #000000;
   position: relative;
   z-index: 2;
   margin-bottom: 100px;
+  font-size: 20px;
 }
 
 .card-home-container .card-home:first-child {
@@ -816,15 +844,14 @@ a:hover,
   text-align: center;
   padding: 0;
   position: absolute;
-  top: -50px;
+  top: -30px;
   height: 68px;
   left: 25px;
   background-color: #f6f6f6;
   border-radius: 15px;
   width: 30%;
   min-width: 275px;
-
-  font-size: 24px;
+  font-size: 26px;
 }
 
 main .card-home:nth-child(2n + 1) {
@@ -1231,9 +1258,9 @@ select {
 .card-players {
   border-radius: 15px;
   justify-content: center;
-  max-width: 500px;
-  width: 60vw;
-  margin: auto;
+  max-width: 400px;
+  width: 50vw;
+  margin: 30px;
   text-align: center;
   -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
@@ -1265,6 +1292,12 @@ select {
   background-color: #333;
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
+  padding: 15px;
+
+}
+.card-body-avatar img{
+  -webkit-box-shadow: 5px 9px 20px 4px rgb(0 0 0 / 40%);
+    box-shadow: 5px 9px 20px 4px rgb(0 0 0 / 40%);
 }
 
 .card-body-player {
@@ -1273,6 +1306,16 @@ select {
   border-radius: 17px;
   font-size: 15px;
   margin-top: 20px;
+}
+
+.card-body-player > p {
+  padding-right: 60px;
+    font-family: 'Quantico', sans-serif;
+    font-size: 16px;
+}
+
+.card-body-player > a{
+  margin-bottom: 15px;
 }
 
 .card-body-event-players > h5 {
