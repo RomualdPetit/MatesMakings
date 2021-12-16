@@ -36,16 +36,19 @@
       <div class="card-players" style ="background-color: #f8f5f2;">
         <div class="card-body-avatar">
         <% if communities.user.avatar %> 
-         <%= image_tag communities.user.avatar, alt: 'avatar', :size => '220x150', style:"border-radius: 50%;"%>
+        <%= image_tag communities.user.avatar, alt: 'avatar', :size => '135x135', style:"border-radius: 50%;" %>
           <% else %>
-        <p> no photo </p>
-         <% end %>
+          <img src="app/assets/images/default-avatar.png">
+          <% end %>
+        
         </div>
+
+
         <div class="card-body-player">
-            <p><strong>Pseudo:</strong><%= communities.user.last_name %></p>
-            <p><strong>Discord:</strong><%= communities.user.discord_tag %></p>
-            <p><strong>Description:</strong><%= communities.user.description %></p>
-            <p><a><%= link_to "En savoir plus", user_path(communities.user.id), class: "btn btn-link" %></a></p> 
+            <p><strong>Pseudo:  </strong><%= communities.user.last_name %></p>
+            <p><strong>Discord:  </strong><%= communities.user.discord_tag %></p>
+            <p><strong>Notation:  </strong><%= communities.user.description %></p>
+            <a><%= link_to "En savoir plus", user_path(communities.user.id), class: "btn btn-link" %></a>
         </div>
       </div>
       <% end %>
