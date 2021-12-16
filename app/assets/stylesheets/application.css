@@ -26,7 +26,7 @@
 }
 
 .global-container {
-  padding-top: 40px;
+  
   min-height: calc(100vh - 219px);
 }
 
@@ -121,6 +121,7 @@ header ul li {
 .navbar li.event-btn,
 .navbar li.game-btn {
   height: auto;
+  cursor: pointer;
 }
 
 .navbar li.event-btn ul,
@@ -182,7 +183,9 @@ input[type="text"] {
   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   margin-bottom: 50px;
 }
-
+.card-login .field.remember label{
+  font-size: 18px;
+}
 .card-event {
   justify-content: center;
   max-width: 500px;
@@ -203,6 +206,13 @@ input[type="text"] {
   -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   margin-bottom: 50px;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+
+.em-game {
+  font-size: 22px;
+  text-shadow: 1px 1px 8px #000000;
 }
 
 .card-body-event {
@@ -484,7 +494,7 @@ ul .event-show {
 }
 
 ul.event-show,
-ul.jeux-show {
+ul.game-show {
   display: block;
   border-style: solid;
   border-image: linear-gradient(
@@ -1008,29 +1018,44 @@ select {
   .body {
     width: 100%;
     margin: 0;
-    padding-top: 100px;
+    padding-top: 50px;
+  }
+  .global-container{
+    min-height: auto;
   }
   header {
-    left: -300px;
-  }
-  body {
-    padding-top: 50px;
+    display: none;
+    width: 0;
   }
   body i {
     left: 25px;
-    top: 25px;
+    top: 8px;
+  }
+  .index{
+    padding: 0 10px;
+  }
+  .index::before {
+    display: none;
   }
   .navbar {
     padding-top: 10px !important;
   }
   .navbar,
   .navbar .container-fluid {
-    text-align: left;
-    height: 50px;
     padding: 0;
   }
   .navbar-header {
     margin: 0 !important;
+  }
+  .card-login{
+    width: calc(100% - 20px);
+    max-width: auto;
+  }
+  .edit_user div{
+    margin-bottom: 20px;
+  }
+  .description{
+    margin-bottom: 20px;
   }
   .navbar-brand {
     width: 100px;
@@ -1039,6 +1064,9 @@ select {
   }
   .navbar-brand:hover {
     transform: scale(1) !important;
+  }
+  .events-jumbotron{
+    padding: 0 10px;
   }
   .navbar-right {
     height: 50px;
@@ -1054,6 +1082,43 @@ select {
     display: inline-block;
     vertical-align: text-bottom;
   }
+  .jumbotron{
+    max-width: 100%;
+    margin: 0 auto 0;
+  }
+  .card-home{
+    padding: 25px 0 10px;
+  }
+  .registration-container{
+    padding: 40px 10px;
+  }
+  .registration-container input{
+    width: 100%;
+  }
+  .registration-container .card-up{
+    width: 100%;
+  }
+  .card-login .field input:not([type="checkbox"]){
+    width: 100%;
+  }
+  main .card-home .card-body{
+    padding: 0;
+  }
+  main .card-home .card-title{
+    width: 100%;
+    position: relative;
+    left: auto;
+    right: auto;
+    margin: 0;
+  }
+  main .card-home:nth-child(2n + 0),
+  main .card-home:nth-child(2n + 1){
+    width: 100%;
+    float: none;
+    margin: 25px 0 0 0;
+    max-width: 100%;
+  }
+  
   .profile {
     padding: 6px 0 0 !important;
   }
@@ -1103,6 +1168,18 @@ select {
 
   .card-plateform .card-item {
     width: 100%;
+  }
+  .row-footer{
+    flex-direction: column;
+  }
+  .row-footer .footer-col{
+    width: 100%;
+  }
+  .row-footer .footer-col:first-child{
+    border-right: 0;
+  }
+  .row-footer .footer-col:last-child{
+    border-left: 0;
   }
 }
 

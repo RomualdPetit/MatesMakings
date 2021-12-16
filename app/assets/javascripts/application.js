@@ -28,7 +28,7 @@ $(document).ready(function () {
   });
 
   $("body i").click((e) => {
-    $("header").css({ width: "300px", opacity: "1" });
+    $("header").css({ width: "300px", opacity: "1", display: "block" });
     $("main.body").css({ marginLeft: "300px", width: "calc(100vw - 300px)" });
   });
 
