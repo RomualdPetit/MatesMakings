@@ -1,7 +1,7 @@
 <div class="jumbotron-game">
  <div class="container-game">
   <div class="fond">
-   <h1>Les jeux disponnibles</h1>
+   <h1>Les jeux disponibles</h1>
    <em>Trouve ton jeu, et lance toi dans la communautée</em>
   </div>
  </div>
@@ -9,18 +9,20 @@
 
 
 <p id="notice"><%= notice %></p>
-<div class="card-event" style ="background-color: #f8f5f2;">
-  <div class="card-body" style="padding-top: 60px;"> 
+<div class="card-games" style ="background-color: #f8f5f2;">
+  <div class="card-body" style="padding-top: 30px;"> 
     <% @games.each do |game| %> 
-    <div class="card-body-event">   
-      <h3 class="title-event"><strong><%= game.name %></strong></h3>
-         <img src="<%= game.img_url %>">
-        <%= game.category %>
+    <div class="card-body-event">
+    <h3 class="title-event"><strong><%= game.name %></strong></h3>
+      <div class="card-body">
+        <img src="<%= game.img_url %>">
+        <div class="game-category"><%= game.category %></div>
         <div class="action-game">
         <%= link_to 'Voir', game, class: "btn btn-primary" %>
         <%= link_to 'Editer', edit_game_path(game) %>
         <%= link_to 'Supprimer', game, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
+      </div>
     </div>
     <% end %>
     

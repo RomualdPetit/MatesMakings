@@ -28,8 +28,8 @@
 
         <center>
           <%= form_tag user_avatars_path(@user), multipart: true  do %>
-            <%= file_field_tag :avatar %>
             <%= submit_tag "Mettre à jour", class: "btn btn-primary"%>
+            <%= file_field_tag :avatar %>
           <% end %>
         </center>
 
@@ -59,9 +59,9 @@
             </div>
           </div>
         </div>
-        <hr style="height: 2px; color: #8f5960; background-color: #8f5960; width: 50%; border: none;">
+        <hr style="height: 2px; color: #49354c; background-color: #49354c; width: 50%; border: none; margin: 50px 0;">
         <div class="form-group">
-          <h3 class="card-title" style="color:#8f5960">Description et Disponibilitées </h3> <strong><div class="text-tag"><%= @user.description %></div></strong>
+          <h3 class="card-title" style="color:#49354c">Description et Disponibilitées </h3> <strong><div class="text-tag"><%= @user.description %></div></strong>
         </div>
         <%= link_to "Editer mon profil", edit_user_path(), class: "btn btn-primary"%>
       </div>
@@ -74,28 +74,60 @@
           <h1 class="card-title">
           <img src="https://img.icons8.com/nolan/64/controller.png"/>
           Plateforme</h1>
-          
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/xbox.png"/> 
-           <div class="text-tag"><strong> <%= @user.xbox %></strong></div>
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/play-station.png"/>
-           <div class="text-tag"><strong><%= @user.psn %></strong></div>
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/nintendo-switch-logo.png"/>
-           <div class="text-tag"><strong><%= @user.nintendo %></strong></div>
-           <br>
-           <img class="img-plateform" src="https://img.icons8.com/ios/50/000000/battle-net.png"/>
-           <div class="text-tag"><strong><%= @user.battlenet %></strong></div>
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/steam.png"/>
-           <div class="text-tag"><strong><%= @user.steam %></strong></div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/xbox.png"/> 
+          <strong> <%= @user.xbox %>
+          </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/play-station.png"/>
+          <strong><%= @user.psn %>
+          </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/nintendo-switch-logo.png"/>
+          <strong><%= @user.nintendo %>
+          </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios/50/000000/battle-net.png"/>
+          <strong><%= @user.battlenet %>
+          </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/steam.png"/>
+          <strong><%= @user.steam %>
+          </strong></div>
+          </div>
+           <div class="card-item">
+           <div class="text-tag">
            <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/epic-games.png"/>
-           <div class="text-tag"><strong><%= @user.epic_game %></strong></div>
-           <br>
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/origin.png"/>
-           <div class="text-tag"><strong><%= @user.origin %></strong></div>
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/league-of-legends.png"/>
-           <div class="text-tag"><strong><%= @user.riot_games %></strong></div>
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/discord-logo.png"/>
-           <div class="text-tag"><strong><%= @user.discord_tag %></strong></div>
-          
+           <strong><%= @user.epic_game %>
+           </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/origin.png"/>
+          <strong><%= @user.origin %>
+          </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/league-of-legends.png"/>
+          <strong><%= @user.riot_games %>
+          </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/discord-logo.png"/>
+          <strong><%= @user.discord_tag %>
+          </strong></div>
+          </div>
       </div>
     </div>
  

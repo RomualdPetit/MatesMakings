@@ -66,7 +66,7 @@
                     </div>
                   </div>
                 </div>           
-
+            
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		              <div class="form-group">
                     <div class="field">
@@ -74,12 +74,22 @@
                       <br>
                       <%= f.select :game_number, options_for_select([
                         1, 
+<<<<<<< Updated upstream
+                        2, 
+                        3, 
+                        4, 
+                        5, 
+                        6, 
+                        7,
+                        8
+=======
                         "Rocket League", 
                         "Fortnite", "Alexandra Ledermann 8 : Les Secrets du Haras", 
                         "Apex Legends", 
                         "Call of Duty: Vanguard", 
                         "Battlefield 2042", 
                         "FIFA13"
+>>>>>>> Stashed changes
                       ]), autofocus: true, autocomplete: "Choisi ton jeu" %> 
                          <!-- ATTENTION A LA MERDE DU TRUC ICI -->
                       
@@ -88,9 +98,9 @@
                 </div>
 
                 
-		              
+		        
             
-            </div>
+            
                   <div class="form-group">
                     <div class="field">
                      <%= f.label :description, style: "display: block;" %>
@@ -99,10 +109,11 @@
                   </div>
 
                   <div class="actions">
-                    <%= f.submit "Créer ton evênement", class: "btn btn-primary" %>|
-                    <%= link_to "Retour aux Events", events_path(current_user), class: "btn btn-secondary" %>
+                    <%= f.submit "Créer", class: "btn btn-primary" %>|
+                    <%= link_to "Retour", events_path(current_user), class: "btn btn-secondary" %>
                   </div>                
-      </div>  
-    </div>    
- 
+      </div> 
+    </div>
+   
+     
 <% end %>
