@@ -7,10 +7,9 @@ class CommunitiesController < ApplicationController
 
       if !@community.save
         flash[:notice] = @community.errors.full_message.to_sentence
-       redirect_to @community.game
-     end
-
-
+        redirect_to @community.game
+      end
+      redirect_to @community.game
     end
 
   def destroy
