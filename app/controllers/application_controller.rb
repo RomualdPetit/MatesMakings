@@ -4,7 +4,13 @@ class ApplicationController < ActionController::Base
     #include ParticipationsHelper
     
     helper_method :current_user
+    
+    def after_sign_in_path_for(current_user)
+      @user = User.find_by(params[:email])
+      edit_user_path(@user)
+    end
 
+  
     def after_sign_out_path_for(current_user)
       root_path       
     end
