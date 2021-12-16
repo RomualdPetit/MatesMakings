@@ -34,9 +34,9 @@ class EventsController < ApplicationController
 
      #x = @event.game_name
      #@event.game = Game.find(name: x)
-    
-    
-    respond_to do |format|
+     
+     
+     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: "Ton event a été créé !" }
         format.json { render :show, status: :created, location: @event }
@@ -45,13 +45,15 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+    
+   
   end
 
   # PATCH/PUT /events/1 or /events/1.json
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: "Event was successfully updated." }
+        format.html { redirect_to @event, notice: "Ton événement à été modifié." }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -64,7 +66,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
+      format.html { redirect_to events_url, notice: "Ton événement à été détruit." }
       format.json { head :no_content }
     end
   end
