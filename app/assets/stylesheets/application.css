@@ -118,23 +118,23 @@ header ul li {
 }
 .navbar li.logo-element,
 .navbar li.event-btn,
-.navbar li.jeux-btn {
+.navbar li.game-btn {
   height: auto;
 }
 
 .navbar li.event-btn ul,
-.navbar li.jeux-btn ul {
+.navbar li.game-btn ul {
   padding: 25px 0;
   display: none;
 }
 .navbar li.event-btn span.fas,
-.navbar li.jeux-btn span.fas {
+.navbar li.game-btn span.fas {
   position: absolute;
   right: 25px;
 }
 
 .navbar li.event-btn ul.show,
-.navbar li.jeux-btn ul.show {
+.navbar li.game-btn ul.show {
   display: block;
 }
 
@@ -194,7 +194,7 @@ input[type="text"] {
   border-radius: 15px;
 }
 
-.card-games{
+.card-games {
   justify-content: center;
   width: 60vw;
   margin: auto;
@@ -292,7 +292,7 @@ h1.card-title {
 }
 
 .jumbotron {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   max-width: 70vw;
   margin: 0 auto 50px;
   border-radius: 15px;
@@ -357,7 +357,7 @@ h1.card-title {
   color: #ffffff !important;
   height: 37px;
   min-width: 120px;
-  font-family: 'Quantico', sans-serif;
+  font-family: "Quantico", sans-serif;
 }
 
 .btn-secondary {
@@ -365,7 +365,7 @@ h1.card-title {
   border-color: white;
   margin: 20px;
   color: #8f5960 !important;
-  font-family: 'Quantico', sans-serif;
+  font-family: "Quantico", sans-serif;
   height: 37px;
   min-width: 120px;
 }
@@ -377,7 +377,7 @@ h1.card-title {
 }
 
 .btn-link {
-  font-family: 'Quantico', sans serif;
+  font-family: "Quantico", sans serif;
   border: solid 1px #8f5960;
   border-radius: 25px;
   background-color: #8f5960;
@@ -770,7 +770,7 @@ a:hover,
   min-height: 1000px;
 }
 
-.index{
+.index {
   padding-top: 50px;
 }
 .index::before {
@@ -1012,10 +1012,10 @@ select {
   header {
     left: -300px;
   }
-  body{
+  body {
     padding-top: 50px;
   }
-  body i{
+  body i {
     left: 25px;
     top: 25px;
   }
@@ -1165,21 +1165,28 @@ select {
   vertical-align: middle;
 }
 
-.space{
+.space {
   margin-top: 50px;
   margin-bottom: 50px;
   border: solid 2px;
-  border-image: linear-gradient( to bottom, #232323, #49354c, #843f64, #c34662, #f45d48 ) 10;
+  border-image: linear-gradient(
+      to bottom,
+      #232323,
+      #49354c,
+      #843f64,
+      #c34662,
+      #f45d48
+    )
+    10;
   border-top: 0;
   border-left: 0;
   border-right: 0;
 }
 
-.card-body-avatar{
+.card-body-avatar {
   background-color: #333;
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
-
 }
 
 .card-body-player {
@@ -1192,7 +1199,7 @@ select {
 
 .card-body-event-players > h5 {
   font-size: 20px;
-  font-family: 'Quantico', sans-serif;
+  font-family: "Quantico", sans-serif;
   background-color: #333;
   color: #dad8d8;
   border: solid 1px;
