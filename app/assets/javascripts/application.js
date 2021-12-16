@@ -12,12 +12,12 @@ $(document).ready(function () {
     $(".event-show").removeClass("show");
   });
 
-  $(".jeux-btn").mouseover((e) => {
-    $(".jeux-show").addClass("show");
+  $(".game-btn").mouseover((e) => {
+    $(".game-show").addClass("show");
   });
 
-  $(".jeux-btn").mouseleave((e) => {
-    $(".jeux-show").removeClass("show");
+  $(".game-btn").mouseleave((e) => {
+    $(".game-show").removeClass("show");
   });
 
   $("header .fa-times").click((e) => {

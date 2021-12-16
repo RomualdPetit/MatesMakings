@@ -118,23 +118,23 @@ header ul li {
 }
 .navbar li.logo-element,
 .navbar li.event-btn,
-.navbar li.jeux-btn {
+.navbar li.game-btn {
   height: auto;
 }
 
 .navbar li.event-btn ul,
-.navbar li.jeux-btn ul {
+.navbar li.game-btn ul {
   padding: 25px 0;
   display: none;
 }
 .navbar li.event-btn span.fas,
-.navbar li.jeux-btn span.fas {
+.navbar li.game-btn span.fas {
   position: absolute;
   right: 25px;
 }
 
 .navbar li.event-btn ul.show,
-.navbar li.jeux-btn ul.show {
+.navbar li.game-btn ul.show {
   display: block;
 }
 
@@ -463,7 +463,7 @@ ul .event-show {
 }
 
 ul.event-show,
-ul.jeux-show {
+ul.game-show {
   display: block;
   border-style: solid;
   border-image: linear-gradient(
@@ -716,8 +716,9 @@ a:hover,
 }
 .actions input[type="submit"] {
   font-family: "Quantico", sans-serif;
-  width: 120px;
-  font-size: 16px;
+  width: 130px;
+  font-size: 12px;
+  padding-left: 4px;
 }
 .card-description input[type="submit"] {
   display: inline-block;
@@ -736,6 +737,16 @@ a:hover,
   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   padding-bottom: 20px;
   color: black;
+}
+
+.card-show input[type="submit"] {
+  background-color: #333;
+  color: #dad8d8;
+  border: solid 1px #dad8d8;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
 }
 
 .card-home-container {
@@ -1123,14 +1134,24 @@ select {
   -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   display: inline-block;
-  min-height: 250px;
+  min-height: 230px;
   width: calc(33% - 150px);
   vertical-align: middle;
 }
 
-.card-body > h5 {
+.space{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: solid 2px;
+  border-image: linear-gradient( to bottom, #232323, #49354c, #843f64, #c34662, #f45d48 ) 10;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.card-body > h6 {
   font-size: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Quantico', sans-serif;
   background-color: #ff793f;
   border: solid 1px;
   border-top-left-radius: 15px;
@@ -1144,9 +1165,9 @@ select {
   font-size: 15px;
 }
 
-.card-body-event-players > h5 {
+.card-body-event-players > h6 {
   font-size: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Quantico', sans-serif;
   background-color: #ff793f;
   border: solid 1px;
   border-top-left-radius: 15px;
@@ -1157,13 +1178,20 @@ select {
   border-radius: 15px;
   justify-content: center;
   max-width: 500px;
-  width: 60vw;
+  width: 25vw;
   margin: auto;
   text-align: center;
   -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   margin-bottom: 50px;
   background-color: #e3e3e3;
+  display: inline-block;
+}
+
+h5{
+  font-size: 30px;
+  font-family: 'Quantico', sans-serif;
+  margin-bottom: 50px
 }
 
 .roundedImage img {
