@@ -344,7 +344,6 @@ h1.card-title {
 .card-plateform,
 .card-event,
 .card-availablity,
-.card-show,
 .card-description,
 .card-star {
   max-width: 60vw;
@@ -378,7 +377,13 @@ h1.card-title {
 }
 
 .btn-link {
-  color: #8f5960;
+  font-family: 'Quantico', sans serif;
+  border: solid 1px #8f5960;
+  border-radius: 25px;
+  background-color: #8f5960;
+  color: #dad8d8;
+  -webkit-box-shadow: 5px 9px 20px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 9px 20px 4px rgba(0, 0, 0, 0.4);
 }
 
 .btn-danger {
@@ -742,15 +747,20 @@ a:hover,
   font-family: "Quantico", sans-serif;
 }
 .card-show {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  max-width: 70vw;
-  justify-content: center;
   background-color: white;
   -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
-  padding-bottom: 20px;
   color: black;
+  margin-bottom: 50px;
+}
+
+.card-show input[type="submit"] {
+  font-family: "Quantico", sans-serif;
+  color: white;
+  background-color: #078080;
+  border-radius: 10px;
+  border: 1px solid #078080;
+  padding: 8px;
 }
 
 .card-home-container {
@@ -1068,7 +1078,6 @@ select {
   .card-event,
   .card-availablity,
   .card-description,
-  .card-show,
   .card-star .card-edit-event {
     max-width: 95%;
     width: 95%;
@@ -1108,15 +1117,11 @@ select {
 
 .jumbotron-show-game {
   color: white;
-  max-width: 70vw;
-  margin: 0 auto 0px;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
   position: relative;
   z-index: 2;
-  background-size: cover;
+  background-position: top;
   padding: 50px;
-  height: 500px;
+  height: 350px;
 }
 
 .jumbotron-show-game h1 {
@@ -1135,8 +1140,14 @@ select {
   bottom: 0;
   width: 100%;
   height: 100%;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
+}
+
+.fond-game img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
 
 .card-players {
@@ -1154,13 +1165,21 @@ select {
   vertical-align: middle;
 }
 
-.card-body > h5 {
-  font-size: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #ff793f;
-  border: solid 1px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+.space{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: solid 2px;
+  border-image: linear-gradient( to bottom, #232323, #49354c, #843f64, #c34662, #f45d48 ) 10;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.card-body-avatar{
+  background-color: #333;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+
 }
 
 .card-body-player {
@@ -1168,12 +1187,14 @@ select {
   height: auto;
   border-radius: 17px;
   font-size: 15px;
+  margin-top: 20px;
 }
 
 .card-body-event-players > h5 {
   font-size: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #ff793f;
+  font-family: 'Quantico', sans-serif;
+  background-color: #333;
+  color: #dad8d8;
   border: solid 1px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
