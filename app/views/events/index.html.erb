@@ -1,7 +1,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid events-jumbotron">
   <div class="container">
     <h1 class="text-jumb">
     <img src="https://img.icons8.com/nolan/64/planner.png"/>
@@ -12,16 +12,7 @@
     <p> Tu es au bon endroit ! <img src="https://img.icons8.com/nolan/50/slime-rancher.png"/> </p>
     <%= link_to 'Créer un événement', new_event_path, class: "btn btn-primary" %>
   </div>
-</div>
-
-
-  
-
- <p id="notice"><%= notice %></p>
-
- 
-
- 
+</div> 
     <body>
       <% @events.each do |event| %>
       <div class="card-event" style ="background-color: #f8f5f2;">
@@ -37,7 +28,4 @@
       </div>
       <% end %>
     </body>
-
-
-<br>
 </div>
