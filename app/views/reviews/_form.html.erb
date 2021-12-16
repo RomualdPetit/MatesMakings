@@ -1,16 +1,10 @@
 <%= simple_form_for([@user_review, @user_review.reviews.build]) do |f| %>
 
-<div id="rating-form">
-		<label>Note :</label>
-	</div>
+    <%= f.input :rating, label: "Note le, sois pas vache sinon cette personne sera trise", in: 1..5 %>
 	<br>
-	<%= f.input :comment %>
-	<%= f.button :submit, :class => "btn-custom2" %>
+	<%= f.input :comment, label: "Comment tu trouve ce mate ;)" %>
+	<%= f.button :submit, :class => "btn-custom2",  in: 1..200 %>
 <% end %>
 
+
 <script>
-	$('#rating-form').raty({
-		path: '/assets/',
-		scoreName: 'review[rating]'
-	});
-</script>
