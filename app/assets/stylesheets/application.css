@@ -172,6 +172,15 @@ input[type="text"] {
   padding-top: 40px;
 }
 
+.reviews-container {
+  padding-top: 200px;
+}
+
+.event-container {
+  padding-top: 80px;
+  margin-bottom: 100px;
+}
+
 .card-up {
   border-radius: 15px;
   justify-content: center;
@@ -183,6 +192,56 @@ input[type="text"] {
   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   margin-bottom: 50px;
 }
+
+.card-reviews {
+  background-color: #f8f5f2;
+  border-radius: 15px;
+  justify-content: center;
+  max-width: 500px;
+  width: 60vw;
+  margin: auto;
+  text-align: center;
+  -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
+  margin-bottom: 50px;
+  padding: 15px;
+}
+
+.card-reviews select {
+  box-shadow: 0px 0px 13px 1px rgb(0 0 0 / 55%);
+  width: 50px;
+  margin-left: 20px;
+}
+
+.card-reviews b {
+  font-size: 20px;
+}
+
+.integer {
+  margin-left: 15px;
+}
+
+.text {
+  margin: auto;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.numeric {
+  box-shadow: 0px 0px 13px 1px rgb(0 0 0 / 55%);
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  outline: none;
+}
+
+.card-reviews h1 {
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
 .card-login .field.remember label{
   font-size: 18px;
 }
@@ -375,6 +434,7 @@ h1.card-title {
 .card-home,
 .card-plateform,
 .card-event,
+.card-reviews,
 .card-availablity,
 .card-description,
 .card-star {
@@ -400,6 +460,7 @@ h1.card-title {
   font-family: "Quantico", sans-serif;
   height: 37px;
   min-width: 120px;
+  font-size: 18px;
 }
 
 .btn-info {
@@ -582,6 +643,7 @@ footer {
   position: relative;
   z-index: 999;
   font-family: "Quantico", sans-sans-serif;
+  box-shadow: 4px -1px 7px -1px #000000;
 }
 
 footer h4 {
@@ -775,7 +837,7 @@ a:hover,
 .actions input[type="submit"] {
   font-family: "Quantico", sans-serif;
   width: 120px;
-  font-size: 16px;
+  font-size: 18px;
 }
 .card-description input[type="submit"] {
   display: inline-block;
@@ -828,12 +890,17 @@ a:hover,
   background-color: #f6f6f6;
   -webkit-box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
   box-shadow: 5px 5px 15px 16px rgba(0, 0, 0, 0.26);
-  padding: 30px 0 10px;
+  padding: 20px 0 5px;
   color: #000000;
   position: relative;
   z-index: 2;
   margin-bottom: 100px;
-  font-size: 20px;
+  font-size: 18px;
+  padding: 30px;
+}
+
+.em-home {
+  font-size: 22px;
 }
 
 .card-home-container .card-home:first-child {
@@ -1169,6 +1236,7 @@ select {
   .card-up.edit-card,
   .card-plateform,
   .card-event,
+  .card-reviews,
   .card-availablity,
   .card-description,
   .card-star .card-edit-event {
