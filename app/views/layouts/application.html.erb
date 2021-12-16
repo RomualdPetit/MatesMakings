@@ -56,7 +56,7 @@
         <div class="actions-header">
           <ul class="actions-list">
             <% if current_user %>
-              <li><%= button_to "Déconnexion", destroy_user_session_path(current_user), method: :delete, class: 'btn btn-danger', style: "margin: 10px" %></li>
+              <li><%= link_to "Déconnexion", destroy_user_session_path(), method: :delete, class: 'btn btn-danger', style: "margin: 10px" %></li>
               <li class="profile"><%=link_to "Mon profil", user_path(current_user), class: 'btn btn-outline-secondary' %></li>
             <% else %>
               <li><span class="glyphicon glyphicon-user"></span><%=link_to "Inscription", new_user_registration_path(), class: 'nav-link' %></li>

@@ -26,6 +26,7 @@
 }
 
 .global-container {
+  padding-top: 40px;
   min-height: calc(100vh - 219px);
 }
 
@@ -926,7 +927,7 @@ main .card-home:nth-child(2n + 0) {
 .actions-success .btn-primary,
 .actions-success a {
   width: 250px;
-  font-size: 22px;
+  font-size: 18px;
 }
 .card-star {
   border-radius: 15px;
