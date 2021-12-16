@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="icon" type="url" href="https://media.discordapp.net/attachments/232197634981363714/919989173702783086/Logo_16x16.png" />
-    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -18,78 +18,88 @@
   </head>
 
 <body>
+ <i class="fas fa-bars"></i>
   <header>
-  <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="menu-burger">
-            <i class="fas fa-bars" id="btn"></i>
-          </div>
-          <div class="navbar-header">
-           <a class="navbar-brand" href="/"><img class="nav-logo" src="https://media.discordapp.net/attachments/232197634981363714/919988734991142912/Noir.png?width=1074&height=330"></a>
-          </div>
-          <ul class="nav navbar-nav navbar-right">
+    <span class="fas fa-times"></span>
+    <nav class="navbar">
+      <ul>
+        <li class="logo-element">
+        <%= link_to  image_tag('https://cdn.discordapp.com/attachments/401527496631255051/920761750352183347/Blanc.png'), root_path %> 
+        </li>
+        <li><%=link_to "Jeux disponible", games_path %></li>
+          <li class="event-btn"><span class="element-title">Evênements</span>
+            <span class="fas fa-caret-down first"></span>
+            <ul class="event-show">
+              <li>
+                <%=link_to "Créer un événement", new_event_path(current_user) %>
+              </li>
+              <li>
+                <%=link_to "Rejoins un événement", events_path(current_user) %>
+              </li>
+            </ul>
+          </li>
+          <li class="game-btn">
+            <span class="element-title">Tous nos jeux</span>
+            <span class="fas fa-caret-down second"></span>
+            <ul class="game-show">
+              <li><a href="/games/1">GTA 5</a></li>
+              <li><a href="/games/2">Rocket League</a></li>
+              <li><a href="/games/3">Fortnite</a></li>
+              <li><a href="/games/4">FarCry 6</a></li>
+              <li><a href="/games/5">Apex Legends</a></li>
+              <li><a href="/games/6">Call of Duty: Vanguard</a></li>
+              <li><a href="/games/7">Battlefield 2042</a></li>
+              <li><a href="/games/8">FIFA13</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="actions-header">
+          <ul class="actions-list">
             <% if current_user %>
-             <li><%= button_to "Déconnexion", destroy_user_session_path(current_user), method: :delete, class: 'btn btn-danger', style: "margin: 10px" %></li>
-             <li class="profile"><%=link_to "Mon profil", user_path(current_user), class: 'btn btn-outline-secondary' %></li>
+              <li><%= button_to "Déconnexion", destroy_user_session_path(current_user), method: :delete, class: 'btn btn-danger', style: "margin: 10px" %></li>
+              <li class="profile"><%=link_to "Mon profil", user_path(current_user), class: 'btn btn-outline-secondary' %></li>
             <% else %>
-             <li><span class="glyphicon glyphicon-user"></span><%=link_to "Inscription", new_user_registration_path(), class: 'nav-link' %></li>
-             <li><span class="glyphicon glyphicon-log-in"></span><%= link_to "Se connecter", new_user_session_path(), class: 'nav-link' %></li>
+              <li><span class="glyphicon glyphicon-user"></span><%=link_to "Inscription", new_user_registration_path(), class: 'nav-link' %></li>
+              <li><span class="glyphicon glyphicon-log-in"></span><%= link_to "Se connecter", new_user_session_path(), class: 'nav-link' %></li>
             <% end %>
           </ul>
         </div>
-  </nav>  
+    </nav>
   </header>
 
   <main class="body" style="background-image: linear-gradient(to right top, #232323, #49354c, #843f64,     #c34662, #f45d48); background-repeat: no-repeat; ">
-    <div class="sidebar">
-      <div class="sidebar-header">MatesMakings</div>
-      <ul>
-        <li><%=link_to "Jeux disponible", games_path(current_user) %></li>
-        <li>
-          <a href="#" class="event-btn">Evênements
-            <span class="fas fa-caret-down first"></a>
-            <ul class="event-show">
-              <li><%=link_to "Créer un événement", new_event_path(current_user) %></li>
-              <li><%=link_to "Rejoins un événement", events_path(current_user) %></li>
-            </ul>
-        </li>
-        <li>
-          <a href="#" class="jeux-btn">Tous nos jeux
-            <span class="fas fa-caret-down second"></a>
-            <ul class="jeux-show">
-              <li><a href="#">Rocket League</a></li>
-              <li><a href="#">League of Legend</a></li>
-              <li><a href="#">Pokémon</a></li>
-              <li><a href="#">Battlefield 2042</a></li>
-              <li><a href="#">GTA XII</a></li>
-            </ul>
-        </li>
-      </ul>
-    </div> 
+  <div class="global-container">
    <%= yield %>
+  </div>
     <footer>
         <div class="row-footer">
           <div class="footer-col">
-            <h4>Equipe</h4>
-            <ul>
-              <li><a href="#">A propos de nous</a></li>
-            </ul>
+            <div class="footer-element">
+              <h4>Equipe</h4>
+              <ul>
+                <li><a href="#">A propos de nous</a></li>
+              </ul>
+            </div>
           </div>
           <div class="footer-col">
-            <h4>Aide</h4>
-            <ul>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Politique de confidentialité</a></li>
-            </ul>
+            <div class="footer-element">
+              <h4>Aide</h4>
+              <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Politique de confidentialité</a></li>
+              </ul>
+            </div>
           </div>
           <div class="footer-col">
-            <h4>Suivez nous</h4>
+            <div class="footer-element">
+              <h4>Suivez nous</h4>
               <ul>
                 <li><a href="#">100code@yoplait.com"</a></li>
               </ul>
+            </div>
           </div>
         </div>
     </footer> 
   </main>
-  </body>
+</body>
 </html>

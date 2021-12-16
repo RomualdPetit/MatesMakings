@@ -5,67 +5,68 @@
 
 
   
-  <div class="container">
-   
-    <div class="description">
-     <div class="card-description">
-      <div class="card-body">
-        
-        <h1 class="card-title">
-         <img src="https://img.icons8.com/nolan/64/resume.png"/>
-         Description 
-         </h1>
-        <h3>Avatar</h3>
-         <center>
-          <%if @user.avatar.attached?%>
-        <div class="roundedImage">
-          <%= image_tag @user.avatar, alt: 'avatar', :size => '260x180'%>
-        </div></center>
-        <%else%>
-          <p>=== Ajoute ton avatar ===</p>
-        <%end%>
-        <br>
-        <center>
-        <%= form_tag user_avatars_path(@user), multipart: true  do %>
-        <%= file_field_tag :avatar %>
-        <%= submit_tag "Mettre à jour", class: "btn btn-primary"%>
-        <% end %>
-        </center>
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		      <div class="form-group">
-            
-            <h3>Pseudo</h3> <strong> <div class="text-tag"><%= @user.last_name %> </div> </strong>
 
+  <div class="description">
+    <div class="card-description">
+      <div class="card-body">
+        <h1 class="card-title">
+          <img src="https://img.icons8.com/nolan/64/resume.png"/>
+          Description 
+        </h1>
+        <center>
+        <%if @user.avatar.attached?%>
+          <div class="roundedImage">
+            <%= image_tag @user.avatar, alt: 'avatar', :size => '260x180'%>
           </div>
-        </div>
+          <%else%>
+        </center>
+
+        <p>Ajoute ton avatar</p>
+        <%end%>
+
+        <br>
+
+        <center>
+          <%= form_tag user_avatars_path(@user), multipart: true  do %>
+            <%= submit_tag "Mettre à jour", class: "btn btn-primary"%>
+            <%= file_field_tag :avatar %>
+          <% end %>
+        </center>
+
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		        <div class="form-group">
+              <h3>Pseudo</h3> <strong> <div class="text-tag"><%= @user.last_name %> </div> </strong>
+            </div>
+          </div>
 
     
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		      <div class="form-group">
-            <h3>Pays</h3>  <strong> <div class="text-tag"><%= @user.country %> </div> </strong>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		        <div class="form-group">
+              <h3>Pays</h3> <strong><div class="text-tag"><%= @user.country %></div></strong>
+            </div>
           </div>
-        </div>
         
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		      <div class="form-group">
-            <h3>Age</h3> <strong> <div class="text-tag"><%= @user.age %> </div> </strong>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		        <div class="form-group">
+              <h3>Age</h3><strong><div class="text-tag"><%= @user.age %></div></strong>
+            </div>
           </div>
-        </div>
 
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		      <div class="form-group">
-            <h3>Niveau de jeu</h3>  <strong> <div class="text-tag"><%= @user.player_type %> </div> </strong>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		        <div class="form-group">
+              <h3>Niveau de jeu</h3> <strong><div class="text-tag"><%= @user.player_type %></div></strong>
+            </div>
           </div>
         </div>
+        <hr style="height: 2px; color: #49354c; background-color: #49354c; width: 50%; border: none; margin: 50px 0;">
+        <div class="form-group">
+          <h3 class="card-title" style="color:#49354c">Description et Disponibilitées </h3> <strong><div class="text-tag"><%= @user.description %></div></strong>
+        </div>
+        <%= link_to "Editer mon profil", edit_user_path(), class: "btn btn-primary"%>
       </div>
-        <hr style="height: 2px; color: #8f5960; background-color: #8f5960; width: 50%; border: none;">
-        <h3 class="card-title" style="color:#8f5960">Description et Disponibilitées </h3> <strong> <%= @user.description %> </strong>
-        <hr style="height: 2px; color: #8f5960; background-color: #8f5960; width: 50%; border: none;">
-         <%= link_to "Editer mon profil", edit_user_path(), class: "btn btn-primary"%>
-      </div>
-     </div>
     </div>
+  </div>
   
     <div class="plateform">
     <div class="card-plateform">
@@ -73,28 +74,60 @@
           <h1 class="card-title">
           <img src="https://img.icons8.com/nolan/64/controller.png"/>
           Plateforme</h1>
-          
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/xbox.png"/> 
-           <div class="text-tag"><strong> <%= @user.xbox %></strong></div>
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/play-station.png"/>
-           <div class="text-tag"><strong><%= @user.psn %></strong></div>
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/nintendo-switch-logo.png"/>
-           <div class="text-tag"><strong><%= @user.nintendo %></strong></div>
-           <br>
-           <img class="img-plateform" src="https://img.icons8.com/ios/50/000000/battle-net.png"/>
-           <div class="text-tag"><strong><%= @user.battlenet %></strong></div>
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/steam.png"/>
-           <div class="text-tag"><strong><%= @user.steam %></strong></div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/xbox.png"/> 
+          <strong> <%= @user.xbox %>
+          </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/play-station.png"/>
+          <strong><%= @user.psn %>
+          </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/nintendo-switch-logo.png"/>
+          <strong><%= @user.nintendo %>
+          </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios/50/000000/battle-net.png"/>
+          <strong><%= @user.battlenet %>
+          </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/steam.png"/>
+          <strong><%= @user.steam %>
+          </strong></div>
+          </div>
+           <div class="card-item">
+           <div class="text-tag">
            <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/epic-games.png"/>
-           <div class="text-tag"><strong><%= @user.epic_game %></strong></div>
-           <br>
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/origin.png"/>
-           <div class="text-tag"><strong><%= @user.origin %></strong></div>
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/league-of-legends.png"/>
-           <div class="text-tag"><strong><%= @user.riot_games %></strong></div>
-           <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/discord-logo.png"/>
-           <div class="text-tag"><strong><%= @user.discord_tag %></strong></div>
-          
+           <strong><%= @user.epic_game %>
+           </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/origin.png"/>
+          <strong><%= @user.origin %>
+          </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/league-of-legends.png"/>
+          <strong><%= @user.riot_games %>
+          </strong></div>
+          </div>
+          <div class="card-item">
+          <div class="text-tag">
+          <img class="img-plateform" src="https://img.icons8.com/ios-filled/50/000000/discord-logo.png"/>
+          <strong><%= @user.discord_tag %>
+          </strong></div>
+          </div>
       </div>
     </div>
  

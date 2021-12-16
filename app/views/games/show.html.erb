@@ -1,46 +1,58 @@
-<br><br><br><br>
+<div class="jumbotron-show-game">
+ <div class="container-page-game">
+  <div class="fond-game">
+    <img src="<%= @game.img_url %>">
+    <h1><%=@game.name%></h1>
+   <em></em>
+  </div>
+ </div>
+</div>
+
+<div class="card-show">
+  <div class="card-body">
+        <% community = current_user.communities.find_by(game: @game)%>
+        <% if community.nil? %>
+        <form action="/communities" method="post" >
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
+            <input type="hidden" name="community[game_id]" value="<%= @game.id %>" >
+            <input type="submit" value="Rejoindre la commu du jeu">
+        </form>
 
 
-<p id="notice"><%= notice %></p>
+        <% else %>
 
-<tr>
+        <form action="<%= community_path(community) %>" method="post" >
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
+            <input type="hidden" name="_method" value="DELETE" >
+            <input type="submit" value="Quitter la commu du jeu">
+        </form>
 
-<td><%= @game.name %></td>       
-<td><%= @game.category %></td>
-<td><img src="<%= @game.img_url %>"></td>
+        <% end %>
+        
+        <p><strong>Il y a <%= @compteur %> joueurs dans cette communauté</strong></p>
+  </div>
+</div>
+      <% @all_commu.each do |communities| %>
+      <div class="card-players" style ="background-color: #f8f5f2;">
+        <div class="card-body-avatar">
+        <% if communities.user.avatar %> 
+         <%= image_tag communities.user.avatar, alt: 'avatar', :size => '220x150', style:"border-radius: 50%;"%>
+         <% end %>
+        </div>
+        <div class="card-body-player">
+            <p><strong>Pseudo:</strong><%= communities.user.last_name %></p>
+            <p><strong>Discord:</strong><%= communities.user.discord_tag %></p>
+            <p><strong>Description:</strong><%= communities.user.description %></p>
+            <p><a><%= link_to "En savoir plus", user_path(communities.user.id), class: "btn btn-link" %></a></p> 
+        </div>
+      </div>
+      <% end %>
 
-</tr>
+<p class="space"></p>
 
 
-
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
-
-
-il y a <%= @compteur %> personnes qui joue a ce jeux
-<% community = current_user.communities.find_by(game: @game)%>
-<% if community.nil? %>
-<form action="/communities" method="post" >
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
-    <input type="hidden" name="community[game_id]" value="<%= @game.id %>" >
-    <input type="submit" value="Rejoindre la commu du jeu">
-</form>
-
-<% else %>
-
-<form action="<%= community_path(community) %>" method="post" >
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
-    <input type="hidden" name="_method" value="DELETE" >
-    <input type="submit" value="Quitter la commu du jeu">
-</form>
-
-<% end %>
-
-<br><br>
-
- <h5>Les évènements a venir</h5>
- <br>
+ <h5><strong>Les évènements à venir</strong></h5>
+ 
 
 <div class="row align-item-center justify-content-center">
   <div class="col-sm-10">
@@ -51,16 +63,16 @@ il y a <%= @compteur %> personnes qui joue a ce jeux
           <% @events.each do |event| %>
             <div class="col-sm-5 mx-2 my-4">
               <div class="card">
-               
-                <div class="card-body">
-                  <h5 class="card-title"><%=event.title%></h5>
-                  <p class="card-text"><%=event.plateform%></p>
-                  <p class="card-text"><%=event.start_date%></p>
-                  <p class="card-text"><%=event.start_time_hours%>h<%=event.start_time_min%></p>
-                  <br>
-                  <p><a><%= link_to "En savoir plus", event_path(event.id), class: "btn btn-link" %></a></p>
-                  
-                </div>
+                
+                  <div class="card-body-event-players">
+                    <h6 class="card-title"><%=event.title%></h6>                  
+                    <p class="card-text">Plateforme: <%=event.plateform%></p>
+                    <p class="card-text">Date de l'event: <%=event.start_date%></p>
+                    <p class="card-text">Heure de l'event: <%=event.start_time_hours%>h<%=event.start_time_min%></p>
+                    <br>
+                    <p><a><%= link_to "En savoir plus", event_path(event.id), class: "btn btn-link" %></a></p>
+                    
+                  </div>
               </div>
             </div>
           <% end %>
@@ -72,32 +84,8 @@ il y a <%= @compteur %> personnes qui joue a ce jeux
 
 
 
-<div class="row align-item-center justify-content-center">
-    <div class="col-sm-10">
-      <div class="card">
-       
-        <div class="card-body">
-          <div class="row card-deck justify-content-center">
-            <% @all_commu.each do |communities| %>
-              <div class="col-sm-5 mx-2 my-4">
-                <div class="card">
-                 <% if communities.user %>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= communities.user.email %></h5>
-                   
-                    <br>
-                    <p><a><%= link_to "En savoir plus", user_path(communities.user.id), class: "btn btn-link" %></a></p>
-                    
-                  </div>
-                </div>
-              </div>
-            <% end %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+
   
 
 

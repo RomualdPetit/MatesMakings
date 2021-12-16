@@ -79,48 +79,65 @@
           Vos Plateformes gaming</h1>
           <div class="card-content">
             <div class="card-item">
-              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/xbox.png"/> 
-              <%= f.text_field :xbox, autofocus: true, autocomplete: "xbox" %></p>
+              <p>
+                <%= f.text_field :xbox, autofocus: true, autocomplete: "xbox" %>
+                <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/xbox.png"/> 
+              </p>
             </div>
             <div class="card-item">
-              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/play-station.png"/>
-              <%= f.text_field :psn, autofocus: true, autocomplete: "psn" %></p>
+              <p>
+                <%= f.text_field :psn, autofocus: true, autocomplete: "psn" %>
+                <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/play-station.png"/>
+              </p>
             </div>
             <div class="card-item">
-              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/nintendo-switch-logo.png"/>
-              <%= f.text_field :nintendo, autofocus: true, autocomplete: "nintendo" %></p>
+              <p>
+                <%= f.text_field :nintendo, autofocus: true, autocomplete: "nintendo" %>
+                <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/nintendo-switch-logo.png"/>
+              </p>
             </div>
             <div class="card-item">
-              <p><img class="img-edit" src="https://img.icons8.com/ios/50/000000/battle-net.png"/>
-              <%= f.text_field :battlenet, autofocus: true, autocomplete: "battlenet" %></p>
+              <p>
+                <%= f.text_field :battlenet, autofocus: true, autocomplete: "battlenet" %>
+                <img class="img-edit" src="https://img.icons8.com/ios/50/000000/battle-net.png"/>
+              </p>
             </div>
             <div class="card-item">
-              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/steam.png"/>
-              <%= f.text_field :steam, autofocus: true, autocomplete: "steam" %></p>
+              <p>
+                <%= f.text_field :steam, autofocus: true, autocomplete: "steam" %>
+                <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/steam.png"/>
+              </p>
             </div>
             <div class="card-item">
-              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/epic-games.png"/>
-              <%= f.text_field :epic_game, autofocus: true, autocomplete: "Epic Game" %></p>
+              <p>
+                <%= f.text_field :epic_game, autofocus: true, autocomplete: "Epic Game" %>
+                <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/epic-games.png"/>
+              </p>
             </div>
             <div class="card-item">
-              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/origin.png"/>
-              <%= f.text_field :origin, autofocus: true, autocomplete: "origin" %></p>
+              <p>
+                <%= f.text_field :origin, autofocus: true, autocomplete: "origin" %>
+                <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/origin.png"/>
+              </p>
             </div>
             <div class="card-item">
-              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/league-of-legends.png"/>
-              <%= f.text_field :riot_games, autofocus: true, autocomplete: "Riot Games" %></p>
+              <p>
+                <%= f.text_field :riot_games, autofocus: true, autocomplete: "Riot Games" %>
+                <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/league-of-legends.png"/>
+              </p>
             </div>
             <div class="card-item">
-              <p><img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/discord-logo.png"/>
-              <%= f.text_field :discord_tag, autofocus: true, autocomplete: "Discord" %></p>
+              <p>
+                  <%= f.text_field :discord_tag, autofocus: true, autocomplete: "Discord" %>
+                  <img class="img-edit" src="https://img.icons8.com/ios-filled/50/000000/discord-logo.png"/>
+              </p>
             </div>
           </div>
         </div>
-      </div>
-   </div>
-      <div class="actions">
+        <div class="actions-success">
         <%= f.submit "Mettre à jour", data: { disable_with: false }, class: "btn btn-primary" %>
         <%= link_to "Retour profil", user_path(current_user), class: "btn btn-secondary" %>
       </div>
-    
+      </div>
+   </div>
 <% end %>
