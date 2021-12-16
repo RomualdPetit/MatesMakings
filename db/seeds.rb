@@ -30,15 +30,15 @@ Game.create(
     )
 
     Game.create(
-        name: "Alexandra Ledermann 8 : Les Secrets du Haras",
-        category: "Mon petit poney",
-        img_url: "https://i.ytimg.com/vi/ngeO7he4XHg/maxresdefault.jpg"
+        name: "Farcry 6",
+        category: "FPS Survie",
+        img_url: "https://www.fun-academy.fr/wp-content/uploads/2021/08/Far-cry-6-gameplay.jpg"
     )
 
     Game.create(
         name: "Apex Legends",
         category: "battle royale",
-        img_url: "https://image.jeuxvideo.com/medias/155137/1551371304-2322-jaquette-avant.jpg"
+        img_url: "https://www.spiritgamer.fr/wp-content/uploads/2019/02/Apex-Legends-mise-en-avant.jpg"
     )
 
     Game.create(
