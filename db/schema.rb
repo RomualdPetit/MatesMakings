@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_12_14_134805) do
     t.string "plateform"
     t.integer "start_time_hours"
     t.integer "start_time_min"
-    t.integer "game_number"
+    t.string "game_name"
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
