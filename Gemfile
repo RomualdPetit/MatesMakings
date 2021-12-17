@@ -35,7 +35,7 @@ gem 'jquery-rails', '~> 4.4'
 gem 'dotenv-rails'
 gem "aws-sdk-s3", require: false
 gem 'simple_form'
-gem 'sendgrid-ruby'
+#gem 'sendgrid-ruby'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
