@@ -185,7 +185,7 @@ input[type="text"] {
 }
 
 .event-container form .field input.field-hour,
-.event-container form .field input.field-minutes{
+.event-container form .field input.field-minutes {
   width: 150px;
 }
 
@@ -1422,17 +1422,18 @@ input[type="file"]::-webkit-file-upload-button {
   padding: 8px;
 }
 
-.new-game-container{
+.new-game-container {
   padding-top: 50px;
 }
-.new-game-container .field{
+.new-game-container .field {
   margin: 0 auto;
 }
-.new-game-container h1{
-  padding-bottom: 0!important;
+.new-game-container h1 {
+  padding-bottom: 0 !important;
 }
-.new-game-container li{
+.new-game-container li {
   list-style-type: none;
 }
-.new-game-container p{
+.new-game-container p {
   margin: 0 auto;
+}
