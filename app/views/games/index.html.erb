@@ -14,7 +14,7 @@
     <% @games.each do |game| %> 
     <div class="card-body-game">
     <h3 class="title-event"><strong><%= game.name %></strong></h3>
-      <div class="card-body">
+      <div class="card-container-game">
         <img src="<%= game.img_url %>">
         <div class="action-game">
         <%= link_to 'Voir', game, class: "btn btn-primary" %>

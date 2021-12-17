@@ -1,4 +1,4 @@
-
+<div class="show-event-container">
 <div class="card-event" style ="background-color: #f8f5f2;">
   <p id="notice"><%= notice %></p>
   <h1 class="card-title"><%= @event.title %>, crée par <%= @event.user.last_name %></h1>
@@ -8,10 +8,12 @@
       <h3>Description</h3> <div class="text-tag-event"><%= @event.description %></div>
       <h3>Date</h3> <div class="text-tag-event"><%= @event.start_date %></div>
       <h3>Jeu</h3> <div class="text-tag-event"><%= @event.game.name %></div>
-      <br>
+      
+      <div class="actions">
       <%= link_to 'Editer', edit_event_path(@event), class: "btn btn-primary" %>
       <%= link_to 'Retour aux évenements', events_path, class: "btn btn-info" %>
-      <br>
+      </div>
+
       <em>il y a <%= @compteur %> personnes inscrites</em>
       <% participation = current_user.participations.find_by(event: @event)%>
       <% if participation.nil? %>
@@ -35,15 +37,32 @@
   <div class="card-body">
     <% @all_participation.each do |participations| %>
       <% if participations.user %>
-      <div class="card-body-event">
-        <h3 class="title-event"><strong><%= participations.user.last_name %></strong></h3>
-        <p><strong>Description</strong></p>
-        <p><em><%= participations.user.description %></em></p>
-        <p><strong>Discord</strong><p>
-        <p><%= participations.user.discord_tag %></p>
-        <p><a><%= link_to "En savoir plus", user_path(participations.user.id), class: "btn btn-primary" %></a></p>                
+      <div class="card-players">
+        <div class="card-body-avatar">
+          <p class="title-min-event">Participant</p>
+        </div>
+
+        <div class="card-body-player">
+          <p><strong>Pseudo</strong></p>
+          <div class="text-tag">
+          <p><em><%= participations.user.last_name %></em>
+        </div></p>
+
+        <div class="card-body-player">
+          <p><strong>Description</strong></p>
+          <div class="text-tag">
+          <p><em><%= participations.user.description %></em>
+          </div></p>
+
+          <p><strong>Discord</strong><p>
+          <div class="text-tag">
+          <p><%= participations.user.discord_tag %></p>
+          </div>
+          <p><a><%= link_to "En savoir plus", user_path(participations.user.id), class: "btn btn-primary" %></a></p>
+        </div>               
       </div>
       <% end %>
       <% end %>
   </div>
+</div>
 </div>

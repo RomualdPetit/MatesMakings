@@ -29,6 +29,10 @@
   min-height: calc(100vh - 186px);
 }
 
+.show-event-container {
+  padding-top: 40px;
+}
+
 header {
   width: 300px;
   height: 100vh;
@@ -349,6 +353,12 @@ input[type="text"] {
   box-shadow: -2px 3px 7px -1px #000000;
 }
 
+.title-min-event {
+  color: white;
+  font-size: 20px;
+  font-family: "Quantico", sans-serif !important;
+}
+
 .game-category {
   margin: 0 10px;
 }
@@ -359,6 +369,21 @@ input[type="text"] {
   transform: translate(-50%, -50%);
   left: 50%;
   width: 100%;
+}
+
+.soon-event {
+  background-color: #24262b;
+  color: rgb(223, 223, 223);
+  overflow: hidden;
+  height: 200px;
+  -webkit-box-shadow: -2px 3px 7px -1px #000000;
+  box-shadow: -2px 3px 7px -1px #000000;
+  margin: 100px auto 100px;
+}
+
+.soon-event h1 {
+  margin-top: 70px;
+  font-size: 60px;
 }
 
 h1,
@@ -448,6 +473,17 @@ h1.card-title {
   height: 37px;
   min-width: 120px;
   font-family: "Quantico", sans-serif;
+  font-size: 16px;
+}
+
+.btn-danger {
+  background-color: #800707 !important;
+  border-color: #800707 !important;
+  margin: 20px;
+  height: 37px;
+  min-width: 120px;
+  font-family: "Quantico", sans-serif;
+  outline: none;
 }
 
 .btn-secondary {
@@ -465,6 +501,8 @@ h1.card-title {
   margin: 20px;
   background-color: #8f5960;
   border: none;
+  font-family: "Quantico", sans-serif;
+  font-size: 16px;
 }
 
 .btn-link {
@@ -791,6 +829,7 @@ a:hover,
   border: 1px solid #078080;
   padding: 8px;
   margin: 5px auto 5px;
+  font-size: 18px;
 }
 
 .card-home-container {
@@ -1075,6 +1114,14 @@ select {
     width: calc(100% - 20px);
     max-width: auto;
   }
+  .card-games {
+    width: calc(100% - 20px);
+  }
+  .card-body-game {
+    width: calc(100% - 20px);
+    margin-bottom: 20px;
+    height: a;
+  }
   .edit_user div {
     margin-bottom: 20px;
   }
@@ -1258,6 +1305,13 @@ select {
   transform: translateY(-50%);
 }
 
+.card-container-game {
+  overflow: hidden;
+  max-height: 140px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 .card-players {
   border-radius: 15px;
   justify-content: center;
@@ -1292,6 +1346,7 @@ select {
 }
 
 .card-body-avatar {
+  height: 50px;
   background-color: #333;
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
@@ -1311,9 +1366,8 @@ select {
 }
 
 .card-body-player > p {
-  padding-right: 60px;
   font-family: "Quantico", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .card-body-player > a {
