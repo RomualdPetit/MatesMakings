@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def create
-		@review = Review.new(review_params)        
+		@review = Review.new(review_params)       
 		@review.user_review_id = @user_review.id
 		@review.user_id = current_user.id
 
@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
 			redirect_to root_path
 		else
 			render 'new'
-            puts "##################################################"
+            
 		end
 	end
 
@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
 
 	def update
 		if @review.update(review_params)
-			redirect_to book_path(@book)
+			redirect_to root_path()
 		else
 			render 'edit'
 		end
@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
 
 	def destroy
 		@review.destroy
-		redirect_to book_path(@book)
+		redirect_to root_path()
 	end
 
 	private
@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
 		end
 
 		def find_user
-			@user_review = UserReview.find_by(params[:id])
+			@user_review = UserReview.find(params[:user_review_id])
 		end
 
 		def find_review

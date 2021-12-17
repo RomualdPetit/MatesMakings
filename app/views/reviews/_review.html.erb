@@ -1,10 +1,42 @@
-<div class="review">
 
-	<%= review.rating %>
+
+<br>
+<% if review.rating == 1 %>
+<i class="fa fa-star gold"></i>
+
+<% elsif review.rating == 2 %>
+<i class="fa fa-star gold"></i>
+<i class="fa fa-star gold"></i>
+
+
+<% elsif review.rating == 3 %>
+<i class="fa fa-star gold"></i>
+<i class="fa fa-star gold"></i>
+<i class="fa fa-star gold"></i>
+
+
+<% elsif review.rating == 4 %>
+<i class="fa fa-star gold"></i>
+<i class="fa fa-star gold"></i>
+<i class="fa fa-star gold"></i>
+<i class="fa fa-star gold"></i>
+
+<% elsif review.rating == 5 %>
+<i class="fa fa-star gold"></i>
+<i class="fa fa-star gold"></i>
+<i class="fa fa-star gold"></i>
+<i class="fa fa-star gold"></i>
+<i class="fa fa-star gold"></i>
+
+
+<% end %>
+
+<div class="review-rating" data-score="<%= review.rating %>"></div>
+	
 	<p class="review-comment"><%= review.comment %></p>
 
 
-	<% if user_signed_in? %>
+	<% if current_user %>
 		<% if review.user_id == current_user.id %>
 
 			<div class="links btn-group">
@@ -16,5 +48,4 @@
 		
 		<% end %>	
 	<% end %>
-
-</div>		
+		

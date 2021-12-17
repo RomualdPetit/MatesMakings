@@ -12,7 +12,15 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user_review = UserReview.find_by(user_id: @user.id)
-  
+    ratings = []
+
+    @review_user = Review.where(user_review_id: @user.id)
+    @review_user.each do |review|
+      ratings.push(review.rating)
+    end
+    @average = ratings.inject{ |sum, el| sum + el }.to_f / ratings.size
+
+    puts @average
   end
 
   def create
@@ -64,7 +72,7 @@ class UsersController < ApplicationController
 
   def authenticate_user
     unless current_user
-      flash[:danger] = "Tu n'est pas connecté"
+      flash[:danger] = "Tu n'es pas connecté"
       redirect_to new_user_session_path
     end
   end

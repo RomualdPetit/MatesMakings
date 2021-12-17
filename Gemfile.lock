@@ -197,6 +197,7 @@ GEM
       railties (>= 5.0)
     rexml (3.2.5)
     ruby_dep (1.5.0)
+    ruby_http_client (3.5.2)
     rubyzip (2.3.2)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -215,6 +216,8 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
+    sendgrid-ruby (6.6.0)
+      ruby_http_client (~> 3.4)
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -229,6 +232,8 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sweetify (2.0.0)
+      actionpack
     table_print (1.5.7)
     thor (1.1.0)
     thread_safe (0.3.6)
@@ -277,9 +282,11 @@ DEPENDENCIES
   rails (~> 5.2.6)
   sass-rails (~> 5.0)
   selenium-webdriver
+  sendgrid-ruby
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  sweetify
   table_print
   turbolinks (~> 5)
   tzinfo-data

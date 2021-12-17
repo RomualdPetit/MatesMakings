@@ -8,8 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="icon" type="url" href="https://media.discordapp.net/attachments/232197634981363714/919989173702783086/Logo_16x16.png" />
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -38,10 +41,10 @@
               </li>
             </ul>
           </li>
-          <li class="jeux-btn">
+          <li class="game-btn">
             <span class="element-title">Tous nos jeux</span>
             <span class="fas fa-caret-down second"></span>
-            <ul class="jeux-show">
+            <ul class="game-show">
               <li><a href="/games/1">GTA 5</a></li>
               <li><a href="/games/2">Rocket League</a></li>
               <li><a href="/games/3">Fortnite</a></li>
@@ -56,7 +59,7 @@
         <div class="actions-header">
           <ul class="actions-list">
             <% if current_user %>
-              <li><%= button_to "Déconnexion", destroy_user_session_path(current_user), method: :delete, class: 'btn btn-danger', style: "margin: 10px" %></li>
+              <li><%= link_to "Déconnexion", destroy_user_session_path(), method: :delete, class: 'btn btn-danger', style: "margin: 10px" %></li>
               <li class="profile"><%=link_to "Mon profil", user_path(current_user), class: 'btn btn-outline-secondary' %></li>
             <% else %>
               <li><span class="glyphicon glyphicon-user"></span><%=link_to "Inscription", new_user_registration_path(), class: 'nav-link' %></li>
@@ -75,26 +78,27 @@
         <div class="row-footer">
           <div class="footer-col">
             <div class="footer-element">
-              <h4>Equipe</h4>
+              <h4>Equipes</h4>
               <ul>
-                <li><a href="#">A propos de nous</a></li>
+                <li><a href="https://www.linkedin.com/in/lucas-derhore-591549150/">Derhore Lucas</a></li>
+                <li><a href="https://www.linkedin.com/in/justin-mbodje-881243222/">Mbodje Justin</a></li>
               </ul>
             </div>
           </div>
           <div class="footer-col">
             <div class="footer-element">
-              <h4>Aide</h4>
+              <h4>100Code</h4>
               <ul>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Politique de confidentialité</a></li>
+                 <li><a href="https://www.linkedin.com/in/romuald-petit-b6a248222/">Petit Romuald</a></li>
               </ul>
             </div>
           </div>
           <div class="footer-col">
             <div class="footer-element">
-              <h4>Suivez nous</h4>
+              <h4>&copy; 2021</h4>
               <ul>
-                <li><a href="#">100code@yoplait.com"</a></li>
+                <li><a href="https://www.linkedin.com/in/valentin-derhore-90b248222/">Derhore Valentin</a></li>
+                <li><a href="https://www.linkedin.com/in/quentin-mainieri-12524a222/">Mainieri Quentin</a></li>
               </ul>
             </div>
           </div>

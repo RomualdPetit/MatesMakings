@@ -1,6 +1,15 @@
-<%= simple_form_for([@user_review, @user_review.reviews.build]) do |f| %>
-	<%= f.input :rating %>
-	<%= f.input :comment %>
-	<%= f.button :submit, :class => "btn-custom2" %>
-<% end %>
+
+
+	<div class="card-reviews">
+		<div class="card-title-reviews">
+			<h1>Laisse un commentaire !</h1>
+			<div class="card-body">
+				<%= simple_form_for([@user_review, @user_review.reviews.build]) do |f| %>
+					<b>Note de 1 à 5</b><%= f.select :rating, options_for_select(["", "1", "2", "3", "4", "5"]) %>
+					<%= f.input :comment, label: "Laisse un commentaire à ton mate" %>
+					<%= f.button :submit, :class => "btn btn-primary",  in: 1..200 %>
+				<% end %>
+			</div>
+		</div>
+	</div>
 

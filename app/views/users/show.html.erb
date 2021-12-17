@@ -2,7 +2,7 @@
  <link rel="stylesheets" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
+  
 
   
 
@@ -20,12 +20,13 @@
           </div>
           <%else%>
         </center>
-
+        
         <p>Ajoute ton avatar</p>
         <%end%>
 
         <br>
-
+        
+        
         <center>
           <%= form_tag user_avatars_path(@user), multipart: true  do %>
             <%= submit_tag "Mettre à jour", class: "btn btn-primary"%>
@@ -34,6 +35,31 @@
         </center>
 
         <div class="row">
+        
+        <% if @review_user.count > 1 %>
+            <h3>
+            <% if @average < 2 %>
+            <i class="fas fa-star "></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+            <% elsif @average.round(3) > 1.75 && @average.round(3) < 2.25 %> 
+            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+            <% elsif @average.round(3) > 2.25 && @average.round(3) < 2.75 %> 
+            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+            <% elsif @average.round(3) > 2.75 && @average.round(3) < 3.25 %> 
+            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+            <% elsif @average.round(3) > 3.25 && @average.round(3) < 3.75 %> 
+            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+            <% elsif @average.round(3) > 3.75 && @average.round(3) < 4.25 %> 
+            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="far fa-star"></i>
+            <% elsif @average.round(3) > 4.25 && @average.round(3) < 4.75 %> 
+            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star-half-alt"></i>
+            <% elsif @average.round(3) == 5 %> 
+            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i>
+            basée sur <%= @review_user.count %> notations</h3>
+            <% else %>
+            <p>Pas assez de notations</p>
+          <% end %>
+        <% end %>
+
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		        <div class="form-group">
               <h3>Pseudo</h3> <strong> <div class="text-tag"><%= @user.last_name %> </div> </strong>
@@ -137,26 +163,21 @@
    <div class="star">
      <div class="card-star">
        <div class="card-body">
-       
+        
+        <h1 class="card-tittle">
+          <img src="https://img.icons8.com/nolan/64/filled-star.png"/>
+          Notation</h1>
+        <br>
+       </div> 
         <div>
+        
+        
       <%= link_to "ajouter un avis", new_user_review_review_path(@user_review) %>
-
+<br><br>
       <%= render @user_review.reviews %>
           </div>
 
-          <h1 class="card-tittle">
-          <img src="https://img.icons8.com/nolan/64/filled-star.png"/>
-          Notation</h1>
-          <div class="rating">
-	          <div class="stars">
-		          <i class="fa fa-star gold"></i>
-		          <i class="fa fa-star gold"></i>
-		          <i class="fa fa-star"></i>
-		          <i class="fa fa-star"></i>
-		          <i class="fa fa-star"></i>
-	          </div>
-          </div>
-       </div> 
+         
      </div>
    </div>
   </div>
@@ -164,4 +185,3 @@
   
  <% end %>
 
-  

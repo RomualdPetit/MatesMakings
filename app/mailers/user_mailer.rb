@@ -1,9 +1,9 @@
 class UserMailer < ApplicationMailer
-    default from: 'matesmakings@gmail.com'
- 
+  default from: 'matesmaking@hotmail.com'
+
   def welcome_email(user)
     #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
-    @user = user 
+    @user = user
 
     #on définit une variable @url qu'on utilisera dans la view d’e-mail
     @url  = 'https://matesmakings.herokuapp.com/sign_in' 

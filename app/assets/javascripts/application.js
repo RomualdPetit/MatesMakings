@@ -1,3 +1,7 @@
+//= require jquery
+//= require jquery_ujs
+
+
 $(document).ready(function () {
   $(".menu-burger").on("click", () => {});
 });
@@ -12,12 +16,12 @@ $(document).ready(function () {
     $(".event-show").removeClass("show");
   });
 
-  $(".jeux-btn").mouseover((e) => {
-    $(".jeux-show").addClass("show");
+  $(".game-btn").mouseover((e) => {
+    $(".game-show").addClass("show");
   });
 
-  $(".jeux-btn").mouseleave((e) => {
-    $(".jeux-show").removeClass("show");
+  $(".game-btn").mouseleave((e) => {
+    $(".game-show").removeClass("show");
   });
 
   $("header .fa-times").click((e) => {
@@ -26,7 +30,7 @@ $(document).ready(function () {
   });
 
   $("body i").click((e) => {
-    $("header").css({ width: "300px", opacity: "1" });
+    $("header").css({ width: "300px", opacity: "1", display: "block" });
     $("main.body").css({ marginLeft: "300px", width: "calc(100vw - 300px)" });
   });
 

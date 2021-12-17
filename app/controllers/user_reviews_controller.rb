@@ -8,7 +8,6 @@ class UserReviewsController < ApplicationController
 		if @user.reviews.blank?
 			@average_review = 0
 		else
-			@average_review = @book.reviews.average(:rating).round(2)
 		end
 	end
 
@@ -64,7 +63,5 @@ class UserReviewsController < ApplicationController
     def set_user_review
       @user_review = UserReview.find(params[:id])
     end
-
-   
-   
+ 
 end

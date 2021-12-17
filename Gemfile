@@ -26,16 +26,18 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'sweetify'
 gem 'table_print'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'devise'
-gem 'letter_opener'
+gem "letter_opener", group: :development
 gem 'bootstrap-sass'
 gem 'jquery-rails', '~> 4.4'
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails'
 gem "aws-sdk-s3", require: false
 gem 'simple_form'
+gem 'sendgrid-ruby'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
