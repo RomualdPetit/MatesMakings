@@ -174,7 +174,21 @@ input[type="text"] {
 .registration-container {
   padding-top: 40px;
 }
-
+.new-game-container{
+  padding-top: 50px;
+}
+.new-game-container .field{
+  margin: 0 auto;
+}
+.new-game-container h1{
+  padding-bottom: 0!important;
+}
+.new-game-container li{
+  list-style-type: none;
+}
+.new-game-container p{
+  margin: 0 auto;
+}
 .reviews-container {
   padding-top: 200px;
 }

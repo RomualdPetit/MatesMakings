@@ -1,8 +1,8 @@
 class GamesController < ApplicationController
   include ApplicationHelper
   before_action :set_game, only: %i[ show edit update destroy ]
-  before_action :isAdmin?, only: [:create, :destroy, :edit, :new]
-  before_action :authenticate_user!, only: [:create, :destroy, :show] 
+  before_action :isAdmin?, only: [:create, :destroy, :edit]
+  before_action :authenticate_user!, only: [:create, :destroy, :show, :new] 
 
   # GET /games or /games.json
   def index
@@ -78,18 +78,8 @@ class GamesController < ApplicationController
       params.require(:game).permit(:name, :category)
     end
 
-
-
- def authenticate_user
-  unless current_user
-    flash[:danger] = "Tu n'est pas connecté"
-    redirect_to new_user_session_path
-  end
-end
-
-
 def isAdmin?
-  
+
   unless current_user && current_user.email = "100code@street.bg"
 
     flash[:danger] = "Tu n'as pas accès a cette page"
@@ -97,6 +87,12 @@ def isAdmin?
   end
 end
 
+def authenticate_user
 
+  unless current_user
+    flash[:danger] = "Tu n'est pas connecté"
+    redirect_to new_user_session_path
+  end
+end
 end
 
