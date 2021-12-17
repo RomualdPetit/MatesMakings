@@ -46,23 +46,24 @@
           <p><strong>Pseudo</strong></p>
           <div class="text-tag">
           <p><em><%= participations.user.last_name %></em>
-        </div></p>
+          </div></p>
 
-        <div class="card-body-player">
+        
           <p><strong>Description</strong></p>
           <div class="text-tag">
           <p><em><%= participations.user.description %></em>
           </div></p>
 
+        
           <p><strong>Discord</strong><p>
           <div class="text-tag">
           <p><%= participations.user.discord_tag %></p>
           </div>
+
           <p><a><%= link_to "En savoir plus", user_path(participations.user.id), class: "btn btn-primary" %></a></p>
         </div>               
       </div>
       <% end %>
       <% end %>
   </div>
-</div>
 </div>
