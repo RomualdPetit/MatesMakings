@@ -44,19 +44,14 @@
 		              <div class="form-group">
                     <div class="field">
                      <%= f.label :Heure, style: "display: inline block;" %><br>
-                     <%= f.text_field :start_time_hours, autofocus: true, autocomplete: "Heure" %>
+                     <div style="display: flex; flex-wrap: nowrap; font-size:12px; width:10px;">
+                     <%= f.text_field :start_time_hours, autofocus: true, autocomplete: "Heure" , step: 1, in: 0..23, class: 'field-hour' %>h
+                      <%= f.text_field :start_time_min, autofocus: true, autocomplete: "Minute", step: 5, in: 0..59, class: 'field-minutes' %>min
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		              <div class="form-group">
-                    <div class="field">
-                     <%= f.label :Minutes, style: "display: inline block;" %><br>
-                     <%= f.text_field :start_time_min, autofocus: true, autocomplete: "Minute" %>
-                   </div>
-                  </div>
-                </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		              <div class="form-group">

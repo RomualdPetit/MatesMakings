@@ -5,11 +5,9 @@
 		<h1>Edit Review</h1>
 
 		<%= simple_form_for([@user_review, @review]) do |f| %>
-			<div id="rating-form">
-				<label>Rating</label>
-			</div>
-			<%= f.input :comment %>
-			<%= f.button :submit, :class => "btn-custom2" %>
+				<b>Change ta note</b><%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
+					<%= f.input :comment, label: "Change ton com içi" %>
+					<%= f.button :submit, :class => "btn btn-primary",  in: 1..200 %>
 		<% end %>	
 
 	</div>

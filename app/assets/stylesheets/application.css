@@ -180,6 +180,11 @@ input[type="text"] {
   margin-bottom: 100px;
 }
 
+.event-container form .field input.field-hour,
+.event-container form .field input.field-minutes{
+  width: 150px;
+}
+
 .card-up {
   border-radius: 15px;
   justify-content: center;

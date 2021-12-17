@@ -36,7 +36,7 @@
 
         <div class="row">
         
-        
+        <% if @review_user.length > 1 %>
             <h3>
             <% if @average < 2 && @average > 1 %>
             <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star-half-empty.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
@@ -57,9 +57,10 @@
             
             <% else %>
             <p>Tu peux noter ce joueur</p>  <%= @average %>
-          <% end %> <br>
-          basée sur <%= @review_user.count %> notations</h3>
+          <% end %> <br> basée sur <%= @review_user.count %> notations</h3>
           
+        <% end %>
+         
 
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		        <div class="form-group">
