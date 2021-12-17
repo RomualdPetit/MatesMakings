@@ -31,7 +31,7 @@
         <%= link_to  image_tag('https://cdn.discordapp.com/attachments/401527496631255051/920761750352183347/Blanc.png'), root_path %> 
         </li>
         <li><%=link_to "Jeux disponible", games_path %></li>
-          <li class="event-btn"><span class="element-title">Evênements</span>
+          <li class="event-btn"><span class="element-title">Evénements</span>
             <span class="fas fa-caret-down first"></span>
             <ul class="event-show">
               <li>
@@ -46,12 +46,12 @@
             <span class="element-title">Tous nos jeux</span>
             <span class="fas fa-caret-down second"></span>
             <ul class="game-show">
-            <% @games_side.each do |game| %>
-              <li><%= link_to "#{game.name}", game %></li>
+              <% @games_side.each do |game| %>
+                <li><%= link_to "#{game.name}", game %></li>   
               <% end %>
-             
             </ul>
           </li>
+          <li><%=link_to "Propose un jeu", new_game_path %></li>
         </ul>
         <div class="actions-header">
           <ul class="actions-list">
