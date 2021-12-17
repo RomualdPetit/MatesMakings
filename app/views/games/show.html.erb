@@ -33,14 +33,14 @@
   </div>
 </div>
       <% @all_commu.each do |communities| %>
-      <div class="card-players" style ="background-color: #f8f5f2;">
+      <div class="card-players" style ="background-color: #f8f5f2;"> 
         <div class="card-body-avatar">
         <% if communities.user.avatar %> 
-        <%= image_tag communities.user.avatar, alt: 'avatar', :size => '135x135', style:"border-radius: 50%;" %>
-          <% else %>
-          <img src="app/assets/images/default-avatar.png">
-          <% end %>
-        
+          <%= image_tag communities.user.avatar %>
+        <% elsif communities.user.avatar == nil %>
+          <p> Edite ton Avatar </p>
+        <% end %>
+      
         </div>
 
 
