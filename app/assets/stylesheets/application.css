@@ -1421,3 +1421,18 @@ input[type="file"]::-webkit-file-upload-button {
   border: 1px solid #49354c;
   padding: 8px;
 }
+
+.new-game-container{
+  padding-top: 50px;
+}
+.new-game-container .field{
+  margin: 0 auto;
+}
+.new-game-container h1{
+  padding-bottom: 0!important;
+}
+.new-game-container li{
+  list-style-type: none;
+}
+.new-game-container p{
+  margin: 0 auto;
