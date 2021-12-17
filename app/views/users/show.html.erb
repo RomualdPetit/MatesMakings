@@ -21,16 +21,17 @@
           <%else%>
         </center>
         
-        <p>Ajoute ton avatar</p>
+        <img src="https://img.icons8.com/office/80/000000/controller.png"/>
         <%end%>
 
         <br>
         
-        
+        <% if current_user.id == @user.id %>
         <center>
           <%= form_tag user_avatars_path(@user), multipart: true  do %>
             <%= submit_tag "Mettre à jour", class: "btn btn-primary"%>
             <%= file_field_tag :avatar %>
+          <% end %>
           <% end %>
         </center>
 
@@ -43,15 +44,15 @@
             <% elsif @average > 1.75 && @average < 2.25 %> 
             <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
             <% elsif @average >= 2.25 && @average < 2.75 %> 
-            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><<img src="https://img.icons8.com/fluency/48/000000/star-half-empty.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
+            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star-half-empty.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
             <% elsif @average >= 2.75 && @average < 3.25 %> 
             <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
             <% elsif @average >= 3.25 && @average < 3.75 %> 
-            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><<img src="https://img.icons8.com/fluency/48/000000/star-half-empty.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
+            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star-half-empty.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
             <% elsif @average >= 3.75 && @average < 4.25 %> 
             <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
             <% elsif @average >= 4.25 && @average < 4.75 %> 
-            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><<img src="https://img.icons8.com/fluency/48/000000/star-half-empty.png"/>
+            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star-half-empty.png"/>
             <% elsif @average == 5 %> 
             <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/>
             
@@ -91,7 +92,9 @@
         <div class="form-group">
           <h3 class="card-title" style="color:#49354c">Description et Disponibilitées </h3> <strong><div class="text-tag"><%= @user.description %></div></strong>
         </div>
+        <% if current_user.id == @user.id %>
         <%= link_to "Editer mon profil", edit_user_path(), class: "btn btn-primary"%>
+        <% end %>
       </div>
     </div>
   </div>
@@ -173,12 +176,12 @@
        </div> 
         <div>
         
-        
+        <% if current_user.id != @user.id %>
       <%= link_to "ajouter un avis", new_user_review_review_path(@user_review) %>
 <br><br>
       <%= render @user_review.reviews %>
           </div>
-
+        <% end %>
          
      </div>
    </div>
