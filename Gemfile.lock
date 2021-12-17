@@ -228,8 +228,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sweetify (2.0.0)
-      actionpack
     table_print (1.5.7)
     thor (1.1.0)
     thread_safe (0.3.6)
@@ -281,7 +279,6 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
-  sweetify
   table_print
   turbolinks (~> 5)
   tzinfo-data
