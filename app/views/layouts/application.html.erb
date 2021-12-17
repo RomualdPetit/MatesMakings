@@ -46,14 +46,10 @@
             <span class="element-title">Tous nos jeux</span>
             <span class="fas fa-caret-down second"></span>
             <ul class="game-show">
-              <li><a href="/games/1">GTA 5</a></li>
-              <li><a href="/games/2">Rocket League</a></li>
-              <li><a href="/games/3">Fortnite</a></li>
-              <li><a href="/games/4">FarCry 6</a></li>
-              <li><a href="/games/5">Apex Legends</a></li>
-              <li><a href="/games/6">Call of Duty: Vanguard</a></li>
-              <li><a href="/games/7">Battlefield 2042</a></li>
-              <li><a href="/games/8">FIFA13</a></li>
+            <% @games_side.each do |game| %>
+              <li><%= link_to "#{game.name}", game %></li>
+              <% end %>
+             
             </ul>
           </li>
         </ul>
