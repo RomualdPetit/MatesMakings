@@ -35,20 +35,28 @@
       <% @all_commu.each do |communities| %>
       <div class="card-players" style ="background-color: #f8f5f2;"> 
         <div class="card-body-avatar">
-        <% if communities.user.avatar %> 
-          <%= image_tag communities.user.avatar %>
-        <% elsif communities.user.avatar == nil %>
-          <p> Edite ton Avatar </p>
-        <% end %>
+        
       
         </div>
 
 
         <div class="card-body-player">
-            <p><strong>Pseudo:  </strong><%= communities.user.last_name %></p>
-            <p><strong>Discord:  </strong><%= communities.user.discord_tag %></p>
-            <p><strong>Notation:  </strong><%= communities.user.description %></p>
-            <a><%= link_to "En savoir plus", user_path(communities.user.id), class: "btn btn-link" %></a>
+            <p><strong>Pseudo </strong>
+            <div class="text-tag">
+              <%= communities.user.last_name %>
+            </div></p>
+
+            <p><strong>Discord </strong>
+            <div class="text-tag">
+            <%= communities.user.discord_tag %>
+            </div></p>
+
+            <p><strong>Type </strong>
+            <div class="text-tag">
+            <%= communities.user.player_type%>
+            </div></p>
+
+            <a><%= link_to "En savoir plus", user_path(communities.user.id), class: "btn btn-primary" %></a>
         </div>
       </div>
       <% end %>

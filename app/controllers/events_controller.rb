@@ -53,7 +53,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: "Ton événement à été modifié." }
+        format.html { redirect_to @event, notice: "Ton évenement à été modifié" }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -66,7 +66,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: "Ton événement à été détruit." }
+      format.html { redirect_to events_url, notice: "Ton évenement à été détruit" }
       format.json { head :no_content }
     end
   end
@@ -86,7 +86,7 @@ class EventsController < ApplicationController
 
  def authenticate_user
   unless current_user
-    flash[:danger] = "Tu n'est pas connecté"
+    flash[:danger] = "Tu n'es pas connecté"
     redirect_to new_user_session_path
   end
 end

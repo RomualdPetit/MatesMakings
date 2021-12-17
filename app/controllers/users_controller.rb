@@ -72,7 +72,7 @@ class UsersController < ApplicationController
 
   def authenticate_user
     unless current_user
-      flash[:danger] = "Tu n'est pas connecté"
+      flash[:danger] = "Tu n'es pas connecté"
       redirect_to new_user_session_path
     end
   end
