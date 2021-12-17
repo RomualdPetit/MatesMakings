@@ -26,7 +26,6 @@
 }
 
 .global-container {
-  
   min-height: calc(100vh - 186px);
 }
 
@@ -208,7 +207,7 @@ input[type="text"] {
 }
 
 .card-reviews select {
-  box-shadow: 0px 0px 13px 1px rgb(0 0 0 / 55%);
+  box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 1);
   width: 50px;
   margin-left: 20px;
 }
@@ -230,7 +229,7 @@ input[type="text"] {
 }
 
 .numeric {
-  box-shadow: 0px 0px 13px 1px rgb(0 0 0 / 55%);
+  box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 1);
   border-radius: 5px;
   border: none;
   text-decoration: none;
@@ -242,7 +241,7 @@ input[type="text"] {
   margin-bottom: 15px;
 }
 
-.card-login .field.remember label{
+.card-login .field.remember label {
   font-size: 18px;
 }
 .card-event {
@@ -402,7 +401,6 @@ h1.card-title {
 .jumbotron-game h1 {
   text-shadow: 1px 1px 8px #000000;
   color: #ffffff;
-  /* background: rgba(0, 0, 0, 0.3); */
 }
 
 .text-jumb {
@@ -470,7 +468,7 @@ h1.card-title {
 }
 
 .btn-link {
-  font-family: 'Quantico', sans serif;
+  font-family: "Quantico", sans serif;
   margin-top: 15px;
   border: solid 1px #078080;
   border-radius: 15px;
@@ -1114,7 +1112,7 @@ select {
     margin: 0;
     padding-top: 50px;
   }
-  .global-container{
+  .global-container {
     min-height: auto;
   }
   header {
@@ -1125,7 +1123,7 @@ select {
     left: 25px;
     top: 8px;
   }
-  .index{
+  .index {
     padding: 0 10px;
   }
   .index::before {
@@ -1141,14 +1139,14 @@ select {
   .navbar-header {
     margin: 0 !important;
   }
-  .card-login{
+  .card-login {
     width: calc(100% - 20px);
     max-width: auto;
   }
-  .edit_user div{
+  .edit_user div {
     margin-bottom: 20px;
   }
-  .description{
+  .description {
     margin-bottom: 20px;
   }
   .navbar-brand {
@@ -1159,7 +1157,7 @@ select {
   .navbar-brand:hover {
     transform: scale(1) !important;
   }
-  .events-jumbotron{
+  .events-jumbotron {
     padding: 0 10px;
   }
   .navbar-right {
@@ -1176,29 +1174,29 @@ select {
     display: inline-block;
     vertical-align: text-bottom;
   }
-  .jumbotron{
+  .jumbotron {
     max-width: 100%;
     margin: 0 auto 0;
   }
-  .card-home{
+  .card-home {
     padding: 25px 0 10px;
   }
-  .registration-container{
+  .registration-container {
     padding: 40px 10px;
   }
-  .registration-container input{
+  .registration-container input {
     width: 100%;
   }
-  .registration-container .card-up{
+  .registration-container .card-up {
     width: 100%;
   }
-  .card-login .field input:not([type="checkbox"]){
+  .card-login .field input:not([type="checkbox"]) {
     width: 100%;
   }
-  main .card-home .card-body{
+  main .card-home .card-body {
     padding: 0;
   }
-  main .card-home .card-title{
+  main .card-home .card-title {
     width: 100%;
     position: relative;
     left: auto;
@@ -1206,13 +1204,13 @@ select {
     margin: 0;
   }
   main .card-home:nth-child(2n + 0),
-  main .card-home:nth-child(2n + 1){
+  main .card-home:nth-child(2n + 1) {
     width: 100%;
     float: none;
     margin: 25px 0 0 0;
     max-width: 100%;
   }
-  
+
   .profile {
     padding: 6px 0 0 !important;
   }
@@ -1264,16 +1262,16 @@ select {
   .card-plateform .card-item {
     width: 100%;
   }
-  .row-footer{
+  .row-footer {
     flex-direction: column;
   }
-  .row-footer .footer-col{
+  .row-footer .footer-col {
     width: 100%;
   }
-  .row-footer .footer-col:first-child{
+  .row-footer .footer-col:first-child {
     border-right: 0;
   }
-  .row-footer .footer-col:last-child{
+  .row-footer .footer-col:last-child {
     border-left: 0;
   }
 }
@@ -1361,11 +1359,10 @@ select {
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
   padding: 15px;
-
 }
-.card-body-avatar img{
-  -webkit-box-shadow: 5px 9px 20px 4px rgb(0 0 0 / 40%);
-    box-shadow: 5px 9px 20px 4px rgb(0 0 0 / 40%);
+.card-body-avatar img {
+  -webkit-box-shadow: 5px 9px 20px 4px rgba(0, 0, 0, 1);
+  box-shadow: 5px 9px 20px 4px rgba(0, 0, 0, 1);
 }
 
 .card-body-player {
@@ -1378,11 +1375,11 @@ select {
 
 .card-body-player > p {
   padding-right: 60px;
-    font-family: 'Quantico', sans-serif;
-    font-size: 16px;
+  font-family: "Quantico", sans-serif;
+  font-size: 16px;
 }
 
-.card-body-player > a{
+.card-body-player > a {
   margin-bottom: 15px;
 }
 
