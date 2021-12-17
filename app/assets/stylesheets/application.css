@@ -745,6 +745,11 @@ a:hover,
   min-height: 1000px;
 }
 
+.card-body-game {
+  margin-top: 30px;
+  padding-top: 30px;
+}
+
 .index::before {
   content: "";
   width: 1px;
