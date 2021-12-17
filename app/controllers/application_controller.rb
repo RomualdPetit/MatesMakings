@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
     include ApplicationHelper
     include UsersHelper # inclure dans tous les controllers le helper "UsersHelper" créé dans le fichier app/helpers/sessions_helper.rb
     #include ParticipationsHelper
-    
+    before_action :set_navbar
+
     helper_method :current_user
     
     def after_sign_in_path_for(current_user)
@@ -21,5 +22,7 @@ class ApplicationController < ActionController::Base
         user_params.permit(:email, :age, :description, :country, :discord_tag, :player_type, :steam, :availablity, :note, :riot_games, :uplay, :psn, :nintendo, :epic_game, :battlenet, :origin, :xbox)
       end
     end
+
+    
 
 end

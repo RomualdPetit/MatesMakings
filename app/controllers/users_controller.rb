@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     @average = ratings.inject{ |sum, el| sum + el }.to_f / ratings.size
 
     puts @average
+    puts @review_user.count
   end
 
   def create

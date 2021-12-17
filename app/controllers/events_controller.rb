@@ -27,10 +27,10 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
-    @event.user = current_user
+    @event.user_id = current_user.id
     
-     x = @event.game_number
-     @event.game = Game.find(x)
+     x = @event.game_name
+     @event.game = Game.find_by(name: x.to_s)
 
      #x = @event.game_name
      #@event.game = Game.find(name: x)
@@ -79,7 +79,7 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:title, :description, :start_date, :start_time_hours, :start_time_min, :plateform, :game_number)
+      params.require(:event).permit(:title, :description, :start_date, :start_time_hours, :start_time_min, :plateform, :game_name)
     end
 
 
