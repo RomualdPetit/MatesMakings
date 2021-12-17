@@ -36,29 +36,30 @@
 
         <div class="row">
         
-        <% if @review_user.count > 1 %>
+        
             <h3>
-            <% if @average < 2 %>
-            <i class="fas fa-star "></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-            <% elsif @average.round(3) > 1.75 && @average.round(3) < 2.25 %> 
-            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-            <% elsif @average.round(3) > 2.25 && @average.round(3) < 2.75 %> 
-            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-            <% elsif @average.round(3) > 2.75 && @average.round(3) < 3.25 %> 
-            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-            <% elsif @average.round(3) > 3.25 && @average.round(3) < 3.75 %> 
-            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
-            <% elsif @average.round(3) > 3.75 && @average.round(3) < 4.25 %> 
-            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="far fa-star"></i>
-            <% elsif @average.round(3) > 4.25 && @average.round(3) < 4.75 %> 
-            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star-half-alt"></i>
-            <% elsif @average.round(3) == 5 %> 
-            <i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i><i class="fas fa-star black"></i>
-            basée sur <%= @review_user.count %> notations</h3>
+            <% if @average < 2 && @average > 1 %>
+            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star-half-empty.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
+            <% elsif @average > 1.74 && @average < 2.25 %> 
+            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
+            <% elsif @average > 2.24 && @average < 2.75 %> 
+            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><<img src="https://img.icons8.com/fluency/48/000000/star-half-empty.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
+            <% elsif @average > 2.74 && @average < 3.25 %> 
+            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
+            <% elsif @average > 3.24 && @average < 3.75 %> 
+            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><<img src="https://img.icons8.com/fluency/48/000000/star-half-empty.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
+            <% elsif @average > 3.74 && @average < 4.25 %> 
+            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/color/48/000000/star--v1.png"/>
+            <% elsif @average > 4.24 && @average < 4.75 %> 
+            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><<img src="https://img.icons8.com/fluency/48/000000/star-half-empty.png"/>
+            <% elsif @average == 5 %> 
+            <img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/><img src="https://img.icons8.com/fluency/48/000000/star.png"/>
+            
             <% else %>
-            <p>Pas assez de notations</p>
-          <% end %>
-          <% end %>
+            <p>Tu peux noter ce joueur</p>  <%= @average %>
+          <% end %> <br>
+          basée sur <%= @review_user.count %> notations</h3>
+          
 
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		        <div class="form-group">
