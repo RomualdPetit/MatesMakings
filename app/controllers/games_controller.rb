@@ -2,7 +2,7 @@ class GamesController < ApplicationController
   include ApplicationHelper
   before_action :set_game, only: %i[ show edit update destroy ]
   before_action :isAdmin?, only: [:create, :destroy, :edit, :new]
-  before_action :authenticate_user!, only: [:create, :destroy] 
+  before_action :authenticate_user!, only: [:create, :destroy, :show] 
 
   # GET /games or /games.json
   def index

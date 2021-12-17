@@ -35,8 +35,7 @@
       <% @all_commu.each do |communities| %>
       <div class="card-players" style ="background-color: #f8f5f2;"> 
         <div class="card-body-avatar">
-        
-      
+          <p class="title-min-event">Joueur</p>
         </div>
 
 
@@ -60,40 +59,50 @@
         </div>
       </div>
       <% end %>
-
-<p class="space"></p>
-
-
- <h5><strong>Les évènements à venir</strong></h5>
  
 
-<div class="row align-item-center justify-content-center">
-  <div class="col-sm-10">
-    <div class="card">
-     
+  <div class="soon-event">
+    <h1>Les évènements à venir</h1>
+  </div> 
+
+
+    
       <div class="card-body">
-        <div class="row card-deck justify-content-center">
           <% @events.each do |event| %>
-            <div class="col-sm-5 mx-2 my-4">
-              <div class="card">
-                
-                  <div class="card-body-event-players">
-                    <h6 class="card-title"><%=event.title%></h6>                  
-                    <p class="card-text">Plateforme: <%=event.plateform%></p>
-                    <p class="card-text">Date de l'event: <%=event.start_date%></p>
-                    <p class="card-text">Heure de l'event: <%=event.start_time_hours%>h<%=event.start_time_min%></p>
-                    <br>
-                    <p><a><%= link_to "En savoir plus", event_path(event.id), class: "btn btn-link" %></a></p>
+            <div class="card-players" style ="background-color: #f8f5f2;"> 
+              <div class="card-body-avatar">
+                <p class="title-min-event">Évenement de <%= event.user.last_name %></p>
+              </div>
+              <div class="card-body-player">
+
+                    <p class="card-text">Titre</p>
+                    <div class="text-tag">
+                    <%=event.title%>
+                    </div>
+                    <p class="card-text">Plateforme
+                    <div class="text-tag">
+                     <%=event.plateform%>
+                    </div></p>
+
+                    <p class="card-text">Date de l'event 
+                    <div class="text-tag">
+                    <%=event.start_date%>
+                    </div></p>
+
+                    <p class="card-text">Heure de l'event
+                    <div class="text-tag">
+                     <%=event.start_time_hours%>h<%=event.start_time_min%>
+                     </div></p>
+
                     
-                  </div>
+                    <p><a><%= link_to "En savoir plus", event_path(event.id), class: "btn btn-primary" %></a></p>
               </div>
             </div>
-          <% end %>
-        </div>
+            <% end %>
+            
       </div>
     </div>
-  </div>
-</div>
+
 
 
 
