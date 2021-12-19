@@ -11,7 +11,7 @@
       
       <div class="actions">
       <%= link_to 'Editer', edit_event_path(@event), class: "btn btn-primary" %>
-      <%= link_to 'Retour aux évenements', events_path, class: "btn btn-info" %>
+      <%= link_to 'Retour aux événements', events_path, class: "btn btn-info" %>
       </div>
 
       <em>il y a <%= @compteur %> personnes inscrites</em>
@@ -26,7 +26,7 @@
         <form action="<%= participation_path(participation) %>" method="post" >
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
           <input type="hidden" name="_method" value="DELETE" >
-          <input class="btn btn-danger" type="submit" value="Ne plus participer à l'évent">
+          <input class="btn btn-danger" type="submit" value="Ne plus participer à l'événement">
         </form>
       <% end %>
     </div>

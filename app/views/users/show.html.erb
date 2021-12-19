@@ -90,7 +90,7 @@
         </div>
         <hr style="height: 2px; color: #49354c; background-color: #49354c; width: 50%; border: none; margin: 50px 0;">
         <div class="form-group">
-          <h3 class="card-title" style="color:#49354c">Description et Disponibilitées </h3> <strong><div class="text-tag"><%= @user.description %></div></strong>
+          <h3 class="card-title" style="color:#49354c">Description et Disponibilités </h3> <strong><div class="text-tag"><%= @user.description %></div></strong>
         </div>
         <% if current_user.id == @user.id %>
         <%= link_to "Editer mon profil", edit_user_path(), class: "btn btn-primary"%>
